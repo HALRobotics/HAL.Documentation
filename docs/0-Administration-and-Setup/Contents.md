@@ -1,0 +1,106 @@
+## 0. Administration and Setup
+
+[0.1. Install](#0.1.-install)
+
+[0.2. Create and Administer an Organization](#0.2.-create-and-administer-an-organization)
+
+[0.3. Join an Organization](#0.3.-join-an-organization)
+
+[0.4. \[Obsolete\] Upload HAL5 Licenses](#0.4.-upload-hal5-licenses-obsolete)
+
+[0.5. Complete Uninstallation](#0.5.-complete-uninstallation)
+
+---
+### 0.1. Install
+
+#### Objective:
+
+In this tutorial you will learn how to install the HAL Robotics Framework from the user portal, user.hal-robotics.com.
+
+#### Requirements to follow along:
+
+- Host software e.g. Rhinoceros 3D and Grasshopper, installed on a PC.
+- Internet access.
+
+#### How to:
+
+Start by browsing to user.hal-robotics.com and creating an account, if you have not already done so. You can then login to the user portal. On the greeting page you should see a link to "Download the HAL Robotics Framework". By clicking on that link, you will download the HAL Robotics Framework installer. Once the download is complete, run the installer and you should see a list of all available packages and extensions. Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. Once you have selected your configuration simply click apply and the installation will start. Every time there are updates available for the packages you have installed simply clicking apply will download and install the latest version. Once the installation is complete you have successfully installed the HAL Robotics Framework.
+
+---
+### 0.2. Create and Administer an Organization
+
+#### Objective:
+
+This tutorial is aimed at organization administrators who would like to manage licenses and users for their institution from the user portal at user.hal-robotics.com. If you are a user trying to access their organization's licenses please skip forward to the "Join an Organization" tutorial.
+
+#### Requirements to follow along:
+
+- Internet access.
+
+#### Background:
+
+Creating an organization will allow members to share floating licenses. This maximizes the usage of your licenses and avoids employees or students leaving with access to a license you've paid for.
+
+#### How to:
+
+Start by browsing to user.hal-robotics.com and logging in. You can then navigate to the "Organizations" page. Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution. Click on "Create New" at the top of the page. There are a few details that need to be entered here:
+
+a. The name of the organization.
+
+b. If your organization is an academic institution then you can tick the "Academic" box.
+
+c. You then have the option of listing your organization for all users to join. Being listed will allow members, for example your colleagues or students, to request to join the organization. You will still have the option of rejecting any unsolicited requests. If you un-tick the option then you will remain hidden to all users but will need to manually add any members to your organization.
+
+d. All other information is optional but will help to automatically populate information when requesting quotes or purchasing information.
+
+e. The "Domain for automatic membership validation" will automatically accept any organizational membership requests from user accounts with a verified email address on the domain you specify e.g. "@example.com" will automatically accept "sarah@example.com" but not "toby@gmail.com". It is entirely optional but could save you some back and forth accepting users in your domain.
+
+Click "Create" and you will be redirected to your "Organization Memberships" page. From here you can view the members of the organization or any licenses that have been assigned to the organization. You may have to visit the "Members" page from time to time to accept new requests to join or manually add members. The "Licenses" page can be used to check which licenses are in use and when they expire.
+
+---
+### 0.3. Join an Organization
+
+#### Objective:
+
+This tutorial is aimed at users who want to join their organization on the user portal at user.hal-robotics.com and access the organization's licenses. If you are unsure of whether your company or institution has an organization please talk to your I.T. department or HAL Robotics Framework admin.
+
+#### Requirements to follow along:
+
+- Internet access.
+
+#### Background:
+
+Joining an organization will allow you to access your organization's licenses.
+
+#### How to:
+
+Start by browsing to user.hal-robotics.com and logging in. You can then navigate to the "Organizations" page. Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's join the organization for you company or institution. Click on "Join" at the top of the page. Here you will be given a list of organizations that you can request to join. Select your organization from the drop-down and click "Request to Join". If you can't find your organization in the list please talk to your I.T. department or HAL Robotics Framework admin as they may have hidden the organization. In most instances, once you've clicked "Request to Join", an organization administrator will have to approve your request. Once you've been approved and login to any of the HAL Robotics Framework client applications, for example, the Grasshopper plugin, you will have access to your own and your organization's licenses.
+
+---
+### 0.4. Upload HAL5 Licenses \[Obsolete\]
+This tutorial is obsolete as all licenses are distributed through the user portal.
+
+---
+### 0.5. Complete Uninstallation
+
+#### Objective:
+
+In this tutorial you'll learn how to completely uninstall the HAL Robotics Framework.
+
+#### Requirements to follow along:
+
+- A PC with the HAL Robotics Framework installed.
+
+#### Background:
+
+Whilst we make every effort to ensure that our software is stable it may occasionally be necessary to completely remove a version of the HAL Robotics Framework.
+
+#### How to:
+
+Start by opening the HAL Robotics Installer and clicking uninstall. This will uninstall all packages and extensions you added through the installer. You can then uninstall the Installer itself through the usual Windows uninstall methods. Once this is done you can clean up any remnants that the uninstallation process may have missed by deleting
+
+a. %ProgramData%\\HAL
+
+b. %LocalAppData%\\HAL
+
+---
