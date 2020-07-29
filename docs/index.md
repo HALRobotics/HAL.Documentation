@@ -1,5 +1,3 @@
-# Work In Progress - please come back soon for a complete version
-
 ## Tutorials for the HAL Robotics Framework in Grasshopper
 ----------------------------------------------------------
 
