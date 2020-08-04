@@ -1,23 +1,26 @@
-remote_theme: LeakyAbstractions/pretty-docs
+#remote_theme: LeakyAbstractions/pretty-docs
+theme: jekyll-theme-minimal
 title: HAL Robotics Framework Tutorials
 description: Tutorials for use of the HAL Robotics Framework in Rhinoceros 3D and Grasshopper
 show_downloads: false
+github:
+  is_project_page: false
 
 #
 # Default values
 #
-defaults:
-  -
-    scope:
-      path: ""
-      type: doc
-    values:
-      layout: doc
-      color: blue
-  -
-    scope:
-      path: ""
-      type: pages
-    values:
-      layout: doc
-      color: blue
+#defaults:
+#  -
+#    scope:
+#      path: ""
+#      type: doc
+#    values:
+#      layout: doc
+#      color: blue
+#  -
+#    scope:
+#      path: ""
+#      type: pages
+#    values:
+#      layout: doc
+#      color: blue
