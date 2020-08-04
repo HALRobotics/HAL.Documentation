@@ -2,5 +2,3 @@ remote_theme: LeakyAbstractions/pretty-docs
 title: HAL Robotics Framework Tutorials
 description: Tutorials for use of the HAL Robotics Framework in Rhinoceros 3D and Grasshopper
 show_downloads: false
-github:
-  is_project_page: false
