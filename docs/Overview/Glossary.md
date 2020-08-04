@@ -77,7 +77,7 @@ signals are used to send electrical data between connected devices. Electrical s
 
 ---
 ### 7.2. Programming
-_a.k.a tell a machine what to do_
+_a.k.a telling a machine what to do_
 
 creation of procedures from CAD data or other sources
 
@@ -113,7 +113,7 @@ _a.k.a waypoint, frame, pose_
 
 a position to be reached by one or more [mechanisms](#mechanism), expressed in [joint space](#joint-space) or [Cartesian space](#cartesian-space).
 
-#### [Toolpath](../7-Glossary/Contents.md#toolpath)
+#### toolpath
 _a.k.a motion sequence_
 
 series of [targets](#target) through which the [endpoint](#endpoint) of [mechanism](#mechanism) will move to perform a process e.g. milling.
