@@ -19,7 +19,7 @@ In this tutorial you will learn how to install the HAL Robotics Framework from t
 
 #### Requirements to follow along:
 
-- Host software e.g. Rhinoceros 3D and Grasshopper, installed on a PC.
+- Host software e.g. Rhinoceros 3D and Grasshopper, installed on a PC. 
 - Internet access.
 
 #### How to:
