@@ -1,12 +1,12 @@
 ## 5. Flow Control
 
-[5.1. Wait for a Time](#5.1.-wait-for-a-time)
+[5.1. Wait for a Time](#51-wait-for-a-time)
 
-[5.2. Wait for Synchronization](#5.2.-wait-for-synchronization)
+[5.2. Wait for Synchronization](#52-wait-for-synchronization)
 
-[5.3. Create a Loop \[Coming Soon\]](#5.3.-create-a-loop)
+[5.3. Create a Loop \[Coming Soon\]](#53-create-a-loop)
 
-[5.4. Create a Condition \[Coming Soon\]](#5.4.-create-a-condition)
+[5.4. Create a Condition \[Coming Soon\]](#54-create-a-condition)
 
 ---
 ### 5.1. Wait for a Time

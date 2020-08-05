@@ -1,8 +1,8 @@
 ## 4. IO
 
-[4.1. Create a Signal](#4.1.-create-a-signal)
+[4.1. Create a Signal](#41-create-a-signal)
 
-[4.2. Change a Signal State](#4.2.-change-a-signal-state)
+[4.2. Change a Signal State](#42-change-a-signal-state)
 
 ---
 ### 4.1. Create a Signal
@@ -42,7 +42,7 @@ In this tutorial we'll change the state of a [Signal](../../Overview/Glossary.md
 
 A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
 
-Reading or watching the [Create a Signal](../4-IO/Contents.md#4.1.-create-a-signal) tutorial is highly recommended and this tutorial builds on its output.
+Reading or watching the [Create a Signal](../4-IO/Contents.md#41-create-a-signal) tutorial is highly recommended and this tutorial builds on its output.
 
 #### Background:
 

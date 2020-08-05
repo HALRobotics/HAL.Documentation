@@ -1,12 +1,12 @@
 ## 7. Glossary
 
-[7.1. Cell Setup](#7.1.-cell-setup)
+[7.1. Cell Setup](#71-cell-setup)
 
-[7.2. Programming](#7.2.-programming)
+[7.2. Programming](#72-programming)
 
-[7.3. Simulation](#7.3.-simulation)
+[7.3. Simulation](#73-simulation)
 
-[7.4. Control](#7.4.-control)
+[7.4. Control](#74-control)
 
 ---
 ### 7.1. Cell Setup
