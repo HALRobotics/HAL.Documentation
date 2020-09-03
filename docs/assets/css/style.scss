@@ -64,13 +64,11 @@ section {
 footer p {
     margin:0px;
 }
-
-img {
-    //border: 1px solid #ddd;
-    border-radius: 0px;
-    padding: 0px;
-}
   
 img:hover {
     box-shadow: 0 0 6px 1px #bebebe;
+}
+
+img.logo {
+    box-shadow: none;
 }
