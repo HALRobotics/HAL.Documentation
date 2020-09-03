@@ -30,11 +30,32 @@ code {
 a {
     color:#000000;
     text-decoration:none;
-    font-weight: 600;
+    font-weight: 500;
   }
 
 
 a:hover, a:focus {
     color:#41b1e1;
-    font-weight: 600;
+    font-weight: 500;
+}
+
+header {
+    width:170px;
+    float:left;
+    position:fixed;
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+
+footer {
+    width:170px;
+    float:left;
+    position:fixed;
+    bottom:50px;
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+
+section {
+    width:600px;
+    float:right;
+    padding-bottom:50px;
 }
