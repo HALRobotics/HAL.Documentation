@@ -26,7 +26,7 @@ In this tutorial you will learn how to install the HAL Robotics Framework from t
 
 Start by browsing to the [user portal](https://user.hal-robotics.com/) and [creating an account](https://user.hal-robotics.com/Account/Register), if you have not already done so. You can then [login to the user portal](https://user.hal-robotics.com/Account/Login). 
 
-[<img align="left" width="500" src="../../assets/images/01UserPortal.PNG">](../../assets/images/01UserPortal.PNG)
+[<kbd><img align="left" width="500" src="../../assets/images/01UserPortal.PNG"></kbd>](../../assets/images/01UserPortal.PNG)
 <em>The HAL Robotics [user portal](https://user.hal-robotics.com/).</em>
 
 [<img align="left" width="500" src="../../assets/images/01UserPortalRegister.PNG">](../../assets/images/01UserPortalRegister.PNG)
@@ -52,7 +52,7 @@ Once the download is complete, run the installer and you should see a list of al
 <em>Each module is distributed with a corresponding EULA, please take notice of these elements before using the software.</em>
 
 [<img align="left" width="500" src="../../assets/images/01InstallerProgress.PNG">](../../assets/images/01InstallerProgress.PNG)
-<em>Upon validation of the module selection, the installer will download and install each module and its dependencies.</em>
+<em>Upon validation of the module selection, the installer will download and install each module and the corresponding dependencies.</em>
 
 [<img align="left" width="500" src="../../assets/images/01InstallerComplete.PNG">](../../assets/images/01InstallerComplete.PNG)
 <em>You can exit the installer once the setup is complete.</em>
