@@ -2,6 +2,7 @@
 theme: jekyll-theme-minimal
 title: HAL Robotics Framework Tutorials
 description: Tutorials for use of the HAL Robotics Framework in Rhinoceros 3D and Grasshopper
+logo: /assets/images/Logo.PNG
 show_downloads: false
 github:
   is_project_page: false
