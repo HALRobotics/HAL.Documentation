@@ -62,7 +62,7 @@ Once the download is complete, run the installer and you should see a list of al
 [<img align="left" src="../../assets/images/01InstallerProgress.PNG">](../../assets/images/01InstallerProgress.PNG)
 <em>Upon validation of the module selection, the installer will download and install each module and the corresponding dependencies.</em>
 
-[<img align="left" src="../../assets/images/01InstallerComplete.PNG">](../../assets/images/01InstallerComplete.PNG)  
+[<img align="left" src="../../assets/images/01InstallerComplete.PNG">](../../assets/images/01InstallerComplete.PNG)  <br/><br/>
 <em>You can exit the installer once the setup is complete.</em>
 
 ---
@@ -82,7 +82,7 @@ Creating an organization will allow members to share floating licenses. This max
 
 #### How to:
 
-Start by browsing to user.hal-robotics.com and logging in. You can then navigate to the "Organizations" page. Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution. Click on "Create New" at the top of the page. There are a few details that need to be entered here:
+Start by browsing to the [user portal](https://user.hal-robotics.com/) and logging in. You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution. Click on "Create New" at the top of the page. There are a few details that need to be entered here:
 
 a. The name of the organization.
 
