@@ -26,17 +26,16 @@ In this tutorial you will learn how to install the HAL Robotics Framework from t
 
 Start by browsing to the [user portal](https://user.hal-robotics.com/) and [creating an account](https://user.hal-robotics.com/Account/Register), if you have not already done so. You can then [login to the user portal](https://user.hal-robotics.com/Account/Login). 
 
-|![<img align="left" width="500" src="../../assets/images/01UserPortal.PNG">](../../assets/images/01UserPortal.PNG)|
--
+> [<img align="left" width="500" src="../../assets/images/01UserPortal.PNG">](../../assets/images/01UserPortal.PNG)
 <em>The HAL Robotics [user portal](https://user.hal-robotics.com/).</em>
 
 > [<img align="left" width="500" src="../../assets/images/01UserPortalRegister.PNG">](../../assets/images/01UserPortalRegister.PNG)
 <em>Register using a valid email address, as it will be used for support and licensing.</em>
 
-[<img align="left" width="500" src="../../assets/images/01UserPortalRegistration.PNG">](../../assets/images/01UserPortalRegistration.PNG)
+> [<img align="left" width="500" src="../../assets/images/01UserPortalRegistration.PNG">](../../assets/images/01UserPortalRegistration.PNG)
 <em>Upon validation of your registration details, please verify that our confirmation email is not blocked by your spam filter.</em>
 
-[<img align="left" width="500" src="../../assets/images/01UserPortalRegistrationConfirmation.PNG">](../../assets/images/01UserPortalRegistrationConfirmation.PNG)
+> [<img align="left" width="500" src="../../assets/images/01UserPortalRegistrationConfirmation.PNG">](../../assets/images/01UserPortalRegistrationConfirmation.PNG)
 <em>A final registration confirmation will be displayed once you click on the link you received via email.</em>
 
 On the greeting page you should see a link to [download the HAL Robotics Framework](https://halinstaller.blob.core.windows.net/windows/Setup.exe). By clicking on that link, you will download the HAL Robotics Framework installer. 
