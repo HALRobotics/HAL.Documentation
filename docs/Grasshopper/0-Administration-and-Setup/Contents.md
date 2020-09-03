@@ -62,7 +62,7 @@ Once the download is complete, run the installer and you should see a list of al
 [<img align="left" src="../../assets/images/01InstallerProgress.PNG">](../../assets/images/01InstallerProgress.PNG)
 <em>Upon validation of the module selection, the installer will download and install each module and the corresponding dependencies.</em>
 
-[<img align="left" src="../../assets/images/01InstallerComplete.PNG">](../../assets/images/01InstallerComplete.PNG)  <br/><br/>
+[<img align="left" src="../../assets/images/01InstallerComplete.PNG">](../../assets/images/01InstallerComplete.PNG)<br class=”blank” />
 <em>You can exit the installer once the setup is complete.</em>
 
 ---
@@ -95,6 +95,9 @@ d. All other information is optional but will help to automatically populate inf
 e. The "Domain for automatic membership validation" will automatically accept any organizational membership requests from user accounts with a verified email address on the domain you specify e.g. "@example.com" will automatically accept "sarah@example.com" but not "toby@gmail.com". It is entirely optional but could save you some back and forth accepting users in your domain.
 
 Click "Create" and you will be redirected to your "Organization Memberships" page. From here you can view the members of the organization or any licenses that have been assigned to the organization. You may have to visit the "Members" page from time to time to accept new requests to join or manually add members. The "Licenses" page can be used to check which licenses are in use and when they expire.
+
+[<img align="left" src="../../assets/images/02Organizations.PNG">](../../assets/images/01InstallerProgress.PNG)
+<em>Upon creation of your organization, you will have access to its members and licenses.</em>
 
 ---
 ### 0.3. Join an Organization
