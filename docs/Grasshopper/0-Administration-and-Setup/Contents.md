@@ -62,7 +62,7 @@ Once the download is complete, run the installer and you should see a list of al
 [<img align="left" src="../../assets/images/01InstallerProgress.PNG">](../../assets/images/01InstallerProgress.PNG)
 <em>Upon validation of the module selection, the installer will download and install each module and the corresponding dependencies.</em>
 
-[<img align="left" src="../../assets/images/01InstallerComplete.PNG">](../../assets/images/01InstallerComplete.PNG)
+[<img align="left" src="../../assets/images/01InstallerComplete.PNG">](../../assets/images/01InstallerComplete.PNG)  
 <em>You can exit the installer once the setup is complete.</em>
 
 ---
