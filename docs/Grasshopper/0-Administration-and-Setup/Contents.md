@@ -28,6 +28,8 @@ Start by browsing to the [user portal](https://user.hal-robotics.com/) and [crea
 
 [<img align="left" width="500" src="../../assets/images/01InstallerPackages.png">](../../assets/images/01InstallerPackages.png)
 
+
+
 ---
 ### 0.2. Create and Administer an Organization
 
