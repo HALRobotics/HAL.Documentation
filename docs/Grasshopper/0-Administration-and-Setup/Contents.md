@@ -6,7 +6,7 @@
 
 [0.3. Join an Organization](#03-join-an-organization)
 
-[~~0.4. \[Obsolete\] Upload HAL5 Licenses~~](#04-upload-hal5-licenses-obsolete)
+[~~0.4. Upload HAL5 Licenses \[Obsolete\]~~](#04-upload-hal5-licenses-obsolete)
 
 [0.5. Complete Uninstallation](#05-complete-uninstallation)
 
@@ -48,8 +48,10 @@ On the greeting page you should see a link to [download the HAL Robotics Framewo
 <em>The downloaded "Setup.exe" application will install the HAL Robotics Framework Installer.</em>
 
 Once the download is complete, run the installer and you should see a list of all available packages and extensions. 
-Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. Once you have selected your configuration simply click apply and the installation will start. <br><br>
-Every time there are updates available for the packages you have installed simply clicking apply will download and install the latest version. <br><br>
+Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. Once you have selected your configuration simply click apply and the installation will start.
+
+Every time there are updates available for the packages you have installed simply clicking apply will download and install the latest version.
+
 Once the installation is complete you have successfully installed the HAL Robotics Framework.
 
 [<img src="../../assets/images/01InstallerDisclaimer.PNG">](../../assets/images/01InstallerDisclaimer.PNG)
@@ -84,7 +86,7 @@ Creating an organization will allow members to share floating licenses. This max
 
 #### How to:
 
-Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution.<br><br>
+Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution.
 
 Click on [Create New](https://user.hal-robotics.com/Organizations/Create) at the top of the page. There are a few details that need to be entered here:
 * The name of the organization.
@@ -138,7 +140,7 @@ In most instances, once you've clicked "Request to Join", an organization admini
 <em>The "Join" page will allow you to look for your organization and request membership.</em>
 
 ---
-### 0.4. Upload HAL5 Licenses \[Obsolete\]
+### ~~0.4. Upload HAL5 Licenses \[Obsolete\]~~
 This tutorial is obsolete as all licenses are distributed through the user portal.
 
 ---
@@ -158,7 +160,8 @@ Whilst we make every effort to ensure that our software is stable it may occasio
 
 #### How to:
 
-Start by opening the HAL Robotics Installer and clicking uninstall. This will uninstall all packages and extensions you added through the installer. <br>
+Start by opening the HAL Robotics Installer and clicking uninstall. This will uninstall all packages and extensions you added through the installer.
+
 You can then uninstall the Installer itself through the usual Windows uninstall methods. 
 
 Once this is done you can clean up any remnants that the uninstallation process may have missed by deleting the following folders:
