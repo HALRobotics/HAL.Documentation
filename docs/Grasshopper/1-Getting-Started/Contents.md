@@ -33,7 +33,7 @@ The HAL Robotics Framework is a modular software library that simplify the model
 
 Once you've opened Grasshopper and logged in to the HAL Robotics Framework to access your licenses you should be presented with a blank Grasshopper canvas and a new **HAL Robotics** tab at the top your screen. There are plenty of tools within this tab to allow you to program just about any process you want, and other tutorials will look at each of them individually as well as the [structure of the interface](../1-Getting-Started/Contents.md#12-interface-overview), but for now, we're just going to get up and running as quickly as possible.
 
-[<img src="../../assets/images/11GHLogin.PNG">](../../assets/images/11GHLogin.PNG)
+[<img src="../../assets/images/11GHLogin.PNG">](../../assets/images/11GHLogin.PNG)<br>
 <em>The "Log In" window will allow ou to connect to your HAL user account when Grasshopper starts.</em>
 
 [<img src="../../assets/images/11GHBlank.PNG">](../../assets/images/11GHBlank.PNG)
@@ -44,7 +44,7 @@ Once you've opened Grasshopper and logged in to the HAL Robotics Framework to ac
 
 The first component we're going to use is the **Robot**. You'll find it inside the **Cell** menu. When we place that component on the canvas not much happens. This is because **Robot** is one of a few special types of component that we've developed to extend the default Grasshopper interface. We'll see what each does as we come across them and they are all covered in a [special tutorial](../1-Getting-Started/Contents.md#13-components) so feel free to have a look at that for more detail. This particular component has an interlocking square icon (⧉) on the name bar. This indicates that it can be double-clicked to get a pop-up window. If we open that window on the **Robot** component then we get the Robot Catalog. You can select any [Robot](../../Overview/Glossary.md#manipulator) you want by simply clicking on it and then the "Select" button. I'm going to choose the `IRB 1200-70` as that's what I have next to me at the office. Once we've made our selection it will pop up into the scene. If you want to change your choice, you can always double click on the component again.
 
-[<img src="../../assets/images/11Robot.PNG">](../../assets/images/11Robot.PNG)
+[<img src="../../assets/images/11Robot.gif">](../../assets/images/11Robot.gif)
 <em>Double click on the robot component to open and select a robot preset.</em>
 
 We have a [Robot](../../Overview/Glossary.md#manipulator), but we're almost always going to need a [Tool](../../Overview/Glossary.md#end-effector), or [End Effector](../../Overview/Glossary.md#end-effector), for our [Robot](../../Overview/Glossary.md#manipulator) so I'm going to add a **Tool** component, again from the **Cell** menu. We assume that you will want to create your own [Tools](../../Overview/Glossary.md#end-effector) so this catalog component contains only a few options to get you started. The creation of [Tools](../../Overview/Glossary.md#end-effector) is covered in future tutorials ([1](../2-Cell/Contents.md#24-create-a-tool),[2](../2-Cell/Contents.md#25-calibrate-a-reference-or-tool),[3](../2-Cell/Contents.md#26-create-a-multi-part-tool)) so please have a look at those for more information. I'm going to select the `extruder` because I know it's about the right size for this [Robot](../../Overview/Glossary.md#manipulator).
