@@ -153,8 +153,7 @@ Whilst we make every effort to ensure that our software is stable it may occasio
 
 Start by opening the HAL Robotics Installer and clicking uninstall. This will uninstall all packages and extensions you added through the installer. You can then uninstall the Installer itself through the usual Windows uninstall methods. Once this is done you can clean up any remnants that the uninstallation process may have missed by deleting
 
-a. %ProgramData%\\HAL
-
+a. [%ProgramData%\\HAL](file///%ProgramData%/HAL)
 b. %LocalAppData%\\HAL
 
 ---
