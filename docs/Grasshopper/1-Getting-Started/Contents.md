@@ -17,7 +17,7 @@ In this tutorial we'll take the shortest route from an empty session to a moving
 
 #### Demo Files:
 
-[💾 Getting Started.gh](../ExampleFiles/Tutorials/1.1%20-%20Getting%20Started.gh)
+[💾 **Getting Started.gh**](../ExampleFiles/Tutorials/1.1%20-%20Getting%20Started.gh)
 
 #### Requirements to follow along:
 
@@ -42,7 +42,9 @@ Once you've opened Grasshopper and logged in to the HAL Robotics Framework to ac
 [<img src="../../assets/images/11GHBlankTab.PNG">](../../assets/images/11GHBlankTab.PNG)
 <em>The "HAL Robotics" tab contains the components we will use in this tutorial series.</em>
 
-The first component we're going to use is the **Robot**. You'll find it inside the **Cell** menu. When we place that component on the canvas not much happens. This is because **Robot** is one of a few special types of component that we've developed to extend the default Grasshopper interface. We'll see what each does as we come across them and they are all covered in a [special tutorial](../1-Getting-Started/Contents.md#13-components) so feel free to have a look at that for more detail. This particular component has an interlocking square icon (⧉) on the name bar. This indicates that it can be double-clicked to get a pop-up window. If we open that window on the **Robot** component then we get the Robot Catalog. You can select any [Robot](../../Overview/Glossary.md#manipulator) you want by simply clicking on it and then the "Select" button. I'm going to choose the `IRB 1200-70` as that's what I have next to me at the office. Once we've made our selection it will pop up into the scene. If you want to change your choice, you can always double click on the component again.
+The first component we're going to use is the **Robot**. You'll find it inside the **Cell** menu. When we place that component on the canvas not much happens. This is because **Robot** is one of a few special types of component that we've developed to extend the default Grasshopper interface. We'll see what each does as we come across them and they are all covered in a [special tutorial](../1-Getting-Started/Contents.md#13-components) so feel free to have a look at that for more detail. 
+
+This particular component has an interlocking square icon **⧉** on the name bar. This indicates that it can be double-clicked to get a pop-up window. If we open that window on the **Robot** component then we get the Robot Catalog. You can select any [Robot](../../Overview/Glossary.md#manipulator) you want by simply clicking on it and then the "Select" button. I'm going to choose the `IRB 1200 - 0.7m` as that's what I have next to me at the office. Once we've made our selection it will pop up into the scene. If you want to change your choice, you can always double click on the component again.
 
 [<img src="../../assets/images/11Robot.gif">](../../assets/images/11Robot.gif)
 <em>Double click on the robot component to open and select a robot preset.</em>
