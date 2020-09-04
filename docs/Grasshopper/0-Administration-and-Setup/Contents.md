@@ -1,10 +1,14 @@
 ## 0. Administration and Setup
 
-[**0.1. Install**](#01-install)
-[**0.2. Create and Administer an Organization**](#02-create-and-administer-an-organization)
-[**0.3. Join an Organization**](#03-join-an-organization)
-[**~~0.4. \[Obsolete\] Upload HAL5 Licenses~~**](#04-upload-hal5-licenses-obsolete)
-[**0.5. Complete Uninstallation**](#05-complete-uninstallation)
+[0.1. Install](#01-install)
+
+[0.2. Create and Administer an Organization](#02-create-and-administer-an-organization)
+
+[0.3. Join an Organization](#03-join-an-organization)
+
+[~~0.4. \[Obsolete\] Upload HAL5 Licenses~~](#04-upload-hal5-licenses-obsolete)
+
+[0.5. Complete Uninstallation](#05-complete-uninstallation)
 
 ---
 ### 0.1. Install
@@ -84,9 +88,13 @@ Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logg
 
 Click on [Create New](https://user.hal-robotics.com/Organizations/Create) at the top of the page. There are a few details that need to be entered here:
 * The name of the organization.
+
 * If your organization is an academic institution then you can tick the "Academic" box.
+
 * You then have the option of listing your organization for all users to join. Being listed will allow members, for example your colleagues or students, to request to join the organization. You will still have the option of rejecting any unsolicited requests. If you un-tick the option then you will remain hidden to all users but will need to manually add any members to your organization.
+
 * All other information is optional but will help to automatically populate information when requesting quotes or purchasing information.
+
 * The "Domain for automatic membership validation" will automatically accept any organizational membership requests from user accounts with a verified email address on the domain you specify e.g. "@example.com" will automatically accept "sarah@example.com" but not "toby@gmail.com". It is entirely optional but could save you some back and forth accepting users in your domain.
 
 [<img align="left" src="../../assets/images/02CreateOrganization.PNG">](../../assets/images/02CreateOrganization.PNG)
@@ -120,8 +128,11 @@ Joining an organization will allow you to access your organization's licenses.
 
 #### How to:
 
-Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's join the organization for you company or institution. <br><br>
-Click on "Join" at the top of the page. Here you will be given a list of organizations that you can request to join. Select your organization from the drop-down and click "Request to Join". If you can't find your organization in the list please talk to your I.T. department or HAL Robotics Framework admin as they may have hidden the organization. In most instances, once you've clicked "Request to Join", an organization administrator will have to approve your request. Once you've been approved and login to any of the HAL Robotics Framework client applications, for example, the Grasshopper plugin, you will have access to your own and your organization's licenses.
+Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's join the organization for you company or institution.
+
+Click on "Join" at the top of the page. Here you will be given a list of organizations that you can request to join. Select your organization from the drop-down and click "Request to Join". If you can't find your organization in the list please talk to your I.T. department or HAL Robotics Framework admin as they may have hidden the organization. 
+
+In most instances, once you've clicked "Request to Join", an organization administrator will have to approve your request. Once you've been approved and login to any of the HAL Robotics Framework client applications, for example, the Grasshopper plugin, you will have access to your own and your organization's licenses.
 
 [<img align="left" src="../../assets/images/03JoinOrganization.PNG">](../../assets/images/03JoinOrganization.PNG)
 <em>The "Join" page will allow you to look for your organization and request membership.</em>
@@ -147,8 +158,10 @@ Whilst we make every effort to ensure that our software is stable it may occasio
 
 #### How to:
 
-Start by opening the HAL Robotics Installer and clicking uninstall. This will uninstall all packages and extensions you added through the installer. You can then uninstall the Installer itself through the usual Windows uninstall methods. Once this is done you can clean up any remnants that the uninstallation process may have missed by deleting the following folders:
+Start by opening the HAL Robotics Installer and clicking uninstall. This will uninstall all packages and extensions you added through the installer. <br>
+You can then uninstall the Installer itself through the usual Windows uninstall methods. 
 
+Once this is done you can clean up any remnants that the uninstallation process may have missed by deleting the following folders:
 * %ProgramData%\\HAL
 * %LocalAppData%\\HAL
 
