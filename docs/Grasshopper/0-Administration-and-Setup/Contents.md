@@ -124,8 +124,11 @@ Joining an organization will allow you to access your organization's licenses.
 
 #### How to:
 
-Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's join the organization for you company or institution. <br>
+Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's join the organization for you company or institution. <br><br>
 Click on "Join" at the top of the page. Here you will be given a list of organizations that you can request to join. Select your organization from the drop-down and click "Request to Join". If you can't find your organization in the list please talk to your I.T. department or HAL Robotics Framework admin as they may have hidden the organization. In most instances, once you've clicked "Request to Join", an organization administrator will have to approve your request. Once you've been approved and login to any of the HAL Robotics Framework client applications, for example, the Grasshopper plugin, you will have access to your own and your organization's licenses.
+
+[<img align="left" src="../../assets/images/03JoinOrganization.PNG">](../../assets/images/03JoinOrganization.PNG)
+<em>The "Join" page will allow you to look for your organization and request membership.</em>
 
 ---
 ### 0.4. Upload HAL5 Licenses \[Obsolete\]
