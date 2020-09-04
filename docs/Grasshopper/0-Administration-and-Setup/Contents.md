@@ -35,7 +35,7 @@ In order to install and use the HAL Robotics Framework, you will first need to [
 [<img src="../../assets/images/01UserPortalRegistrationConfirmation.PNG">](../../assets/images/01UserPortalRegistrationConfirmation.PNG)
 <em>A final registration confirmation will be displayed once you click on the link you received via email.</em>
 
-If you have not already done so. You can simply [login to the user portal](https://user.hal-robotics.com/Account/Login). 
+If you already have an account, you can simply [login to the user portal](https://user.hal-robotics.com/Account/Login). 
 
 [<img src="../../assets/images/01UserPortalLogin.PNG">](../../assets/images/01UserPortalLogin.PNG)
 <em>The login page simply requires your email and password.</em>
@@ -43,12 +43,15 @@ If you have not already done so. You can simply [login to the user portal](https
 On the greeting page you should see a link to [download the HAL Robotics Framework](https://halinstaller.blob.core.windows.net/windows/Setup.exe). By clicking on that link, you will download the HAL Robotics Framework Installer. 
 
 [<img src="../../assets/images/01UserPortal.PNG">](../../assets/images/01UserPortal.PNG)
-<em>The HAL Robotics [user portal](https://user.hal-robotics.com/).</em>
+<em>The [user portal](https://user.hal-robotics.com/) greeting page.</em>
 
 [<img src="../../assets/images/01SetupExe.PNG" style="display:block">](../../assets/images/01SetupExe.PNG)
 <em>The downloaded "Setup.exe" application will install the HAL Robotics Framework Installer.</em>
 
-Once the download is complete, run the installer and you should see a list of all available packages and extensions. Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. Once you have selected your configuration simply click apply and the installation will start. Every time there are updates available for the packages you have installed simply clicking apply will download and install the latest version. Once the installation is complete you have successfully installed the HAL Robotics Framework.
+Once the download is complete, run the installer and you should see a list of all available packages and extensions. 
+Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. Once you have selected your configuration simply click apply and the installation will start. 
+Every time there are updates available for the packages you have installed simply clicking apply will download and install the latest version.
+Once the installation is complete you have successfully installed the HAL Robotics Framework.
 
 [<img src="../../assets/images/01InstallerDisclaimer.PNG">](../../assets/images/01InstallerDisclaimer.PNG)
 <em>Important information is displayed during the installation phases, please take notice of these elements before using the software.</em>
@@ -57,7 +60,7 @@ Once the download is complete, run the installer and you should see a list of al
 <em>The HAL Robotics Framework is composed of functionality modules. The installer lets you select the ones you wish to install.</em>
 
 [<img src="../../assets/images/01InstallerPackageLicenses.PNG">](../../assets/images/01InstallerPackageLicenses.PNG)
-<em>Each module is distributed with a corresponding EULA, please take notice of these elements before using the software.</em>
+<em>Each module is distributed with a corresponding End-User License Agreement (EULA), please take notice of these elements before using the software.</em>
 
 [<img src="../../assets/images/01InstallerProgress.PNG">](../../assets/images/01InstallerProgress.PNG)
 <em>Upon validation of the module selection, the installer will download and install each module and the corresponding dependencies.</em>
