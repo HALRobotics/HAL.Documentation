@@ -1,14 +1,10 @@
 ## 0. Administration and Setup
 
-[0.1. Install](#01-install)
-
-[0.2. Create and Administer an Organization](#02-create-and-administer-an-organization)
-
-[0.3. Join an Organization](#03-join-an-organization)
-
-[0.4. \[Obsolete\] Upload HAL5 Licenses](#04-upload-hal5-licenses-obsolete)
-
-[0.5. Complete Uninstallation](#05-complete-uninstallation)
+[**0.1. Install**](#01-install)
+[**0.2. Create and Administer an Organization**](#02-create-and-administer-an-organization)
+[**0.3. Join an Organization**](#03-join-an-organization)
+[**~~0.4. \[Obsolete\] Upload HAL5 Licenses~~**](#04-upload-hal5-licenses-obsolete)
+[**0.5. Complete Uninstallation**](#05-complete-uninstallation)
 
 ---
 ### 0.1. Install
