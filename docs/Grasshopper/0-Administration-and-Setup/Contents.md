@@ -72,7 +72,7 @@ Once the installation is complete you have successfully installed the HAL Roboti
 
 #### Objective:
 
-This tutorial is aimed at organization administrators who would like to manage licenses and users for their institution from the user portal at user.hal-robotics.com. If you are a user trying to access their organization's licenses please skip forward to the "Join an Organization" tutorial.
+This tutorial is aimed at organization administrators who would like to manage licenses and users for their institution from the [user portal](https://user.hal-robotics.com/). If you are a user trying to access their organization's licenses please skip forward to the "Join an Organization" tutorial.
 
 #### Requirements to follow along:
 
@@ -84,21 +84,23 @@ Creating an organization will allow members to share floating licenses. This max
 
 #### How to:
 
-Start by browsing to the [user portal](https://user.hal-robotics.com/) and logging in. You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution. Click on "Create New" at the top of the page. There are a few details that need to be entered here:
+Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution.<br><br>
 
-a. The name of the organization.
+Click on [Create New](https://user.hal-robotics.com/Organizations/Create) at the top of the page. There are a few details that need to be entered here:
+    - The name of the organization.
+    - If your organization is an academic institution then you can tick the "Academic" box.
+    - You then have the option of listing your organization for all users to join. Being listed will allow members, for example your colleagues or students, to request to join the organization. You will still have the option of rejecting any unsolicited requests. If you un-tick the option then you will remain hidden to all users but will need to manually add any members to your organization.
+    - All other information is optional but will help to automatically populate information when requesting quotes or purchasing information.
+    - The "Domain for automatic membership validation" will automatically accept any organizational membership requests from user accounts with a verified email address on the domain you specify e.g. "@example.com" will automatically accept "sarah@example.com" but not "toby@gmail.com". It is entirely optional but could save you some back and forth accepting users in your domain.
 
-b. If your organization is an academic institution then you can tick the "Academic" box.
-
-c. You then have the option of listing your organization for all users to join. Being listed will allow members, for example your colleagues or students, to request to join the organization. You will still have the option of rejecting any unsolicited requests. If you un-tick the option then you will remain hidden to all users but will need to manually add any members to your organization.
-
-d. All other information is optional but will help to automatically populate information when requesting quotes or purchasing information.
-
-e. The "Domain for automatic membership validation" will automatically accept any organizational membership requests from user accounts with a verified email address on the domain you specify e.g. "@example.com" will automatically accept "sarah@example.com" but not "toby@gmail.com". It is entirely optional but could save you some back and forth accepting users in your domain.
+[<img align="left" src="../../assets/images/02CreateOrganization.PNG">](../../assets/images/02CreateOrganization.PNG)
+<em>Fill the organization creation form then validate using the Create button.</em>
 
 Click "Create" and you will be redirected to your "Organization Memberships" page. From here you can view the members of the organization or any licenses that have been assigned to the organization. You may have to visit the "Members" page from time to time to accept new requests to join or manually add members. The "Licenses" page can be used to check which licenses are in use and when they expire.
 
-[<img align="left" src="../../assets/images/02Organizations.PNG">](../../assets/images/01InstallerProgress.PNG)
+[<img align="left" src="../../assets/images/02Organizations.PNG">](../../assets/images/02Organizations.PNG)
+[<img align="left" src="../../assets/images/02OrganizationMembers.PNG">](../../assets/images/02OrganizationMembers.PNG)
+[<img align="left" src="../../assets/images/02OrganizationLicenses.PNG">](../../assets/images/02OrganizationLicenses.PNG)
 <em>Upon creation of your organization, you will have access to its members and licenses.</em>
 
 ---
