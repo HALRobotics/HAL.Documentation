@@ -116,7 +116,7 @@ Within the **HAL Robotics** tab, you will see a set of panels. These are ordered
 
 a.  **Cell** - The Cell panel covers everything you'll need to build up a virtual version of your robotic [Cell](../../Overview/Glossary.md#cell). This includes [Robot](../../Overview/Glossary.md#manipulator), [Positioner](../../Overview/Glossary.md#positioner) and [Tool](../../Overview/Glossary.md#end-effector) presets, as well as the components required to build your own [Mechanisms](../../Overview/Glossary.md#mechanism), [Parts](../../Overview/Glossary.md#part), set up your [I/O Signals](../../Overview/Glossary.md#signal) and assemble all of these into a complete digital system through a [Controller](../../Overview/Glossary.md#controller).
 
-<center>
+<center> 
 [<img height="" src="../../assets/images/12CellComponents.PNG">](../../assets/images/12CellComponents.PNG)
 <em>The "Cell" panel contains everything to model the hardware of a robot cell.</em> 
 </center>
