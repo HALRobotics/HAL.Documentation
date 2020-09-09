@@ -96,7 +96,7 @@ In this tutorial we'll take a look at the layout HAL Robotics Framework componen
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -106,9 +106,18 @@ The HAL Robotics Framework for Grasshopper installs a new tab within the Grassho
 
 In the **Params** tab you will find a number of HAL Robotics Framework parameters. These are all in blue hexagons and may come in useful for keeping your documents organized. The parameters panels are organized in the same way as the **HAL Robotics** tab, as we'll see shortly, with the addition of all of these units which can be used to ensure you use the units most appropriate to your way of working regardless of the units of your model space.
 
+[<img src="../../assets/images/12Parameters.PNG">](../../assets/images/12Parameters.PNG)
+<em>The HAL parameters are shaped as blue hexagon.</em> 
+
 Within the **HAL Robotics** tab, you will see 7 (at the time of writing) panels of components. These are ordered and organized to guide you through the process of setting up your processes in the HAL Robotics Framework.
 
+[<img src="../../assets/images/12Components.PNG">](../../assets/images/12Components.PNG)
+<em>The HAL Robotics tab is ordered following the software workflow, from the robot cell modelling, to the procedure execution utilities.</em> 
+
 a.  **Cell** - The Cell panel covers everything you'll need to build up a virtual version of your robotic [Cell](../../Overview/Glossary.md#cell). This includes [Robot](../../Overview/Glossary.md#manipulator), [Positioner](../../Overview/Glossary.md#positioner) and [Tool](../../Overview/Glossary.md#end-effector) presets, as well as the components required to build your own [Mechanisms](../../Overview/Glossary.md#mechanism), [Parts](../../Overview/Glossary.md#part), set up your [I/O Signals](../../Overview/Glossary.md#signal) and assemble all of these into a complete digital system through a [Controller](../../Overview/Glossary.md#controller).
+
+[<img src="../../assets/images/12CellComponents.PNG">](../../assets/images/12CellComponents.PNG)
+<em>The Cell panel contains everything to model the hardware of a robot cell.</em> 
 
 b.  **Motion** - The Motion panel contains all the components to create and manipulate [Targets](../../Overview/Glossary.md#target) and control how your [Robots](../../Overview/Glossary.md#manipulator) are going to move towards those [Targets](../../Overview/Glossary.md#target) by specifying the Speed, Acceleration, [Blend](../../Overview/Glossary.md#blend) and Kinematic Settings.
 
