@@ -116,17 +116,17 @@ Within the **HAL Robotics** tab, you will see a set of panels. These are ordered
 
 a.  **Cell** - The Cell panel covers everything you'll need to build up a virtual version of your robotic [Cell](../../Overview/Glossary.md#cell). This includes [Robot](../../Overview/Glossary.md#manipulator), [Positioner](../../Overview/Glossary.md#positioner) and [Tool](../../Overview/Glossary.md#end-effector) presets, as well as the components required to build your own [Mechanisms](../../Overview/Glossary.md#mechanism), [Parts](../../Overview/Glossary.md#part), set up your [I/O Signals](../../Overview/Glossary.md#signal) and assemble all of these into a complete digital system through a [Controller](../../Overview/Glossary.md#controller).
 
-[<center><img height="" src="../../assets/images/12CellComponents.PNG"></center>](../../assets/images/12CellComponents.PNG)
+[<img height="" src="../../assets/images/12CellComponents.PNG"></center>](../../assets/images/12CellComponents.PNG)<br>
 <em>The "Cell" panel contains everything to model the hardware of a robot cell.</em> 
 
 b.  **Motion** - The Motion panel contains all the components to create and manipulate [Targets](../../Overview/Glossary.md#target) and control how your [Robots](../../Overview/Glossary.md#manipulator) are going to move towards those [Targets](../../Overview/Glossary.md#target) by specifying the Speed, Acceleration, [Blend](../../Overview/Glossary.md#blend) and Kinematic Settings.
 
-[<center><img src="../../assets/images/12MotionComponents.PNG"></center>](../../assets/images/12MotionComponents.PNG)
+[<img src="../../assets/images/12MotionComponents.PNG"></center>](../../assets/images/12MotionComponents.PNG)<br>
 <em>The "Motion" panel contains everything to fine tune a robot motion.</em> 
 
 c.  **Procedure** - The Procedure panel is where you'll find all the tools necessary to program your machines. This includes [Move](../../Overview/Glossary.md#motion-action), [Wait](../../Overview/Glossary.md#wait-action) and [Signal Change](../../Overview/Glossary.md#signal-action) [Actions](../../Overview/Glossary.md#action) as well as utilities for changing [Tools](../../Overview/Glossary.md#end-effector) at runtime, manipulating [Parts](../../Overview/Glossary.md#part) and Combining these into a [Procedure](../../Overview/Glossary.md#procedure) ready to [Simulate](../../Overview/Glossary.md#73-simulation).
 
-[<center><img src="../../assets/images/12ProcedureComponents.PNG"></center>](../../assets/images/12ProcedureComponents.PNG)
+[<img src="../../assets/images/12ProcedureComponents.PNG"></center>](../../assets/images/12ProcedureComponents.PNG)<br>
 <em>The "Procedure" panel contains the different actions forming a robot procedure.</em> 
 
 d.  **Simulation** - The Simulation panel contains everything you need to [Solve](../../Overview/Glossary.md#solving) and Execute a [Simulation](../../Overview/Glossary.md#73-simulation) of your [Procedures](../../Overview/Glossary.md#procedure).
