@@ -143,7 +143,7 @@ f.  **Utilities** - The Utilities tab contains useful tools such as Frame creato
 
 [<center><img src="../../assets/images/12UtilitiesComponents.PNG"></center>](../../assets/images/12UtilitiesComponents.PNG)<br>
 <em>The "Utilities" panel contains various utilities.</em> 
-
+ 
 g.  **Help** - The Help panel contains the Documentation component and other tools to help you look up information about the software.
 
 [<center><img src="../../assets/images/12HelpComponents.PNG"></center>](../../assets/images/12HelpComponents.PNG)<br>
