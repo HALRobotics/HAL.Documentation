@@ -150,7 +150,7 @@ g.  **Help** - The Help panel contains the Documentation component and other too
 [<img src="../../assets/images/12DocumentationDrops.gif">](../../assets/images/12DocumentationDrops.gif)<br>
 <em>The "Documentation" component can be dropped on a component to visualize its documentation.</em> 
 
----
+--- 
 ### 1.3. Components
 
 #### Objective:
