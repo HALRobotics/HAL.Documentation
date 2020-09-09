@@ -116,34 +116,37 @@ Within the **HAL Robotics** tab, you will see a set of panels. These are ordered
 
 a.  **Cell** - The Cell panel covers everything you'll need to build up a virtual version of your robotic [Cell](../../Overview/Glossary.md#cell). This includes [Robot](../../Overview/Glossary.md#manipulator), [Positioner](../../Overview/Glossary.md#positioner) and [Tool](../../Overview/Glossary.md#end-effector) presets, as well as the components required to build your own [Mechanisms](../../Overview/Glossary.md#mechanism), [Parts](../../Overview/Glossary.md#part), set up your [I/O Signals](../../Overview/Glossary.md#signal) and assemble all of these into a complete digital system through a [Controller](../../Overview/Glossary.md#controller).
 
-<center> 
-[<img height="" src="../../assets/images/12CellComponents.PNG">](../../assets/images/12CellComponents.PNG)
+[<center><img src="../../assets/images/12CellComponents.PNG"></center>](../../assets/images/12CellComponents.PNG)
 <em>The "Cell" panel contains everything to model the hardware of a robot cell.</em> 
-</center>
 
 b.  **Motion** - The Motion panel contains all the components to create and manipulate [Targets](../../Overview/Glossary.md#target) and control how your [Robots](../../Overview/Glossary.md#manipulator) are going to move towards those [Targets](../../Overview/Glossary.md#target) by specifying the Speed, Acceleration, [Blend](../../Overview/Glossary.md#blend) and Kinematic Settings.
 
-[<img src="../../assets/images/12MotionComponents.PNG">](../../assets/images/12MotionComponents.PNG)<br>
+[<center><img src="../../assets/images/12MotionComponents.PNG"></center>](../../assets/images/12MotionComponents.PNG)<br>
 <em>The "Motion" panel contains everything to fine tune a robot motion.</em> 
 
 c.  **Procedure** - The Procedure panel is where you'll find all the tools necessary to program your machines. This includes [Move](../../Overview/Glossary.md#motion-action), [Wait](../../Overview/Glossary.md#wait-action) and [Signal Change](../../Overview/Glossary.md#signal-action) [Actions](../../Overview/Glossary.md#action) as well as utilities for changing [Tools](../../Overview/Glossary.md#end-effector) at runtime, manipulating [Parts](../../Overview/Glossary.md#part) and Combining these into a [Procedure](../../Overview/Glossary.md#procedure) ready to [Simulate](../../Overview/Glossary.md#73-simulation).
 
-[<img src="../../assets/images/12ProcedureComponents.PNG">](../../assets/images/12ProcedureComponents.PNG)<br>
+[<center><img src="../../assets/images/12ProcedureComponents.PNG"></center>](../../assets/images/12ProcedureComponents.PNG)<br>
 <em>The "Procedure" panel contains the different actions forming a robot procedure.</em> 
 
 d.  **Simulation** - The Simulation panel contains everything you need to [Solve](../../Overview/Glossary.md#solving) and Execute a [Simulation](../../Overview/Glossary.md#73-simulation) of your [Procedures](../../Overview/Glossary.md#procedure).
 
-[<img src="../../assets/images/12SimulationComponents.PNG">](../../assets/images/12SimulationComponents.PNG)<br>
+[<center><img src="../../assets/images/12SimulationComponents.PNG"></center>](../../assets/images/12SimulationComponents.PNG)<br>
 <em>The "Simulation" panel contains the utilities to compute and visualize simulated robot procedures.</em> 
 
 e.  **Control** - The Control panel is where you'll find components to get your [Procedures](../../Overview/Glossary.md#procedure) out of the digital world and onto your real machines. This includes functionality such as [Exporting](../../Overview/Glossary.md#export) and [Uploading](../../Overview/Glossary.md#upload) code.
 
-[<img src="../../assets/images/12ControlComponents.PNG">](../../assets/images/12ControlComponents.PNG)<br>
+[<center><img src="../../assets/images/12ControlComponents.PNG"></center>](../../assets/images/12ControlComponents.PNG)<br>
 <em>The "Control" panel contains utilities to transform your simulation into executable robot code.</em> 
 
 f.  **Utilities** - The Utilities tab contains useful tools such as Frame creators which will enable you to input or output frame data in any standard formalism.
 
+[<center><img src="../../assets/images/12UtilitiesComponents.PNG"></center>](../../assets/images/12UtilitiesComponents.PNG)<br>
+<em>The "Utilities" panel contains various utilities.</em> 
+
 g.  **Help** - The Help panel contains the Documentation component and other tools to help you look up information about the software.
+
+[<center><img src="../../assets/images/12HelpComponents.PNG"></center>](../../assets/images/12HelpComponents.PNG)<br>
 
 ---
 ### 1.3. Components
