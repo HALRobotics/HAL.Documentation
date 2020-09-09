@@ -126,6 +126,9 @@ b.  **Motion** - The Motion panel contains all the components to create and mani
 
 c.  **Procedure** - The Procedure panel is where you'll find all the tools necessary to program your machines. This includes [Move](../../Overview/Glossary.md#motion-action), [Wait](../../Overview/Glossary.md#wait-action) and [Signal Change](../../Overview/Glossary.md#signal-action) [Actions](../../Overview/Glossary.md#action) as well as utilities for changing [Tools](../../Overview/Glossary.md#end-effector) at runtime, manipulating [Parts](../../Overview/Glossary.md#part) and Combining these into a [Procedure](../../Overview/Glossary.md#procedure) ready to [Simulate](../../Overview/Glossary.md#73-simulation).
 
+[<center><img src="../../assets/images/12ProcedureComponents.PNG"></center>](../../assets/images/12ProcedureComponents.PNG)
+<em>The "Procedure" panel contains the different actions forming a robot procedure.</em> 
+
 d.  **Simulation** - The Simulation panel contains everything you need to [Solve](../../Overview/Glossary.md#solving) and Execute a [Simulation](../../Overview/Glossary.md#73-simulation) of your [Procedures](../../Overview/Glossary.md#procedure).
 
 e.  **Control** - The Control panel is where you'll find components to get your [Procedures](../../Overview/Glossary.md#procedure) out of the digital world and onto your real machines. This includes functionality such as [Exporting](../../Overview/Glossary.md#export) and [Uploading](../../Overview/Glossary.md#upload) code.
