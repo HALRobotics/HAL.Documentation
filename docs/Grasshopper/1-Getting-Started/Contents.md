@@ -40,12 +40,18 @@ Once you've opened Grasshopper and logged in to the HAL Robotics Framework to ac
 [<img src="../../assets/images/11GHBlankTab.PNG">](../../assets/images/11GHBlankTab.PNG)
 <em>The "HAL Robotics" tab contains the components we will use in this tutorial series.</em>
 
-The first component we're going to use is the **Robot**. You'll find it inside the **Cell** menu. When we place that component on the canvas not much happens. This is because **Robot** is one of a few special types of component that we've developed to extend the default Grasshopper interface. We'll see what each does as we come across them and they are all covered in a [special tutorial](../1-Getting-Started/Contents.md#13-components) so feel free to have a look at that for more detail. 
+The first component we're going to use is the **Robot**. You'll find it inside the **Cell** menu, in the top left of the toolbar. Alteratively, you can use the  When we place that component on the canvas not much happens. This is because **Robot** is one of a few special types of component that we've developed to extend the default Grasshopper interface. We'll see what each does as we come across them and they are all covered in a [special tutorial](../1-Getting-Started/Contents.md#13-components) so feel free to have a look at that for more detail.
 
 This particular component has an interlocking square icon **⧉** on the name bar. This indicates that it can be double-clicked to get a pop-up window. If we open that window on the **Robot** component then we get the Robot Catalog. You can select any [Robot](../../Overview/Glossary.md#manipulator) you want by simply clicking on it and then the "Select" button. I'm going to choose the `IRB 1200 - 0.7m` as that's what I have next to me at the office. Once we've made our selection it will pop up into the scene. If you want to change your choice, you can always double click on the component again.
 
 [<img src="../../assets/images/11Robot.gif">](../../assets/images/11Robot.gif)
 <em>Double click on the robot component to open and select a robot preset.</em>
+
+[<img src="../../assets/images/11RobotSearch.gif">](../../assets/images/11RobotSearch.gif)
+<em>You can also find this component by using the Grasshopper search feature, by double clicking on the canvas and typing "robot".</em>
+
+[<img src="../../assets/images/11RobotViaHelp.gif">](../../assets/images/11RobotViaHelp.gif)
+<em>As the default Grasshopper search feature is limited, we added our own component browser allowing you to look for keywords in components, and preview filtered results. To access this utility, you can use the **Documentation** component in the **Help** menu, or via the "HAL > Help > Documentation" menu of the Grasshopper window.</em>
 
 We have a [Robot](../../Overview/Glossary.md#manipulator), but we're almost always going to need a [Tool](../../Overview/Glossary.md#end-effector), or [End Effector](../../Overview/Glossary.md#end-effector), for our [Robot](../../Overview/Glossary.md#manipulator) so I'm going to add a **Tool** component, again from the **Cell** menu. We assume that you will want to create your own [Tools](../../Overview/Glossary.md#end-effector) so this catalog component contains only a few options to get you started. The creation of [Tools](../../Overview/Glossary.md#end-effector) is covered in future tutorials ([1](../2-Cell/Contents.md#24-create-a-tool),[2](../2-Cell/Contents.md#25-calibrate-a-reference-or-tool),[3](../2-Cell/Contents.md#26-create-a-multi-part-tool)) so please have a look at those for more information. I'm going to select the `extruder` because I know it's about the right size for this [Robot](../../Overview/Glossary.md#manipulator).
 
