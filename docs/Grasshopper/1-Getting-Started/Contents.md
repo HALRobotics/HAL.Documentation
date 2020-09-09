@@ -17,7 +17,7 @@ In this tutorial we'll take the shortest route from an empty session to a moving
 
 #### Demo Files:
 
-[<img src="../../assets/images/GHFile16.PNG"> Getting Started.gh 💾](../ExampleFiles/Tutorials/1.1%20-%20Getting%20Started.gh)
+> [<img src="../../assets/images/GHFile16.PNG">  Getting Started.gh](../ExampleFiles/Tutorials/1.1%20-%20Getting%20Started.gh)
 
 #### Requirements to follow along:
 
