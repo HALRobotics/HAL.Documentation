@@ -131,6 +131,9 @@ c.  **Procedure** - The Procedure panel is where you'll find all the tools neces
 
 d.  **Simulation** - The Simulation panel contains everything you need to [Solve](../../Overview/Glossary.md#solving) and Execute a [Simulation](../../Overview/Glossary.md#73-simulation) of your [Procedures](../../Overview/Glossary.md#procedure).
 
+[<img src="../../assets/images/12SimulationComponents.PNG"></center>](../../assets/images/12SimulationComponents.PNG)<br>
+<em>The "Simulation" panel contains the utilities to compute and visualize simulated robot procedures.</em> 
+
 e.  **Control** - The Control panel is where you'll find components to get your [Procedures](../../Overview/Glossary.md#procedure) out of the digital world and onto your real machines. This includes functionality such as [Exporting](../../Overview/Glossary.md#export) and [Uploading](../../Overview/Glossary.md#upload) code.
 
 f.  **Utilities** - The Utilities tab contains useful tools such as Frame creators which will enable you to input or output frame data in any standard formalism.
