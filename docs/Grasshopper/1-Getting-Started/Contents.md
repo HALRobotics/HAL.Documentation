@@ -17,12 +17,11 @@ In this tutorial we'll take the shortest route from an empty session to a moving
 
 #### Demo Files:
 
-[💾 **Getting Started.gh**](../ExampleFiles/Tutorials/1.1%20-%20Getting%20Started.gh)
+[<img src="../../assets/images/GHFile32.PNG"> Getting Started.gh 💾](../ExampleFiles/Tutorials/1.1%20-%20Getting%20Started.gh)
 
 #### Requirements to follow along:
 
 [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
-
 A basic knowledge of Rhinoceros 3D and Grasshopper are highly recommended.
 
 #### Background:
@@ -33,7 +32,7 @@ The HAL Robotics Framework is a modular software library that simplify the model
 
 Once you've opened Grasshopper and logged in to the HAL Robotics Framework to access your licenses you should be presented with a blank Grasshopper canvas and a new **HAL Robotics** tab at the top your screen. There are plenty of tools within this tab to allow you to program just about any process you want, and other tutorials will look at each of them individually as well as the [structure of the interface](../1-Getting-Started/Contents.md#12-interface-overview), but for now, we're just going to get up and running as quickly as possible.
 
-[<img src="../../assets/images/11GHLogin.PNG">](../../assets/images/11GHLogin.PNG)<br>
+[<center><img src="../../assets/images/11GHLogin.PNG"></center>](../../assets/images/11GHLogin.PNG)
 <em>The "Log In" window will allow ou to connect to your HAL user account when Grasshopper starts.</em>
 
 [<img src="../../assets/images/11GHBlank.PNG">](../../assets/images/11GHBlank.PNG)
