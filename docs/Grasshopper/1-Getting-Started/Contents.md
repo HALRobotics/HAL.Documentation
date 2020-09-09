@@ -201,10 +201,18 @@ In this tutorial we'll look at the **Documentation** component and how it can he
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 Reading or watching the Component Variations tutorial is highly recommended.
 
 #### How to:
 
-The **Documentation** component can be accessed through the HAL menu under Help -\> Documentation or via the **Help** panel in the **HAL Robotics** tab of Grasshopper. You can drag this component onto an existing component to display its documentation, or if you instantiate the component on the canvas, you will be presented with a list of all the available HAL Robotics Framework component Templates. Using the search bar at the top of the window you can look for functionality that interests you. For example, if you type "speed" and trigger the search by hitting enter or space you will see a list of Templates which use the word "speed" in their title or description. The first option presented should be the **Speed Settings**. By selecting that component, if it isn't already, you will see the component layout at the bottom of the window with descriptions of each input and output, as well as a series of tabs which will show the different Overloads of the component. From here you can add the component to your current document by clicking "add to document" or close the window to cancel. This same functionality is extended to many other Grasshopper libraries and plugins which can be activated in the _Libraries_ slide-out on the left-hand side of the window.
+The **Documentation** component can be accessed through the HAL menu under Help -\> Documentation or via the **Help** panel in the **HAL Robotics** tab of Grasshopper. You can drag this component onto an existing component to display its documentation, or if you instantiate the component on the canvas, you will be presented with a list of all the available HAL Robotics Framework components.
+
+Using the search bar at the top of the window you can look for functionality that interests you. For example, if you type "speed" and trigger the search by hitting the _enter_ or _space_ key you will see a list of components which use the word "speed" in their title or description. The first option presented should be the **Speed Settings**. By selecting that component, if it isn't already, you will see the component layout at the bottom of the window with descriptions of each input and output, as well as a series of tabs which will show the different _overloads_ of the component. From here you can add the component to your current document by clicking "add to document" or close the window to cancel. This same functionality is extended to many other Grasshopper libraries and plugins which can be activated in the _Libraries_ slide-out on the left-hand side of the window.
+
+[<img src="../../assets/images/14DocumentationSearch.PNG">](../../assets/images/14DocumentationSearch.PNG)<br>
+<em>You can browse the various component overloads by using the tabs at the bottom of the window, if any.</em> 
+
+[<img src="../../assets/images/14DocumentationLibraries.PNG">](../../assets/images/14DocumentationLibraries.PNG)<br>
+<em>It is possible to use the HAL Documentation browser with all Grasshopper components, including plugins.</em> 
