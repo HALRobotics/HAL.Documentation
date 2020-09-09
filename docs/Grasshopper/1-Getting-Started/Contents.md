@@ -190,7 +190,7 @@ To help keep the interface and number of components manageable we have introduce
 *   Templated Components, such as the **Frame** component, can be identified by their black bar at the bottom which states _Template 1/3_, or similar. Templates are a means of grouping components that create similar objects or use different construction methods. For example, in the case of **Frame**, the templates represent different formalisms for frame creation such as Euler, Quaternion etc. Similarly, in the **Create Target** component, templates all create [Targets](../../Overview/Glossary.md#target) but use different inputs e.g. from a Frame, from Joint Positions or from a Curve.
 
 [<img src="../../assets/images/13Components.PNG">](../../assets/images/13Components.PNG)<br>
-<em>The various parameter decorations and shape-changing component features listed above are visible in these components.</em> 
+<em>The various parameter decorations and shape-changing component features listed above are visible on these four components.</em> 
 
 ---
 ### 1.4. Documentation Component
