@@ -114,43 +114,43 @@ Within the **HAL Robotics** tab, you will see a set of panels. These are ordered
 [<img src="../../assets/images/12Components.PNG">](../../assets/images/12Components.PNG)
 <em>The HAL Robotics tab is ordered following the software workflow, from the robot cell modelling, to the procedure execution utilities.</em> 
 
-**Cell**
+**Cell**<br>
 The Cell panel covers everything you'll need to build up a virtual version of your robotic [Cell](../../Overview/Glossary.md#cell). This includes [Robot](../../Overview/Glossary.md#manipulator), [Positioner](../../Overview/Glossary.md#positioner) and [Tool](../../Overview/Glossary.md#end-effector) presets, as well as the components required to build your own [Mechanisms](../../Overview/Glossary.md#mechanism), [Parts](../../Overview/Glossary.md#part), set up your [I/O Signals](../../Overview/Glossary.md#signal) and assemble all of these into a complete digital system through a [Controller](../../Overview/Glossary.md#controller).
 
 [<img src="../../assets/images/12CellComponents.PNG">](../../assets/images/12CellComponents.PNG)<br>
 <em>The "Cell" panel contains everything to model the hardware of a robot cell.</em> 
 
-**Motion**
+**Motion**<br>
 The Motion panel contains all the components to create and manipulate [Targets](../../Overview/Glossary.md#target) and control how your [Robots](../../Overview/Glossary.md#manipulator) are going to move towards those [Targets](../../Overview/Glossary.md#target) by specifying the Speed, Acceleration, [Blend](../../Overview/Glossary.md#blend) and Kinematic Settings.
 
 [<img src="../../assets/images/12MotionComponents.PNG">](../../assets/images/12MotionComponents.PNG)<br>
 <em>The "Motion" panel contains everything to fine tune a robot motion.</em> 
 
-**Procedure**
+**Procedure**<br>
 The Procedure panel is where you'll find all the tools necessary to program your machines. This includes [Move](../../Overview/Glossary.md#motion-action), [Wait](../../Overview/Glossary.md#wait-action) and [Signal Change](../../Overview/Glossary.md#signal-action) [Actions](../../Overview/Glossary.md#action) as well as utilities for changing [Tools](../../Overview/Glossary.md#end-effector) at runtime, manipulating [Parts](../../Overview/Glossary.md#part) and Combining these into a [Procedure](../../Overview/Glossary.md#procedure) ready to [Simulate](../../Overview/Glossary.md#73-simulation).
 
 [<img src="../../assets/images/12ProcedureComponents.PNG">](../../assets/images/12ProcedureComponents.PNG)<br>
 <em>The "Procedure" panel contains the different actions forming a robot procedure.</em> 
 
-**Simulation**
+**Simulation**<br>
 The Simulation panel contains everything you need to [Solve](../../Overview/Glossary.md#solving) and Execute a [Simulation](../../Overview/Glossary.md#73-simulation) of your [Procedures](../../Overview/Glossary.md#procedure).
 
 [<img src="../../assets/images/12SimulationComponents.PNG">](../../assets/images/12SimulationComponents.PNG)<br>
 <em>The "Simulation" panel contains the utilities to compute and visualize simulated robot procedures.</em> 
 
-**Control**
+**Control**<br>
 The Control panel is where you'll find components to get your [Procedures](../../Overview/Glossary.md#procedure) out of the digital world and onto your real machines. This includes functionality such as [Exporting](../../Overview/Glossary.md#export) and [Uploading](../../Overview/Glossary.md#upload) code.
 
 [<img src="../../assets/images/12ControlComponents.PNG">](../../assets/images/12ControlComponents.PNG)<br>
 <em>The "Control" panel contains utilities to transform your simulation into executable robot code.</em> 
 
-**Utilities**
+**Utilities**<br>
 The Utilities tab contains useful tools such as Frame creators which will enable you to input or output frame data in any standard formalism.
 
 [<img src="../../assets/images/12UtilitiesComponents.PNG">](../../assets/images/12UtilitiesComponents.PNG)<br>
 <em>The "Utilities" panel contains various utilities.</em> 
  
-**Help**
+**Help**<br>
 The Help panel contains the Documentation component and other tools to help you look up information about the software.
 
 [<img src="../../assets/images/12HelpComponents.PNG">](../../assets/images/12HelpComponents.PNG)<br> 
@@ -173,21 +173,21 @@ In this tutorial we'll look at the component variations and patterns added to HA
 
 On any given HAL Robotics Framework component, you will notice a few recurring patterns and symbols in the names of inputs and outputs. These patterns can be used individually or combined on a single parameter. The Create Part component is a good example of all of these.
 
-a.  **→**Name - An arrow ( → ) preceding an input name means that the input is mandatory. Component will not compute until data is provided to every mandatory input.
+*   **→** Name - An arrow ( **→** ) preceding an input name means that the input is mandatory. Component will not compute until data is provided to every mandatory input.
 
-b.  **\[**Name**\]** - Square brackets ( **\[\]** ) around the name of an input or output mean that the data will be treated as a list or collection.
+*   **\[**Name**\]** - Square brackets **\[ \]** around the name of an input or output mean that the data will be treated as a list or collection.
 
-c. **{**Name**}** - Curly brackets (**{}**) around the name of an input or output mean that the data will be treated as a Grasshopper DataTree.
+*   **{**Name**}** - Curly brackets **{ }** around the name of an input or output mean that the data will be treated as a Grasshopper DataTree.
 
-d.  Name **(unit)** - A name followed by a unit in brackets e.g. (mm) or (rad), means that the input will be treated in a specific unit. These units can be changed by right-clicking on the input, hovering over _Unit_ and selecting the unit you prefer to use. You can assign a textual expression to these inputs and it will be calculated for you e.g. 3m + 35mm.
+*   Name **(unit)** - A name followed by a unit in brackets e.g. (mm) or (rad), means that the input will be treated in a specific unit. These units can be changed by right-clicking on the input, hovering over _Unit_ and selecting the unit you prefer to use. You can assign a textual expression to these inputs and it will be calculated for you e.g. 3m + 35mm.
 
 To help keep the interface and number of components manageable we have introduced 3 new modes of interaction with Grasshopper components. Components that feature each new interaction mode can be identified easily.
 
-a.  Windowed Components a.k.a. Pop-up Components, such as the **Robot** preset component, feature two interlocking squares **⧉** in their name. You can double click on these components to get a pop-up window with additional component inputs. This could be a catalog of available [Robot](../../Overview/Glossary.md#manipulator) or [Controller](../../Overview/Glossary.md#controller) presets, or an overview of [Procedure](../../Overview/Glossary.md#procedure) execution progress.
+*   Windowed Components a.k.a. Pop-up Components, such as the **Robot** preset component, feature two interlocking squares **⧉** in their name. You can double click on these components to get a pop-up window with additional component inputs. This could be a catalog of available [Robot](../../Overview/Glossary.md#manipulator) or [Controller](../../Overview/Glossary.md#controller) presets, or an overview of [Procedure](../../Overview/Glossary.md#procedure) execution progress.
 
-b.  Overloaded Components, such as the **Create Reference** component, can be recognized by their black bar at the bottom which states _Shift + ↕ (1/2)_, or similar. Overloads of a component all perform the same function, such as creating a [Reference](../../Overview/Glossary.md#reference), but are designed to simplify components for typical use by keeping advanced inputs out of the way until you need them.
+*   Overloaded Components, such as the **Create Reference** component, can be recognized by their black bar at the bottom which states _Shift + ↕ (1/2)_, or similar. Overloads of a component all perform the same function, such as creating a [Reference](../../Overview/Glossary.md#reference), but are designed to simplify components for typical use by keeping advanced inputs out of the way until you need them.
 
-c.  Templated Components, such as the **Frame** component, can be identified by their black bar at the bottom which states _Template 1/3_, or similar. Templates are a means of grouping components that create similar objects or use different construction methods. For example, in the case of **Frame**, the templates represent different formalisms for frame creation such as Euler, Quaternion etc. Similarly, in the **Create Target** component, templates all create [Targets](../../Overview/Glossary.md#target) but use different inputs e.g. from a Frame, from Joint Positions or from a Curve.
+*   Templated Components, such as the **Frame** component, can be identified by their black bar at the bottom which states _Template 1/3_, or similar. Templates are a means of grouping components that create similar objects or use different construction methods. For example, in the case of **Frame**, the templates represent different formalisms for frame creation such as Euler, Quaternion etc. Similarly, in the **Create Target** component, templates all create [Targets](../../Overview/Glossary.md#target) but use different inputs e.g. from a Frame, from Joint Positions or from a Curve.
 
 ---
 ### 1.4. Documentation Component
