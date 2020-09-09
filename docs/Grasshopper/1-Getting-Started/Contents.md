@@ -109,7 +109,7 @@ In the **Params** tab you will find a number of HAL Robotics Framework parameter
 [<img src="../../assets/images/12Parameters.PNG">](../../assets/images/12Parameters.PNG)
 <em>The HAL parameters are shaped as blue hexagon.</em> 
 
-Within the **HAL Robotics** tab, you will see 7 (at the time of writing) panels of components. These are ordered and organized to guide you through the process of setting up your processes in the HAL Robotics Framework.
+Within the **HAL Robotics** tab, you will see a set of panels. These are ordered and organized to guide you through the process of setting up your processes in the HAL Robotics Framework.
 
 [<img src="../../assets/images/12Components.PNG">](../../assets/images/12Components.PNG)
 <em>The HAL Robotics tab is ordered following the software workflow, from the robot cell modelling, to the procedure execution utilities.</em> 
