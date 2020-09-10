@@ -252,4 +252,4 @@ If you have created a [Track](../../Overview/Glossary.md#positioner), you can mo
 
 ---
 
-[Continue to: 3. Motion](3-Motion/Contents.md#3-motion)
+[Continue to: 3. Motion](../3-Motion/Contents.md#3-motion)
