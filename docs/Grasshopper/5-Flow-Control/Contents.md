@@ -61,3 +61,7 @@ We can create a [Wait](../../Overview/Glossary.md#wait-action) [Action](../../Ov
 ---
 ### 5.4. Create a Condition
 #### Coming Soon
+
+---
+
+[Continue to: 6. Control](../6-Control/Contents.md#6-control)
