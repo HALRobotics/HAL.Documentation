@@ -17,7 +17,7 @@ In this tutorial we'll create a [Signal](../../Overview/Glossary.md#signal) that
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -40,9 +40,8 @@ In this tutorial we'll change the state of a [Signal](../../Overview/Glossary.md
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
-
-Reading or watching the [Create a Signal](../4-IO/Contents.md#41-create-a-signal) tutorial is highly recommended and this tutorial builds on its output.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- Reading or watching the [Create a Signal](../4-IO/Contents.md#41-create-a-signal) tutorial is highly recommended and this tutorial builds on its output.
 
 #### Background:
 

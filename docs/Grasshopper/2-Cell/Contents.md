@@ -25,7 +25,7 @@ In this quick tutorial we'll take a look how to insert a **Robot** preset in the
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### How to:
 
@@ -50,7 +50,7 @@ In this tutorial we'll see how to create [References](../../Overview/Glossary.md
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -99,9 +99,8 @@ In this tutorial we'll see how to create [Parts](../../Overview/Glossary.md#part
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
-
-Reading or watching the [Create a Reference](../2-Cell/Contents.md#22-create-references) tutorial is highly recommended.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- Reading or watching the [Create a Reference](../2-Cell/Contents.md#22-create-references) tutorial is highly recommended.
 
 #### Background:
 
@@ -133,9 +132,8 @@ In this tutorial we'll create a simple [Tool](../../Overview/Glossary.md#end-eff
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
-
-Reading or watching the [Getting Started](../1-Getting-Started/Contents.md#1-getting-started) tutorial is highly recommended.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- Reading or watching the [Getting Started](../1-Getting-Started/Contents.md#1-getting-started) tutorial is highly recommended.
 
 #### Background:
 
@@ -161,9 +159,8 @@ In this tutorial we'll bring in calibrated data to improve the accuracy of [Tool
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
-
-Reading or watching the [Create a Tool tutorial](../2-Cell/Contents.md#24-create-a-tool) is highly recommended as this tutorial builds on its output.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- Reading or watching the [Create a Tool tutorial](../2-Cell/Contents.md#24-create-a-tool) is highly recommended as this tutorial builds on its output.
 
 #### Background:
 
@@ -186,13 +183,10 @@ In this tutorial we'll look at how we can create more complex [Tools](../../Over
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
-
-Basic modelling skills in Rhinoceros 3D and Vector/Plane manipulation skills in Grasshopper will greatly help preparing your own [Tool](../../Overview/Glossary.md#end-effector) model.
-
-Reading or watching the [Create a Part](../2-Cell/Contents.md#23-create-a-part) tutorial is highly recommended.
-
-Reading or watching the [Create a Tool](../2-Cell/Contents.md#24-create-a-tool) tutorial is highly recommended.
+- A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- Basic modelling skills in Rhinoceros 3D and Vector/Plane manipulation skills in Grasshopper will greatly help preparing your own [Tool](../../Overview/Glossary.md#end-effector) model.
+- Reading or watching the [Create a Part](../2-Cell/Contents.md#23-create-a-part) tutorial is highly recommended.
+- Reading or watching the [Create a Tool](../2-Cell/Contents.md#24-create-a-tool) tutorial is highly recommended.
 
 #### Background:
 
@@ -223,11 +217,9 @@ In this tutorial we'll be modelling a [Positioner](../../Overview/Glossary.md#po
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
-
-Basic modelling skills in Rhinoceros 3D and Vector/Plane manipulation skills in Grasshopper will greatly help preparing your own [Positioner](../../Overview/Glossary.md#positioner) model.
-
-Reading or watching the [Create a Multi-Part Tool](../2-Cell/Contents.md#26-create-a-multi-part-tool) tutorial is highly recommended as this tutorial builds on some of its learnings.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- Basic modelling skills in Rhinoceros 3D and Vector/Plane manipulation skills in Grasshopper will greatly help preparing your own [Positioner](../../Overview/Glossary.md#positioner) model.
+- Reading or watching the [Create a Multi-Part Tool](../2-Cell/Contents.md#26-create-a-multi-part-tool) tutorial is highly recommended as this tutorial builds on some of its learnings.
 
 #### Background:
 

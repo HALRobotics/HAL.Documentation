@@ -19,7 +19,7 @@ In this tutorial we'll look at how you can configure a virtual [Controller](../.
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -50,7 +50,7 @@ In this tutorial we'll [Export](../../Overview/Glossary.md#export) some robot co
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 

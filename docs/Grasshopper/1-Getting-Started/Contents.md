@@ -20,8 +20,8 @@ In this tutorial we'll take the shortest route from an empty session to a moving
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
-A basic knowledge of Rhinoceros 3D and Grasshopper are highly recommended.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- A basic knowledge of Rhinoceros 3D and Grasshopper are highly recommended.
 
 #### Background:
 
@@ -96,7 +96,7 @@ In this tutorial we'll take a look at the layout HAL Robotics Framework componen
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -167,7 +167,7 @@ In this tutorial we'll look at the component variations and patterns added to HA
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### How to:
 
@@ -201,7 +201,7 @@ In this tutorial we'll look at the **Documentation** component and how it can he
 
 #### Requirements to follow along:
 
-[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 Reading or watching the Component Variations tutorial is highly recommended.
 

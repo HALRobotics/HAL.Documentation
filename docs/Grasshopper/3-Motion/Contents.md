@@ -29,7 +29,7 @@ In this tutorial we'll look at the different ways that we can create [Targets](.
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -62,7 +62,7 @@ In this tutorial we'll look at the different utilities to modify [Targets](../..
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -89,7 +89,7 @@ In this tutorial we'll look at how to change the way in which a [Robot](../../Ov
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -122,7 +122,7 @@ In this tutorial we'll see how to combine different [Procedures](../../Overview/
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -147,7 +147,7 @@ In this tutorial we'll see how to synchronize the motion of multiple [Mechanisms
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -170,7 +170,7 @@ In this tutorial we'll see how to simplify the programming of multi-[Mechanism](
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -195,7 +195,7 @@ In this tutorial we'll see how to change the active [Tool](../../Overview/Glossa
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
