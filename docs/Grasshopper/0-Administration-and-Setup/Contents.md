@@ -169,3 +169,5 @@ Once this is done you can clean up any remnants that the uninstallation process 
 * %LocalAppData%\\HAL
 
 ---
+
+[Continue to: 1. Getting Started](Grasshopper/1-Getting-Started/Contents.md#1-getting-started)

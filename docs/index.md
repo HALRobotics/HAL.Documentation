@@ -13,6 +13,8 @@
 
 #### [0.5. Complete Uninstallation](Grasshopper/0-Administration-and-Setup/Contents.md#05-complete-uninstallation)
 
+---
+
 ### [1. Getting Started](Grasshopper/1-Getting-Started/Contents.md#1-getting-started)
 
 #### [1.1. Quick Start](Grasshopper/1-Getting-Started/Contents.md#11-quick-start)
@@ -22,6 +24,8 @@
 #### [1.3. Components](Grasshopper/1-Getting-Started/Contents.md#13-components)
 
 #### [1.4. Documentation Component](Grasshopper/1-Getting-Started/Contents.md#14-documentation-component)
+
+---
 
 ### [2. Cell](Grasshopper/2-Cell/Contents.md#2-cell)
 
@@ -40,6 +44,8 @@
 #### [2.7. Create a Positioner](Grasshopper/2-Cell/Contents.md#27-create-a-positioner)
 
 #### [2.8. Save a Mechanism as a Preset \[Coming Soon\]](Grasshopper/2-Cell/Contents.md#28-save-a-mechanism-as-a-preset)
+
+---
 
 ### [3. Motion](Grasshopper/3-Motion/Contents.md#3-motion)
 
@@ -61,11 +67,15 @@
 
 #### [3.9. Add Mechanism Constraints \[Coming Soon\]](Grasshopper/3-Motion/Contents.md#39-add-mechanism-constraints)
 
+---
+
 ### [4. I/O](Grasshopper/4-IO/Contents.md#4-io)
 
 #### [4.1. Create a Signal](Grasshopper/4-IO/Contents.md#41-create-a-signal)
 
 #### [4.2. Change a Signal State](Grasshopper/4-IO/Contents.md#42-change-a-signal-state)
+
+---
 
 ### [5. Flow Control](Grasshopper/5-Flow-Control/Contents.md#5-flow-control)
 
@@ -76,6 +86,8 @@
 #### [5.3. Create a Loop \[Coming Soon\]](Grasshopper/5-Flow-Control/Contents.md#53-create-a-loop)
 
 #### [5.4. Create a Condition \[Coming Soon\]](Grasshopper/5-Flow-Control/Contents.md#54-create-a-condition)
+
+---
 
 ### [6. Control](Grasshopper/6-Control/Contents.md#6-control)
 

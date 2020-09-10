@@ -25,11 +25,16 @@ In this quick tutorial we'll take a look how to insert a **Robot** preset in the
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### How to:
 
-Within the **HAL Robotics** tab, under the **Cell** panel you will find a component called **Robot**. When you place this in the document you will notice that it has two interlocking squares (⧉) in its name. This is the symbol for a [pop-up window component](../1-Getting-Started/Contents.md#13-components) meaning we can double click on the component to bring up an additional user interface. In this case that's a catalog listing all of the available [Robots](../../Overview/Glossary.md#manipulator) we've pre-created for your immediate use. You can use the search bar or tags listed on the left-hand side of the window to filter the [Robots](../../Overview/Glossary.md#manipulator) to find the one you want. Once you have identified the [Robot](../../Overview/Glossary.md#manipulator) you want to add to the document simply double click or use the "Select" button to instantiate your [Robot](../../Overview/Glossary.md#manipulator) in the scene. If you intend to [Export](../../Overview/Glossary.md#export) code to your [Robot](../../Overview/Glossary.md#manipulator) it is a good habit to name your virtual **Robot** to match the real one using the _Alias_ input. For example, the `IRB-1200` we have in the office is configured as `HAL_Jarvis`.
+Within the **HAL Robotics** tab, under the **Cell** panel you will find a component called **Robot**. When you place this in the document you will notice that it has two interlocking squares **⧉** in its name. This is the symbol for a [pop-up window component](../1-Getting-Started/Contents.md#13-components) meaning we can double click on the component to bring up an additional user interface. In this case that's a catalog listing all of the available [Robots](../../Overview/Glossary.md#manipulator) we've pre-created for your immediate use. 
+
+You can use the search bar or tags listed on the left-hand side of the window to filter the [Robots](../../Overview/Glossary.md#manipulator) to find the one you want. Once you have identified the [Robot](../../Overview/Glossary.md#manipulator) you want to add to the document simply double click or use the "Select" button to instantiate your [Robot](../../Overview/Glossary.md#manipulator) in the scene. If you intend to [Export](../../Overview/Glossary.md#export) code to your [Robot](../../Overview/Glossary.md#manipulator) it is a good habit to name your virtual **Robot** to match the real one using the _Alias_ input. For example, the `IRB-1200` we have in the office is configured as `HAL_Jarvis`.
+
+[<img src="../../assets/images/21Robot.gif">](../../assets/images/21Robot.gif)
+<em>It is good practice to name HAL objects by using the _Alias_ input of the components.</em>
 
 ---
 ### 2.2. Create References
@@ -40,13 +45,12 @@ In this tutorial we'll see how to create [References](../../Overview/Glossary.md
 
 #### Demo Files:
 
-[2.2 - Create a Reference.3dm](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.3dm)
-
-[2.2 - Create a Reference.gh](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.gh)
+> [<img src="../../assets/images/RHFile16.PNG">  Create a Reference.3dm](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.3dm)
+> [<img src="../../assets/images/GHFile16.PNG">  Create a Reference.gh](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.gh)
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 #### Background:
 
@@ -56,9 +60,21 @@ A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installe
 
 The simplest way to create a [Reference](../../Overview/Glossary.md#reference) is under the **Cell** panel, **Create Reference**. Our [Reference](../../Overview/Glossary.md#reference) defaults to the world origin but you can equally select any point from your Rhino or Grasshopper session. In this demo I'm going to use this point on the corner of my box which I've previously drawn in Rhino. I'm going to bring that into Grasshopper and assign it as the origin of an XY Plane and the _Frame_ of my **Reference**. We can see the location of our [Reference](../../Overview/Glossary.md#reference) from these dashed axes with dots at the ends. You can also see that the [Reference](../../Overview/Glossary.md#reference) is labelled. To simplify finding our [References](../../Overview/Glossary.md#reference) later it's advisable to give them an identifiable name, in this case `BoxCorner`, using the _Alias_ input.
 
-There are two main ways to use [References](../../Overview/Glossary.md#reference), both of which can be demonstrated using the **Target** component and selecting the **From Curve** template. The first, default, way of using the [Reference](../../Overview/Glossary.md#reference) can be seen by simply selecting a curve already in position in the world. We can see that the [Targets](../../Overview/Glossary.md#target) all follow the curve as it is drawn, but if we drill down into the **Targets'** properties using the **Target Properties** component, we can see that their [References](../../Overview/Glossary.md#reference) are correctly set to `BoxCorner`. If, in this configuration, we move our [Reference](../../Overview/Glossary.md#reference) you'll see that the [Targets](../../Overview/Glossary.md#target) do not follow. That's because the parameter _IsAbsolute_ is set to `true` meaning that both the [Targets](../../Overview/Glossary.md#target) and [Reference](../../Overview/Glossary.md#reference) are in their correct positions in the world and no modifications need to be made. The other way of using the [References](../../Overview/Glossary.md#reference) is with geometry modelled relative to the world origin like this curve. If we set this up in the same way and change _IsAbsolute_ to `false` our [Targets](../../Overview/Glossary.md#target) maintain the same relative transformation between the world origin and their new [Reference](../../Overview/Glossary.md#reference). Now when we move the [Reference](../../Overview/Glossary.md#reference) around, the relative [Targets](../../Overview/Glossary.md#target) follow.
+[<img src="../../assets/images/22Reference.gif">](../../assets/images/22Reference.gif)
+<em>It is good practice to name HAL objects by using the _Alias_ input of the components.</em>
 
-[References](../../Overview/Glossary.md#reference) can also be parented. If we create another [Reference](../../Overview/Glossary.md#reference) and use Shift + Up to change overload we can see a _Parent_ input appear and the same _IsAbsolute_ parameter that we saw in **Target from Curve**. If we use our old [Reference](../../Overview/Glossary.md#reference) as the _Parent_ of this new [Reference](../../Overview/Glossary.md#reference), add a bit of an offset by assigning the _Frame_ and set _IsAbsolute_ to `false` we now have a [Reference](../../Overview/Glossary.md#reference) referenced to a [Reference](../../Overview/Glossary.md#reference). We can reassign the [Reference](../../Overview/Glossary.md#reference) of our relative [Targets](../../Overview/Glossary.md#target) and see both the new [Reference](../../Overview/Glossary.md#reference) and our [Targets](../../Overview/Glossary.md#target) follow when `BoxCorner` is moved. This is of particular use if you have a calibrated work surface but want to perform work in different areas of it.
+There are two main ways to use [References](../../Overview/Glossary.md#reference), both of which can be demonstrated using the **Target** component and selecting the **From Curve** template. 
+*   The first, default, way of using the [Reference](../../Overview/Glossary.md#reference) can be seen by simply selecting a curve already in position in the world. We can see that the [Targets](../../Overview/Glossary.md#target) all follow the curve as it is drawn, but if we drill down into the **Targets'** properties using the **Target Properties** component, we can see that their [References](../../Overview/Glossary.md#reference) are correctly set to `BoxCorner`. If, in this configuration, we move our [Reference](../../Overview/Glossary.md#reference) you'll see that the [Targets](../../Overview/Glossary.md#target) do not follow. That's because the parameter _InWorld_ is set to `true` meaning that both the [Targets](../../Overview/Glossary.md#target) and [Reference](../../Overview/Glossary.md#reference) are in their correct positions in the world and no modifications need to be made. 
+
+*   The other way of using the [References](../../Overview/Glossary.md#reference) is with geometry modelled relative to the world origin like this curve. If we set this up in the same way and change _InWorld_ to `false` our [Targets](../../Overview/Glossary.md#target) maintain the same relative transformation between the world origin and their new [Reference](../../Overview/Glossary.md#reference). Now when we move the [Reference](../../Overview/Glossary.md#reference) around, the relative [Targets](../../Overview/Glossary.md#target) follow.
+
+[<img src="../../assets/images/22TargetReferenceCombinations.gif">](../../assets/images/22TargetReferenceCombinations.gif)
+<em>Specifying the reference of a target is optional. Once you decide to reference some targets, you will need to specify whether the targets are already located relative to the reference, or if the targets need to be moved to the reference.</em>
+
+[References](../../Overview/Glossary.md#reference) can also be parented. If we create another [Reference](../../Overview/Glossary.md#reference) and use Shift + Up to change overload we can see a _Parent_ input appear and the same _InWorld_ parameter that we saw in **Target from Curve**. If we use our old [Reference](../../Overview/Glossary.md#reference) as the _Parent_ of this new [Reference](../../Overview/Glossary.md#reference), add a bit of an offset by assigning the _Frame_ and set _InWorld_ to `false` we now have a [Reference](../../Overview/Glossary.md#reference) referenced to a [Reference](../../Overview/Glossary.md#reference). We can reassign the [Reference](../../Overview/Glossary.md#reference) of our relative [Targets](../../Overview/Glossary.md#target) and see both the new [Reference](../../Overview/Glossary.md#reference) and our [Targets](../../Overview/Glossary.md#target) follow when `BoxCorner` is moved. This is of particular use if you have a calibrated work surface but want to perform work in different areas of it.
+
+[<img src="../../assets/images/22Reference.gif">](../../assets/images/22RelativeReferences.gif)
+<em>References can be declared relative to each other.</em>
 
 #### Next:
 
@@ -73,11 +89,11 @@ In this tutorial we'll see how to create [Parts](../../Overview/Glossary.md#part
 
 #### Demo Files:
 
-[2.3 - Create a Part.gh](../ExampleFiles/Tutorials/2.3%20-%20Create%20a%20Part.gh)
+> [<img src="../../assets/images/GHFile16.PNG">  Create a Part.gh](../ExampleFiles/Tutorials/2.3%20-%20Create%20a%20Part.gh)
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 Reading or watching the [Create a Reference](../2-Cell/Contents.md#22-create-references) tutorial is highly recommended.
 
@@ -112,7 +128,7 @@ In this tutorial we'll create a simple [Tool](../../Overview/Glossary.md#end-eff
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 Reading or watching the [Getting Started](../1-Getting-Started/Contents.md#1-getting-started) tutorial is highly recommended.
 
@@ -140,7 +156,7 @@ In this tutorial we'll bring in calibrated data to improve the accuracy of [Tool
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 Reading or watching the [Create a Tool tutorial](../2-Cell/Contents.md#24-create-a-tool) is highly recommended as this tutorial builds on its output.
 
@@ -204,7 +220,7 @@ In this tutorial we'll be modelling a [Positioner](../../Overview/Glossary.md#po
 
 #### Requirements to follow along:
 
-A PC with the Rhinoceros 3D, Grasshopper and the HAL Robotics Framework installed.
+[McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
 
 Basic modelling skills in Rhinoceros 3D and Vector/Plane manipulation skills in Grasshopper will greatly help preparing your own [Positioner](../../Overview/Glossary.md#positioner) model.
 
@@ -230,3 +246,7 @@ If you have created a [Track](../../Overview/Glossary.md#positioner), you can mo
 
 ### 2.8. Save a Mechanism as a Preset
 #### Coming Soon
+
+---
+
+[Continue to: 3. Motion](Grasshopper/3-Motion/Contents.md#3-motion)
