@@ -45,7 +45,7 @@ In this tutorial we'll see how to create [References](../../Overview/Glossary.md
 
 #### Demo Files:
 
-> [<img src="../../assets/images/RHFile16.PNG">  Create a Reference.3dm](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.3dm)
+> [<img src="../../assets/images/RHFile16.PNG">  Create a Reference.3dm](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.3dm)<br>
 > [<img src="../../assets/images/GHFile16.PNG">  Create a Reference.gh](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.gh)
 
 #### Requirements to follow along:
@@ -73,7 +73,7 @@ There are two main ways to use [References](../../Overview/Glossary.md#reference
 
 [References](../../Overview/Glossary.md#reference) can also be parented. If we create another [Reference](../../Overview/Glossary.md#reference) and use Shift + Up to change overload we can see a _Parent_ input appear and the same _InWorld_ parameter that we saw in **Target from Curve**. If we use our old [Reference](../../Overview/Glossary.md#reference) as the _Parent_ of this new [Reference](../../Overview/Glossary.md#reference), add a bit of an offset by assigning the _Frame_ and set _InWorld_ to `false` we now have a [Reference](../../Overview/Glossary.md#reference) referenced to a [Reference](../../Overview/Glossary.md#reference). We can reassign the [Reference](../../Overview/Glossary.md#reference) of our relative [Targets](../../Overview/Glossary.md#target) and see both the new [Reference](../../Overview/Glossary.md#reference) and our [Targets](../../Overview/Glossary.md#target) follow when `BoxCorner` is moved. This is of particular use if you have a calibrated work surface but want to perform work in different areas of it.
 
-[<img src="../../assets/images/22Reference.gif">](../../assets/images/22RelativeReferences.gif)
+[<img src="../../assets/images/22RelativeReferences.gif">](../../assets/images/22RelativeReferences.gif)
 <em>References can be declared relative to each other.</em>
 
 #### Next:
@@ -122,9 +122,8 @@ In this tutorial we'll create a simple [Tool](../../Overview/Glossary.md#end-eff
 
 #### Demo Files:
 
-[2.4 - Create a Tool.gh](../ExampleFiles/Tutorials/2.4%20-%20Create%20a%20Tool.gh)
-
-[2.4 - Create a Tool.3dm](../ExampleFiles/Tutorials/2.4%20-%20Create%20a%20Tool.3dm)
+> [<img src="../../assets/images/RHFile16.PNG">  Create a Tool.3dm](../ExampleFiles/Tutorials/2.4%20-%20Create%20a%20Tool.3dm)<br>
+> [<img src="../../assets/images/GHFile16.PNG">  Create a Tool.gh](../ExampleFiles/Tutorials/2.4%20-%20Create%20a%20Tool.gh)
 
 #### Requirements to follow along:
 
@@ -152,7 +151,7 @@ In this tutorial we'll bring in calibrated data to improve the accuracy of [Tool
 
 #### Demo Files:
 
-[2.5 - Calibrate a Tool or Reference.gh](../ExampleFiles/Tutorials/2.5%20-%20Calibrate%20a%20Tool%20or%20Reference.gh)
+> [<img src="../../assets/images/GHFile16.PNG">  Calibrate a Tool or Reference.gh](../ExampleFiles/Tutorials/2.5%20-%20Calibrate%20a%20Tool%20or%20Reference.gh)
 
 #### Requirements to follow along:
 
@@ -176,9 +175,8 @@ In this tutorial we'll look at how we can create more complex [Tools](../../Over
 
 #### Demo Files:
 
-[2.6 - Create a Multi-Part Tool.gh](../ExampleFiles/Tutorials/2.6%20-%20Create%20a%20Multi-Part%20Tool.gh)
-
-[2.6 - Create a Multi-Part Tool.3dm](../ExampleFiles/Tutorials/2.6%20-%20Create%20a%20Multi-Part%20Tool.3dm)
+> [<img src="../../assets/images/RHFile16.PNG">  Create a Multi-Part Tool.3dm](../ExampleFiles/Tutorials/2.6%20-%20Create%20a%20Multi-Part%20Tool.3dm)<br>
+> [<img src="../../assets/images/GHFile16.PNG">  Create a Multi-Part Tool.gh](../ExampleFiles/Tutorials/2.6%20-%20Create%20a%20Multi-Part%20Tool.gh)
 
 #### Requirements to follow along:
 
@@ -214,9 +212,8 @@ In this tutorial we'll be modelling a [Positioner](../../Overview/Glossary.md#po
 
 #### Demo Files:
 
-[2.7 - Create a Positioner.gh](../ExampleFiles/Tutorials/2.7%20-%20Create%20a%20Positioner.gh)
-
-[2.7 - Create a Positioner.3dm](../ExampleFiles/Tutorials/2.7%20-%20Create%20a%20Positioner.3dm)
+> [<img src="../../assets/images/RHFile16.PNG">  Create a Positioner.3dm](../ExampleFiles/Tutorials/2.7%20-%20Create%20a%20Positioner.3dm)<br>
+> [<img src="../../assets/images/GHFile16.PNG">  Create a Positioner.gh](../ExampleFiles/Tutorials/2.7%20-%20Create%20a%20Positioner.gh)
 
 #### Requirements to follow along:
 
