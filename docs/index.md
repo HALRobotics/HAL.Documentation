@@ -31,7 +31,7 @@
 
 #### [2.1. Insert a Robot](Grasshopper/2-Cell/Contents.md#21-insert-a-robot)
 
-#### [2.2. Create a Reference](Grasshopper/2-Cell/Contents.md#22-create-references)
+#### [2.2. Create a Reference](Grasshopper/2-Cell/Contents.md#22-create-a-reference)
 
 #### [2.3. Create a Part](Grasshopper/2-Cell/Contents.md#23-create-a-part)
 

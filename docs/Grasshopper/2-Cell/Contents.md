@@ -2,7 +2,7 @@
 
 [2.1. Insert a Robot](#21-insert-a-robot)
 
-[2.2. Create a Reference](#22-create-references)
+[2.2. Create a Reference](#22-create-a-reference)
 
 [2.3. Create a Part](#23-create-a-part)
 
@@ -37,7 +37,7 @@ You can use the search bar or tags listed on the left-hand side of the window to
 <em>It is good practice to name HAL objects by using the _Alias_ input of the components.</em>
 
 ---
-### 2.2. Create References
+### 2.2. Create a Reference
 
 #### Objective:
 
@@ -100,7 +100,7 @@ In this tutorial we'll see how to create [Parts](../../Overview/Glossary.md#part
 #### Requirements to follow along:
 
 - [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
-- Reading or watching the [Create a Reference](../2-Cell/Contents.md#22-create-references) tutorial is highly recommended.
+- Reading or watching the [Create a Reference](../2-Cell/Contents.md#22-create-a-reference) tutorial is highly recommended.
 
 #### Background:
 
@@ -108,7 +108,7 @@ In this tutorial we'll see how to create [Parts](../../Overview/Glossary.md#part
 
 #### How to:
 
-We can create a [Part](../../Overview/Glossary.md#part) by going to the **Cell** panel, **Create Part**. If you've seen the [Create a Reference](../2-Cell/Contents.md#22-create-references) tutorial many of the inputs here will look familiar, in its simplest form a [Part](../../Overview/Glossary.md#part) is just a [Reference](../../Overview/Glossary.md#reference) with associated geometry. The _Frame_ of our [Part](../../Overview/Glossary.md#part) is its base frame, that is to say if you were to set the position of the [Part](../../Overview/Glossary.md#part) that is the point that you would expect to be at the designated position. The _Body_ is the geometry we want to assign to our [Part](../../Overview/Glossary.md#part), and we can assign a _Mass_. The _Mass_ is particularly necessary if this part is going to be used as part of a [Tool](../../Overview/Glossary.md#end-effector) so that the total mass can be calculated and [Exported](../../Overview/Glossary.md#export) in your code.
+We can create a [Part](../../Overview/Glossary.md#part) by going to the **Cell** panel, **Create Part**. If you've seen the [Create a Reference](../2-Cell/Contents.md#22-create-a-reference) tutorial many of the inputs here will look familiar, in its simplest form a [Part](../../Overview/Glossary.md#part) is just a [Reference](../../Overview/Glossary.md#reference) with associated geometry. The _Frame_ of our [Part](../../Overview/Glossary.md#part) is its base frame, that is to say if you were to set the position of the [Part](../../Overview/Glossary.md#part) that is the point that you would expect to be at the designated position. The _Body_ is the geometry we want to assign to our [Part](../../Overview/Glossary.md#part), and we can assign a _Mass_. The _Mass_ is particularly necessary if this part is going to be used as part of a [Tool](../../Overview/Glossary.md#end-effector) so that the total mass can be calculated and [Exported](../../Overview/Glossary.md#export) in your code.
 
 The second overload of the [Part](../../Overview/Glossary.md#part) component allows us to specify a few more details including the _Color_ and _Centre of Mass_.
 

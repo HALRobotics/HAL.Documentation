@@ -10,11 +10,13 @@
 
 [3.5. Synchronize Motion](#35-synchronize-motion)
 
-[3.6. Resolve Targets](#36-coupled-motion-and-resolving-targets)
+[3.6. Coupled Motion and Resolving Targets](#36-coupled-motion-and-resolving-targets)
 
-[3.7. Add Target Constraints \[Coming Soon\]](#37-add-target-constraints)
+[3.7. Change a Tool at Runtime](#37-change-a-tool-at-runtime)
 
-[3.8. Add Mechanism Constraints \[Coming Soon\]](#38-add-mechanism-constraints)
+[3.8. Add Target Constraints \[Coming Soon\]](#38-add-target-constraints)
+
+[3.9. Add Mechanism Constraints \[Coming Soon\]](#39-add-mechanism-constraints)
 
 ---
 ### 3.1. Create a Target

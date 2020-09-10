@@ -79,11 +79,11 @@ As a final note in this tutorial, we know that there are circumstances where you
 [//]: # (Use RobotStudio as part of demo and upload to Virtual Controller - mention that it should work with other manufacturers' offline programming solutions)
 
 ---
-### 6.4. Monitor Robot State \[C\# only\]
+### 6.4. Monitor Robot State
 #### Coming Soon
 
 ---
-### 6.5. Stream Positions to a Robot \[C\# Only\]
+### 6.5. Stream Positions to a Robot
 #### Coming Soon
 
 ---
