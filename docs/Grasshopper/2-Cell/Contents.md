@@ -147,6 +147,7 @@ In the Getting Started tutorial we used a preset [Tool](../../Overview/Glossary.
 
 Take a look at the [tutorial](#26-create-a-multi-part-tool) on creating multi-[Part](../../Overview/Glossary.md#part) [Tools](../../Overview/Glossary.md#end-effector) and the calibrating [Tools](../../Overview/Glossary.md#end-effector) [tutorial](2.5.-calibrate-a-reference-or-tool) to get a more accurate representation of your cell.
 
+---
 ### 2.5. Calibrate a Reference or Tool
 
 #### Objective:
@@ -170,6 +171,7 @@ In this tutorial we'll bring in calibrated data to improve the accuracy of [Tool
 
 In our previous tutorial we used a theoretical plane as our [Tool Centre Point (TCP)](../../Overview/Glossary.md#endpoint). To ensure our simulation matches the real world as closely as possible we're going to swap this out for calibrated data. In this tutorial I am using a 3D printed [Tool](../../Overview/Glossary.md#end-effector) which is mounted on an ABB arm. I have calibrated the [Tool](../../Overview/Glossary.md#end-effector) using the real [Robot](../../Overview/Glossary.md#manipulator) and simply copied and pasted that information into my Grasshopper document. As I'm using an ABB [Robot](../../Overview/Glossary.md#manipulator) the code imported is in RAPID, ABB's [Robot](../../Overview/Glossary.md#manipulator) programming language. Additionally, I have extracted the information I need, in particular the X, Y and Z co-ordinates of the [TCP](../../Overview/Glossary.md#endpoint) and its orientation as a quaternion because that's the formalism used by ABB. Converting between different frame formalisms can be complicated but we've included the **Frame** component to make it a breeze. You'll find **Frame** under the **HAL Robotics** tab, **Utilities** panel. By default, the **Frame** component comes in as Euler frame. By right-clicking on the component we can see that there are a variety of formalisms on offer to suit importing data from any [Robot](../../Overview/Glossary.md#manipulator) manufacturer. In this instance we want to select quaternion frame. This first overload of the component asks for the _Origin_ and 4 quaternion components. As we have the co-ordinates of the [TCP](../../Overview/Glossary.md#endpoint) as individual values, we can switch to the alternative overload of quaternion frame to get _X_, _Y_ and _Z_ as individual inputs. We need to ensure that the units are correct. ABB RAPID positions are in millimeters so as long as that's what's on our inputs we're ok there. We can now hook all of the imported data into the **Frame**. Once that's done, we can replace the _ToolFrame_ we had previously, the simulation will re-[Solve](../../Overview/Glossary.md#solving) and we can see that the [TCP](../../Overview/Glossary.md#endpoint) is slightly offset from the CAD data, as we would expect from a 3D printed tool with moving parts. When we now **Simulate**, we can see that our calibrated [TCP](../../Overview/Glossary.md#endpoint) is hitting all of our [Targets](../../Overview/Glossary.md#target) not the CAD tool tip.
 
+---
 ### 2.6. Create a Multi-Part Tool
 
 #### Objective:
@@ -204,6 +206,7 @@ At this point you should see your [Endpoints](../../Overview/Glossary.md#endpoin
 
 See the [Change a Tool at Runtime](../3-Motion/Contents.md#37-change-a-tool-at-runtime) tutorial to see how to switch between your [Endpoints](../../Overview/Glossary.md#endpoint) during the execution of a [Procedure](../../Overview/Glossary.md#procedure).
 
+---
 ### 2.7. Create a Positioner
 
 #### Objective:
@@ -239,6 +242,7 @@ With all of the elements in place we can merge them all into a single list and p
 
 If you have created a [Track](../../Overview/Glossary.md#positioner), you can mount a [Robot](../../Overview/Glossary.md#manipulator) onto it using the **Attach** component exactly as you have done [Tools](../../Overview/Glossary.md#end-effector) in [previous tutorials](../2-Cell/Contents.md#24-create-a-tool).
 
+---
 ### 2.8. Save a Mechanism as a Preset
 #### Coming Soon
 
