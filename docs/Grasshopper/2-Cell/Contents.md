@@ -110,9 +110,17 @@ In this tutorial we'll see how to create [Parts](../../Overview/Glossary.md#part
 
 We can create a [Part](../../Overview/Glossary.md#part) by going to the **Cell** panel, **Create Part**. If you've seen the [Create a Reference](../2-Cell/Contents.md#22-create-a-reference) tutorial many of the inputs here will look familiar, in its simplest form a [Part](../../Overview/Glossary.md#part) is just a [Reference](../../Overview/Glossary.md#reference) with associated geometry. The _Frame_ of our [Part](../../Overview/Glossary.md#part) is its base frame, that is to say if you were to set the position of the [Part](../../Overview/Glossary.md#part) that is the point that you would expect to be at the designated position. The _Body_ is the geometry we want to assign to our [Part](../../Overview/Glossary.md#part), and we can assign a _Mass_. The _Mass_ is particularly necessary if this part is going to be used as part of a [Tool](../../Overview/Glossary.md#end-effector) so that the total mass can be calculated and [Exported](../../Overview/Glossary.md#export) in your code.
 
-The second overload of the [Part](../../Overview/Glossary.md#part) component allows us to specify a few more details including the _Color_ and _Centre of Mass_.
+[<img src="../../assets/images/23Part.gif">](../../assets/images/23Part.gif)
+<em>A part is a shape (approximated by meshes) with an associated location an mass.</em>
 
-Once you've created your [Parts](../../Overview/Glossary.md#part) they can be moved around your scene using the **Relocate** component or attached to each other using the **Attach** component.
+[<img src="../../assets/images/23PartAdvanced.gif">](../../assets/images/23PartAdvanced.gif)
+<em>The second overload of the [Part](../../Overview/Glossary.md#part) component allows us to specify a few more details including the _Color_ and _Centre of Mass_.</em>
+
+[<img src="../../assets/images/23PartRelocate.gif">](../../assets/images/23PartRelocate.gif)
+<em>Once you've created your [Parts](../../Overview/Glossary.md#part) they can be moved around your scene using the **Relocate** component.</em>
+
+[<img src="../../assets/images/23PartAttach.gif">](../../assets/images/23PartAttach.gif)
+<em> Two parts can also be attached to each other using the **Attach** component.</em>
 
 #### Next:
 
