@@ -39,7 +39,7 @@ If you already have an account, you can simply [login to the user portal](https:
 [<img src="../../assets/images/01UserPortalLogin.PNG">](../../assets/images/01UserPortalLogin.PNG)
 <em>The login page simply requires your email and password.</em>
 
-On the greeting page you should see a link to [download the HAL Robotics Framework](https://halinstaller.blob.core.windows.net/windows/Setup.exe). By clicking on that link, you will download the HAL Robotics Framework Installer. 
+On the greeting page you should see a link to [download the HAL Robotics Framework](https://halinstaller.blob.core.windows.net/windows/HALRoboticsFramework.exe). By clicking on that link, you will download the HAL Robotics Framework Installer. 
 
 [<img src="../../assets/images/01UserPortal.PNG">](../../assets/images/01UserPortal.PNG)
 <em>The [user portal](https://user.hal-robotics.com/) greeting page.</em>
