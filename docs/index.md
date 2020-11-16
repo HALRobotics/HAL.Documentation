@@ -67,6 +67,8 @@
 
 #### [3.9. Add Mechanism Constraints \[Coming Soon\]](Grasshopper/3-Motion/Contents.md#39-add-mechanism-constraints)
 
+#### [3.10. Using a Track](Grasshopper/3-Motion/Contents.md#310-using-a-track)
+
 ---
 
 ### [4. I/O](Grasshopper/4-IO/Contents.md#4-io)

@@ -45,7 +45,6 @@ In this tutorial we'll see how to create [References](../../Overview/Glossary.md
 
 #### Demo Files:
 
-> [<img src="../../assets/images/RHFile16.PNG">  Create a Reference.3dm](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.3dm)<br>
 > [<img src="../../assets/images/GHFile16.PNG">  Create a Reference.gh](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.gh)
 
 #### Requirements to follow along:
@@ -164,7 +163,7 @@ In this tutorial we'll bring in calibrated data to improve the accuracy of [Tool
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG">  Calibrate a Tool or Reference.gh](../ExampleFiles/Tutorials/2.5%20-%20Calibrate%20a%20Tool%20or%20Reference.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Calibrate a Tool or Reference.gh](../ExampleFiles/Tutorials/2.5%20-%20Calibrate%20a%20Tool%20or%20Reference.gh)
 
 #### Requirements to follow along:
 

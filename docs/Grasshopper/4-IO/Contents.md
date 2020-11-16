@@ -13,7 +13,7 @@ In this tutorial we'll create a [Signal](../../Overview/Glossary.md#signal) that
 
 #### Demo Files:
 
-[4.1. Create a Signal.gh](../ExampleFiles/Tutorials/4.1%20-%20Create%20a%20Signal.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Create a Signal.gh](../ExampleFiles/Tutorials/4.1%20-%20Create%20a%20Signal.gh)
 
 #### Requirements to follow along:
 
@@ -36,7 +36,7 @@ In this tutorial we'll change the state of a [Signal](../../Overview/Glossary.md
 
 #### Demo Files:
 
-[4.2. Change a Signal State.gh](../ExampleFiles/Tutorials/4.2%20-%20Change%20a%20Signal%20State.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Change a Signal State.gh](../ExampleFiles/Tutorials/4.2%20-%20Change%20a%20Signal%20State.gh)
 
 #### Requirements to follow along:
 

@@ -29,7 +29,7 @@ In this tutorial we'll look at the different ways that we can create [Targets](.
 
 #### Demo Files:
 
-[3.1 - Create a Target.gh](../ExampleFiles/Tutorials/3.1%20-%20Create%20a%20Target.gh)
+> [<img src="../../assets/images/GHFile16.PNG">  Create a Target.gh](../ExampleFiles/Tutorials/3.1%20-%20Create%20a%20Target.gh)
 
 #### Requirements to follow along:
 
@@ -62,7 +62,7 @@ In this tutorial we'll look at the different utilities to modify [Targets](../..
 
 #### Demo Files:
 
-[3.2 - Modify a Target.gh](../ExampleFiles/Tutorials/3.2%20-%20Modify%20a%20Target.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Modify a Target.gh](../ExampleFiles/Tutorials/3.2%20-%20Modify%20a%20Target.gh)
 
 #### Requirements to follow along:
 
@@ -89,7 +89,7 @@ In this tutorial we'll look at how to change the way in which a [Robot](../../Ov
 
 #### Demo Files:
 
-[3.3 - Change Motion Settings.gh](../ExampleFiles/Tutorials/3.3%20-%20Change%20Motion%20Settings.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Change Motion Settings.gh](../ExampleFiles/Tutorials/3.3%20-%20Change%20Motion%20Settings.gh)
 
 #### Requirements to follow along:
 
@@ -122,7 +122,7 @@ In this tutorial we'll see how to combine different [Procedures](../../Overview/
 
 #### Demo Files:
 
-[3.4 - Combine Procedures and the Procedure Browser.gh](../ExampleFiles/Tutorials/3.4%20-%20Combine%20Procedures%20and%20the%20Procedure%20Browser.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Combine Procedures and the Procedure Browser.gh](../ExampleFiles/Tutorials/3.4%20-%20Combine%20Procedures%20and%20the%20Procedure%20Browser.gh)
 
 #### Requirements to follow along:
 
@@ -147,7 +147,7 @@ In this tutorial we'll see how to synchronize the motion of multiple [Mechanisms
 
 #### Demo Files:
 
-[3.5 - Synchronize Motion.gh](../ExampleFiles/Tutorials/3.5%20-%20Synchronize%20Motion.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Synchronize Motion.gh](../ExampleFiles/Tutorials/3.5%20-%20Synchronize%20Motion.gh)
 
 #### Requirements to follow along:
 
@@ -170,7 +170,7 @@ In this tutorial we'll see how to simplify the programming of multi-[Mechanism](
 
 #### Demo Files:
 
-[3.6 - Resolve Targets.gh](../ExampleFiles/Tutorials/3.6%20-%20Resolve%20Targets.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Resolve Targets.gh](../ExampleFiles/Tutorials/3.6%20-%20Resolve%20Targets.gh)
 
 #### Requirements to follow along:
 
@@ -195,7 +195,7 @@ In this tutorial we'll see how to change the active [Tool](../../Overview/Glossa
 
 #### Demo Files:
 
-[3.7 - Change a Tool at Runtime.gh](../ExampleFiles/Tutorials/3.7%20-%20Change%20a%20Tool%20at%20Runtime.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Change a Tool at Runtime.gh](../ExampleFiles/Tutorials/3.7%20-%20Change%20a%20Tool%20at%20Runtime.gh)
 
 #### Requirements to follow along:
 
@@ -232,7 +232,7 @@ In this tutorial we'll see how the previous tutorials on [synchronization](#35-s
 
 #### Demo Files:
 
-[3.10 - Using a Track.gh](../ExampleFiles/Tutorials/3.10%20-%20Using%20a%20Track.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Using a Track.gh](../ExampleFiles/Tutorials/3.10%20-%20Using%20a%20Track.gh)
 
 #### Requirements to follow along:
 
