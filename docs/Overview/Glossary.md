@@ -50,6 +50,11 @@ _a.k.a articulation, axis_
 
 an articulated link between two [parts](#part). A joint can be _active_ (controlled) or _passive_.
 
+#### joint mapping
+_a.k.a joint index_
+
+the index a [joint](#joint) should be assigned during export. This is typically only required with [external axes](#positioner) to set the index of a [joint](#joint) within a main [program](#procedure).
+
 #### connection
 _a.k.a rigid joint_
 
