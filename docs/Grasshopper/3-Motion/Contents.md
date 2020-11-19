@@ -18,6 +18,8 @@
 
 [3.9. Add Mechanism Constraints \[Coming Soon\]](#39-add-mechanism-constraints)
 
+[3.10. Using a Track](#310-using-a-track)
+
 ---
 ### 3.1. Create a Target
 
@@ -27,7 +29,7 @@ In this tutorial we'll look at the different ways that we can create [Targets](.
 
 #### Demo Files:
 
-[3.1 - Create a Target.gh](../ExampleFiles/Tutorials/3.1%20-%20Create%20a%20Target.gh)
+> [<img src="../../assets/images/GHFile16.PNG">  Create a Target.gh](../ExampleFiles/Tutorials/3.1%20-%20Create%20a%20Target.gh)
 
 #### Requirements to follow along:
 
@@ -60,7 +62,7 @@ In this tutorial we'll look at the different utilities to modify [Targets](../..
 
 #### Demo Files:
 
-[3.2 - Modify a Target.gh](../ExampleFiles/Tutorials/3.2%20-%20Modify%20a%20Target.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Modify a Target.gh](../ExampleFiles/Tutorials/3.2%20-%20Modify%20a%20Target.gh)
 
 #### Requirements to follow along:
 
@@ -87,7 +89,7 @@ In this tutorial we'll look at how to change the way in which a [Robot](../../Ov
 
 #### Demo Files:
 
-[3.3 - Change Motion Settings.gh](../ExampleFiles/Tutorials/3.3%20-%20Change%20Motion%20Settings.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Change Motion Settings.gh](../ExampleFiles/Tutorials/3.3%20-%20Change%20Motion%20Settings.gh)
 
 #### Requirements to follow along:
 
@@ -120,7 +122,7 @@ In this tutorial we'll see how to combine different [Procedures](../../Overview/
 
 #### Demo Files:
 
-[3.4 - Combine Procedures and the Procedure Browser.gh](../ExampleFiles/Tutorials/3.4%20-%20Combine%20Procedures%20and%20the%20Procedure%20Browser.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Combine Procedures and the Procedure Browser.gh](../ExampleFiles/Tutorials/3.4%20-%20Combine%20Procedures%20and%20the%20Procedure%20Browser.gh)
 
 #### Requirements to follow along:
 
@@ -145,7 +147,7 @@ In this tutorial we'll see how to synchronize the motion of multiple [Mechanisms
 
 #### Demo Files:
 
-[3.5 - Synchronize Motion.gh](../ExampleFiles/Tutorials/3.5%20-%20Synchronize%20Motion.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Synchronize Motion.gh](../ExampleFiles/Tutorials/3.5%20-%20Synchronize%20Motion.gh)
 
 #### Requirements to follow along:
 
@@ -168,7 +170,7 @@ In this tutorial we'll see how to simplify the programming of multi-[Mechanism](
 
 #### Demo Files:
 
-[3.6 - Resolve Targets.gh](../ExampleFiles/Tutorials/3.6%20-%20Resolve%20Targets.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Resolve Targets.gh](../ExampleFiles/Tutorials/3.6%20-%20Resolve%20Targets.gh)
 
 #### Requirements to follow along:
 
@@ -193,7 +195,7 @@ In this tutorial we'll see how to change the active [Tool](../../Overview/Glossa
 
 #### Demo Files:
 
-[3.7 - Change a Tool at Runtime.gh](../ExampleFiles/Tutorials/3.7%20-%20Change%20a%20Tool%20at%20Runtime.gh)
+> [<img src="../../assets/images/GHFile16.PNG"> Change a Tool at Runtime.gh](../ExampleFiles/Tutorials/3.7%20-%20Change%20a%20Tool%20at%20Runtime.gh)
 
 #### Requirements to follow along:
 
@@ -220,6 +222,38 @@ In this final combination of [Tools](../../Overview/Glossary.md#end-effector) at
 ---
 ### 3.9. Add Mechanism Constraints
 #### Coming Soon
+
+---
+### 3.10. Using a Track
+
+#### Objective:
+
+In this tutorial we'll see how the previous tutorials on [synchronization](#35-synchronize-motion) and [Target Resolvers](#36-coupled-motion-and-resolving-targets) can be used together to program a **Track**, or [Linear Positioner](../../Overview/Glossary.md#positioner), using the HAL Robotics Framework for Grasshopper.
+
+#### Demo Files:
+
+> [<img src="../../assets/images/GHFile16.PNG"> Using a Track.gh](../ExampleFiles/Tutorials/3.10%20-%20Using%20a%20Track.gh)
+
+#### Requirements to follow along:
+
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- Reading or watching the [Synchronize Motion](../3-Motion/Contents.md#35-synchronize-motion) tutorial is highly recommended.
+- Reading or watching the [Coupled Motion and Resolving Targets](../3-Motion/Contents.md#36-coupled-motion-and-resolving-targets) tutorial is highly recommended.
+- An extension to the HAL Robotics Framework that allows code export for external axes such as HAL.ABB or HAL.KUKA.
+
+#### Background:
+
+Mounting a [Robot](../../Overview/Glossary.md#manipulator) on a **Track**, or linear axis [Positioner](../../Overview/Glossary.md#positioner), can massively open up the usable space in a [Cell](../../Overview/Glossary.md#cell). However, programming one [Mechanism](../../Overview/Glossary.md#mechanism) whilst it's mounted on another can introduce a few complexities.
+
+#### How to:
+
+As per usual, we're going to start this session by modelling our [Cell](../../Overview/Glossary.md#cell). This means picking our [Robot](../../Overview/Glossary.md#manipulator), **Attaching** a [Tool](../../Overview/Glossary.md#end-effector), and importing our [Positioner](../../Overview/Glossary.md#positioner). This is where things start deviating slightly from our [synchronization](#35-synchronize-motion) tutorial. In this instance we actually want to mount one of our [Mechanisms](../../Overview/Glossary.md#mechanism) on another. The HAL Robotics Framework doesn't really make a distinction between [Mechanism](../../Overview/Glossary.md#mechanism) types e.g. [Positioner](../../Overview/Glossary.md#positioner), [Robot](../../Overview/Glossary.md#manipulator) or [Tool](../../Overview/Glossary.md#end-effector), so we can use the exact same strategy as **Attaching** our [Tool](../../Overview/Glossary.md#end-effector) to the [Robot](../../Overview/Glossary.md#manipulator). We'll use the **Attach** component with the **Track** as the _Parent_ and the [Robot](../../Overview/Glossary.md#manipulator) + [Tool](../../Overview/Glossary.md#end-effector) combination as the _Child_. Ensure that _IsEndEffector_ is left as `true` because our _Child_ contains our desired [End Effector](../../Overview/Glossary.md#end-effector). We can use the _Location_ and _InWorld_ parameters to adjust the position and orientation of the [Robot](../../Overview/Glossary.md#manipulator) on the **Track**. This will create a single [Mechanism](../../Overview/Glossary.md#mechanism) that we can program as we would any other [Mechanism](../../Overview/Glossary.md#mechanism), however, this monolithic approach doesn't give us as much freedom as treating this like a multi-[Mechanism](../../Overview/Glossary.md#mechanism) setup does. N.B. If you do use the single [Mechanism](../../Overview/Glossary.md#mechanism) approach, ensure any [Joint space](../../Overview/Glossary.md#joint-space) [Targets](../../Overview/Glossary.md#target) are a) in SI units for the relevant joints, and b) are in the right order i.e. with the **Track** first in this case (_Parent_ joints followed by _Child_ joints). To return to a multi-[Mechanism](../../Overview/Glossary.md#mechanism) scenario we can use the **Disassemble** component from **HAL Robotics** -\> **Cell**. This will split our [Mechanism](../../Overview/Glossary.md#mechanism) into its constituent parts including its _SubMechanisms_, that is to say, the [Mechanisms](../../Overview/Glossary.md#mechanism) which make it up. We can now treat the _SubMechanisms_ as we did our [Mechanisms](../../Overview/Glossary.md#mechanism) in [previous](#35-synchronize-motion) [tutorials](#36-coupled-motion-and-resolving-targets).
+
+There are a few subtleties to programming a **Track** so let's walk through an example. Let's start by preparing a simple curve following [Procedure](../../Overview/Glossary.md#procedure) for the [Robot](../../Overview/Glossary.md#manipulator) as we did in the [Getting Started tutorial](../1-Getting-Started/Contents.md#1-getting-started). Ensure the **Track** is actually required by making this curve longer than the [Robot's](../../Overview/Glossary.md#manipulator) reach. We can then program the **Track** using [Targets](../../Overview/Glossary.md#target) as we do for any other [Mechanism](../../Overview/Glossary.md#mechanism) for maximum control, or using the **Target Resolvers** seen in a [previous tutorial](#36-coupled-motion-and-resolving-targets) for a quick but effective approach. For a **Track** the **Offset** **Target Resolver** overload is of particular use. The default version of this component asks simply for an _Offset_ distance which is the distance the **Track's** [Endpoint](../../Overview/Glossary.md#endpoint) (and by extension the [Robot's](../../Overview/Glossary.md#manipulator) base) should be kept from the [Robot's](../../Overview/Glossary.md#manipulator) [Target](../../Overview/Glossary.md#target). Setting the _Offset_ to `0` or any value less than the distance between the **Track's** [Endpoint](../../Overview/Glossary.md#endpoint) and [Target](../../Overview/Glossary.md#target) will cause the **Track** to get as close to the [Target](../../Overview/Glossary.md#target) as possible. To create a full [Procedure](../../Overview/Glossary.md#procedure) for the **Track** we need to set some **Sync Settings** for the [Robot's](../../Overview/Glossary.md#manipulator) [Move](../../Overview/Glossary.md#motion-action) and can then use the **Synchronize** utility overload of the **Move** component to synchronize our **Target Resolver** with the full [Robot](../../Overview/Glossary.md#manipulator) [Procedure](../../Overview/Glossary.md#procedure) (see the [Synchronize Motion tutorial](../3-Motion/Contents.md#35-synchronize-motion) for a refresher on how to do this). As one [Mechanism](../../Overview/Glossary.md#mechanism) is moving another, you will also need to ensure that the **Kinematic Settings** are in place for this setup, with the **Track** as the _Primary_ and [Robot](../../Overview/Glossary.md#manipulator) as a _Secondary_, in both the [Robot's](../../Overview/Glossary.md#manipulator) [Move](../../Overview/Glossary.md#motion-action) and the **Track's** (see the [Coupled Motion and Resolving Targets tutorial](../3-Motion/Contents.md#36-coupled-motion-and-resolving-targets) as a reminder if needed). With this in place we are in a position to **Solve** and **Execute** and we should see both [Mechanisms](../../Overview/Glossary.md#mechanism) moving as we expect.
+
+Although [exporting](../../Overview/Glossary.md#export) is covered in a later [tutorial](../6-Control/Contents.md#62-export-a-procedure), there are a couple of things that need to be setup for external axes that are worth looking at here if your [Positioner](../../Overview/Glossary.md#positioner) is an external axis and programmed within the same exported [Procedure](../../Overview/Glossary.md#procedure) as your [Robot](../../Overview/Glossary.md#manipulator).
+1. You'll need to setup your [Joint Mappings](../../Overview/Glossary.md#joint-mapping).  When you created or loaded your [Positioner](../../Overview/Glossary.md#positioner) you will likely have glossed over the _Mapping(s)_ input. These values are 0-based indices of any external [axis](../../Overview/Glossary.md#joint) that needs to be exported. In our example above, we have 6 axes in our [Robot](../../Overview/Glossary.md#manipulator) and our [Positioner](../../Overview/Glossary.md#positioner) comes after that. We can therefore assign it an index of `6` (0-based, so 7th when exported) or higher depending on the exact configuration of our real [Cell](../../Overview/Glossary.md#cell).
+2. You'll need to set your [Positioner](../../Overview/Glossary.md#positioner) [Procedure](../../Overview/Glossary.md#procedure) as a child of your [Robot](../../Overview/Glossary.md#manipulator) [Procedure](../../Overview/Glossary.md#procedure). This can be done in the [Controller](../../Overview/Glossary.md#controller) configuration, accessible by double-clicking on your [Controller](../../Overview/Glossary.md#controller) component. On the right-hand side of this window you should see both of the [Procedures](../../Overview/Glossary.md#procedure) listed. Drag the [Positioner](../../Overview/Glossary.md#positioner) [Procedure](../../Overview/Glossary.md#procedure) onto the main [Procedure](../../Overview/Glossary.md#procedure) to make it a child. As you're doing this, ensure that the _Task Alias_ of your main [Procedure](../../Overview/Glossary.md#procedure) matches the target **Task** on your real [Controller](../../Overview/Glossary.md#controller).
 
 ---
 
