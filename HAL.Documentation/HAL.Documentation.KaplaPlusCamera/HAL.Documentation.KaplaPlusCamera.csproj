@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net461</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Tests\Application.cs" />
+    <Compile Remove="Tests\RobotCamera.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Tests\Application.cs" />
+    <None Include="Tests\RobotCamera.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Emgu.CV.Runtime" Version="1.0.0-beta" />
+    <PackageReference Include="HAL.ABB" Version="1.4.0-beta" />
+    <PackageReference Include="HAL.Core" Version="1.4.0-beta" />
+    <PackageReference Include="HAL.ImageAnalysis" Version="1.4.0-beta" />
+    <PackageReference Include="HAL.OptiTrack" Version="1.4.0-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HAL.Documentation.BasicExamples\HAL.Documentation.Base.csproj" />
+  </ItemGroup>
+</Project>

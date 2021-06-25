@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net461</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="StopExecution.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="StopExecution.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HAL.Core" Version="1.4.0-beta" />
+  </ItemGroup>
+
+</Project>
