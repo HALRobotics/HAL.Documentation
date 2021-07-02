@@ -25,6 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HAL.Documentation.BasicExamples\HAL.Documentation.Base.csproj" />
+    <ProjectReference Include="..\HAL.Documentation.Base\HAL.Documentation.Base.csproj" />
   </ItemGroup>
 </Project>

@@ -239,10 +239,10 @@ namespace HAL.Documentation.KaplaPlusCamera.Calibration
                 }
             }
 
-            if (socket is CommunicatingObject communicatingObject)
-            {
-                throw new NotImplementedException();
-            }
+            //if (socket is CommunicatingObject communicatingObject)
+            //{
+            //    throw new NotImplementedException();
+            //}
 
             return succeded;
         }

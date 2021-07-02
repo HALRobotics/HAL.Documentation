@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAL.Documentation.Base", "HAL.Documentation.BasicExamples\HAL.Documentation.Base.csproj", "{99793DC1-D25C-4827-866C-FE29121DA2BC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.SimpleApplication", "HAL.Documentation.SimpleApplication\HAL.Documentation.SimpleApplication.csproj", "{9B53A959-4E08-4AAD-85A5-35FC1BF1C365}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.KaplaPlusCamera", "HAL.Documentation.KaplaPlusCamera\HAL.Documentation.KaplaPlusCamera.csproj", "{2FEE10B0-D2C7-4B95-942A-94817D2CF412}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.KaplaPlusDistanceSensor", "HAL.Documentation.KaplaPlusDistanceSensor\HAL.Documentation.KaplaPlusDistanceSensor.csproj", "{7EC65470-7637-4A2E-A5B0-D75CC1617786}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.OptiTrack", "HAL.Documentation.Optitrack\HAL.Documentation.OptiTrack.csproj", "{518A9036-3954-4097-96D9-92C3DE09A90D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.Base", "HAL.Documentation.Base\HAL.Documentation.Base.csproj", "{145882DE-433D-4D9B-B637-9389DDD69897}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAL.Documentation.ATI", "HAL.Documentation.ATI\HAL.Documentation.ATI.csproj", "{E09687EB-0609-48F1-B687-1AFA7F427CB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,12 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{99793DC1-D25C-4827-866C-FE29121DA2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99793DC1-D25C-4827-866C-FE29121DA2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99793DC1-D25C-4827-866C-FE29121DA2BC}.DebugLocalRefs|Any CPU.ActiveCfg = DebugLocalRefs|Any CPU
-		{99793DC1-D25C-4827-866C-FE29121DA2BC}.DebugLocalRefs|Any CPU.Build.0 = DebugLocalRefs|Any CPU
-		{99793DC1-D25C-4827-866C-FE29121DA2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99793DC1-D25C-4827-866C-FE29121DA2BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B53A959-4E08-4AAD-85A5-35FC1BF1C365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B53A959-4E08-4AAD-85A5-35FC1BF1C365}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B53A959-4E08-4AAD-85A5-35FC1BF1C365}.DebugLocalRefs|Any CPU.ActiveCfg = DebugLocalRefs|Any CPU
@@ -42,6 +40,24 @@ Global
 		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
 		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{518A9036-3954-4097-96D9-92C3DE09A90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{518A9036-3954-4097-96D9-92C3DE09A90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{518A9036-3954-4097-96D9-92C3DE09A90D}.DebugLocalRefs|Any CPU.ActiveCfg = Debug|Any CPU
+		{518A9036-3954-4097-96D9-92C3DE09A90D}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
+		{518A9036-3954-4097-96D9-92C3DE09A90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{518A9036-3954-4097-96D9-92C3DE09A90D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145882DE-433D-4D9B-B637-9389DDD69897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145882DE-433D-4D9B-B637-9389DDD69897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145882DE-433D-4D9B-B637-9389DDD69897}.DebugLocalRefs|Any CPU.ActiveCfg = DebugLocalRefs|Any CPU
+		{145882DE-433D-4D9B-B637-9389DDD69897}.DebugLocalRefs|Any CPU.Build.0 = DebugLocalRefs|Any CPU
+		{145882DE-433D-4D9B-B637-9389DDD69897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145882DE-433D-4D9B-B637-9389DDD69897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.DebugLocalRefs|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
+		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

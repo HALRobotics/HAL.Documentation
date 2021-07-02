@@ -63,7 +63,6 @@ namespace HAL.Documentation.SimpleApplication
             var directory = Path.GetDirectoryName(path);
             var directoryName = Path.GetDirectoryName(path);
             var languageFileName = Path.Combine(directory, "Language.lang");
-            File.WriteAllBytes(languageFileName, Resources.Resources.ABB_RAPID_6_0);
             Console.WriteLine($@"'{Path.GetFileName(languageFileName)}' file created at ('{directoryName}')");
             var rapid6ExportingSubsystem = new Rapid6ExportingSubsystem();
             controller.SubsystemManager.Add(rapid6ExportingSubsystem);

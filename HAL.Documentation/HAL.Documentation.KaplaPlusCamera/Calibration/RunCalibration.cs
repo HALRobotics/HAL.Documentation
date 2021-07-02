@@ -42,7 +42,7 @@ namespace HAL.Documentation.KaplaPlusCamera.Calibration
             var session = Serialization.Helpers.DeserializeSession(@"C:\Users\ThomasDelaplanche\SerializedDocuments\SessionTestABB.hal", true);
             var controller = session.ControlGroup.Controllers.OfType<RobotController>().First();
             var mechanism = controller.Controlled.OfType<Mechanism>().First();
-            var cameraController = new CameraController();
+            var cameraController = new Controller(new Identifier("cameraController"),new List<Protocol>());
             //var optitrack = new OptiTrackController();
            // var optiManager = new OptiTrackManager();
             var cameraManager = new CameraManager((mm)2,0);

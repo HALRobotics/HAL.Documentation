@@ -111,6 +111,7 @@ namespace HAL.Documentation.KaplaPlusCamera
 
             // stop provider
             Provider.Stop();
+            
 
             IsRunning = false;
         }
