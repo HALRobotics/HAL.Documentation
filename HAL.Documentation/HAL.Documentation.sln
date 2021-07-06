@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.SimpleApplication", "HAL.Documentation.SimpleApplication\HAL.Documentation.SimpleApplication.csproj", "{9B53A959-4E08-4AAD-85A5-35FC1BF1C365}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.KaplaPlusCamera", "HAL.Documentation.KaplaPlusCamera\HAL.Documentation.KaplaPlusCamera.csproj", "{2FEE10B0-D2C7-4B95-942A-94817D2CF412}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.KaplaPlusDistanceSensor", "HAL.Documentation.KaplaPlusDistanceSensor\HAL.Documentation.KaplaPlusDistanceSensor.csproj", "{7EC65470-7637-4A2E-A5B0-D75CC1617786}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.OptiTrack", "HAL.Documentation.Optitrack\HAL.Documentation.OptiTrack.csproj", "{518A9036-3954-4097-96D9-92C3DE09A90D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.Base", "HAL.Documentation.Base\HAL.Documentation.Base.csproj", "{145882DE-433D-4D9B-B637-9389DDD69897}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAL.Documentation.ATI", "HAL.Documentation.ATI\HAL.Documentation.ATI.csproj", "{E09687EB-0609-48F1-B687-1AFA7F427CB6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.ArduinoDistanceSensor", "HAL.Documentation.ArduinoDistanceSensor\HAL.Documentation.ArduinoDistanceSensor.csproj", "{883CE1A8-926E-437D-9B70-D2663B9F687C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HAL.Documentation.KaplaPlusCamera", "HAL.Documentation.WebCam\HAL.Documentation.KaplaPlusCamera.csproj", "{9E45D931-8A43-43EE-91EC-67E7822D0E1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAL.Documentation.FusionOptiTrackATI", "HAL.Documentation.FusionOptiTrackATI\HAL.Documentation.FusionOptiTrackATI.csproj", "{A0D71DAE-981D-4F65-BF4A-D93A129F57A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,18 +30,6 @@ Global
 		{9B53A959-4E08-4AAD-85A5-35FC1BF1C365}.DebugLocalRefs|Any CPU.Build.0 = DebugLocalRefs|Any CPU
 		{9B53A959-4E08-4AAD-85A5-35FC1BF1C365}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B53A959-4E08-4AAD-85A5-35FC1BF1C365}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FEE10B0-D2C7-4B95-942A-94817D2CF412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FEE10B0-D2C7-4B95-942A-94817D2CF412}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FEE10B0-D2C7-4B95-942A-94817D2CF412}.DebugLocalRefs|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FEE10B0-D2C7-4B95-942A-94817D2CF412}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
-		{2FEE10B0-D2C7-4B95-942A-94817D2CF412}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FEE10B0-D2C7-4B95-942A-94817D2CF412}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.DebugLocalRefs|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
-		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EC65470-7637-4A2E-A5B0-D75CC1617786}.Release|Any CPU.Build.0 = Release|Any CPU
 		{518A9036-3954-4097-96D9-92C3DE09A90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{518A9036-3954-4097-96D9-92C3DE09A90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{518A9036-3954-4097-96D9-92C3DE09A90D}.DebugLocalRefs|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,6 +48,24 @@ Global
 		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
 		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E09687EB-0609-48F1-B687-1AFA7F427CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{883CE1A8-926E-437D-9B70-D2663B9F687C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883CE1A8-926E-437D-9B70-D2663B9F687C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883CE1A8-926E-437D-9B70-D2663B9F687C}.DebugLocalRefs|Any CPU.ActiveCfg = Debug|Any CPU
+		{883CE1A8-926E-437D-9B70-D2663B9F687C}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
+		{883CE1A8-926E-437D-9B70-D2663B9F687C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883CE1A8-926E-437D-9B70-D2663B9F687C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E45D931-8A43-43EE-91EC-67E7822D0E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E45D931-8A43-43EE-91EC-67E7822D0E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E45D931-8A43-43EE-91EC-67E7822D0E1E}.DebugLocalRefs|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E45D931-8A43-43EE-91EC-67E7822D0E1E}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
+		{9E45D931-8A43-43EE-91EC-67E7822D0E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E45D931-8A43-43EE-91EC-67E7822D0E1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D71DAE-981D-4F65-BF4A-D93A129F57A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D71DAE-981D-4F65-BF4A-D93A129F57A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D71DAE-981D-4F65-BF4A-D93A129F57A9}.DebugLocalRefs|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D71DAE-981D-4F65-BF4A-D93A129F57A9}.DebugLocalRefs|Any CPU.Build.0 = Debug|Any CPU
+		{A0D71DAE-981D-4F65-BF4A-D93A129F57A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D71DAE-981D-4F65-BF4A-D93A129F57A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

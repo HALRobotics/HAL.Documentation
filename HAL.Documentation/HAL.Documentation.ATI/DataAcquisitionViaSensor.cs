@@ -27,6 +27,8 @@ namespace HAL.Documentation.ATI
     /// The values of the sensor come directly form the sensor' controller. The values of the ATI sensor can also be comunicated by egm <see cref= HAL.Documentation.ATI"/>.
     class DataAcquisitionViaSensor
     {
+        public static async Task Main() { await Run((kg)0, MatrixFrame.Identity, MatrixFrame.Identity); }
+
         public static async Task Run(Mass sensorMass, MatrixFrame sensorCenterOfMass, MatrixFrame sensorCoordinateSytem, string sensorIpAdress = "192.168.1.205", string listenerIPAdress = "192.168.1.100", string remoteControllerIpAdress = "192.168.1.202")
         {
             var acquisition = new DataAcquisitionViaSensor();
@@ -57,24 +59,12 @@ namespace HAL.Documentation.ATI
 
 
             var monitor = new Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem>{ aTIManager }, egmManager, "");
-            monitor.StateChanged += OnMonitorStateChanged;
-
            
-
-            //Console.WriteLine("Test 1 : Subscribe to event");
-            //manager.StateChanged += Manager_StateChanged;
-            //await manager.Start();
-            //while (_counter < 20) await Task.Delay(100);
-            //manager.StateChanged -= Manager_StateChanged;
-            //manager.Stop();
-
-            //Console.WriteLine("Test 2 : Test get state async.");
-            //Console.WriteLine("Press any key to continue...");
-            //Console.ReadLine();
-            //GetState(manager);
-            //await Task.Delay(3000);
-            //await manager.Start();
-            //Console.ReadLine();
+            monitor.StateChanged += OnMonitorStateChanged;
+            monitor.Start();
+            await Task.Delay(10000);
+            monitor.Stop();
+            
         }
 
         
@@ -102,13 +92,8 @@ namespace HAL.Documentation.ATI
             controller.AddControlledObject(mechanism);
         }
 
-        static int _counter = 0;
-        private static void Manager_StateChanged(Objects.IState current, Objects.IState? previous)
-        {
-            _counter++;
-            Console.WriteLine(current.Date);
-            if (current is ForceSensor6DofState state) Console.WriteLine($"{state.Force}{state.EndPointPosition.LocationInWorld(false)}");
-        }
+        
+       
 
         private static async Task GetState(NetBoxManager manager)
         {
@@ -125,8 +110,7 @@ namespace HAL.Documentation.ATI
             if (sender is Monitor monitor)
             {
                 
-                //var orientation = monitor.CurrentRecord.States.OfType<EGMState>().FirstOrDefault().Tool.EndPointPosition.LocationInWorld(true);
-                var force = monitor.CurrentRecord.States.OfType<ForceSensor6DofState>().FirstOrDefault().Values;
+                var force = monitor.CurrentRecord.States.OfType<ForceSensor6DofState>().FirstOrDefault().CorrectedForce;
 
             }
         }
