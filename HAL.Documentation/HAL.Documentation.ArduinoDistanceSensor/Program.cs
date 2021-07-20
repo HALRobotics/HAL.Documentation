@@ -8,7 +8,7 @@ namespace HAL.Documentation.KaplaPlusDistanceSensor
     {
         static async Task Main(string[] args)
         {
-            Run("127.0.0.1", 1, "COM3");
+            await Run("127.0.0.1", 1, "COM3");
         }
 
         /// <summary>Simple test sensor function. </summary>

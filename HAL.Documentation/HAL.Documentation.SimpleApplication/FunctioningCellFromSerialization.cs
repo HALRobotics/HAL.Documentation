@@ -21,6 +21,7 @@ using HAL.ABB.Control;
 using HAL.Control.Subsystems.Procedures;
 using System.Threading;
 using HAL.Documentation.Base;
+using HAL.Units.Speed;
 
 namespace HAL.Documentation.SimpleApplication
 {
@@ -34,12 +35,12 @@ namespace HAL.Documentation.SimpleApplication
         private static async Task Main(string[] args)
         {
             ///Create a new client and set the required assemblies. Mandatory step. 
-            var client =  new Client(ClientBootSettings.Minimal,
+            var client = new Client(ClientBootSettings.Minimal,
             Assembly.GetAssembly(typeof(ABBController))
             //Assembly.GetAssembly(typeof(IProcedureExportingSubsystem)),
             //Assembly.GetAssembly(typeof(ILoadingCapableSubsystem)),
             );
-           
+
             await client.StartAsync();
 
             InfoLogger = new Logger();
@@ -58,7 +59,18 @@ namespace HAL.Documentation.SimpleApplication
 
             ///Settings 
 
-            ///To genreate a specific setting for each joint.
+            /// Get default values for <see cref="MotionSettings"/>.
+            var defaultMotionSettings = DefaultSettings.Get<MotionSettings>();
+
+            /// Generate custom settings.
+            /// From existing, by cloning, to remove any reference to object.
+            var customMotionSettings = defaultMotionSettings.Clone() as MotionSettings;
+            customMotionSettings.SpeedSettings.PositionSpeed =  (m_s)10;
+            customMotionSettings.SpeedSettings.PositionSpeed +=  (m_s)1;
+            customMotionSettings.SpeedSettings.PositionSpeed /=  2;
+
+            /// From scratch
+            ///To generate a specific setting for each joint.
             var individualJointSpeeds = (new double[] { 10, 20, 10, 20, 10, 20 });
             var individualJointAccelerations = (new double[] { 10, 20, 10, 20, 10, 20 });
 
@@ -71,16 +83,18 @@ namespace HAL.Documentation.SimpleApplication
                         new AccelerationSettings(new JointAccelerations(mechanism.ActiveJoints, individualJointAccelerations)),
                         new BlendSettings(new Length((mm)1.0), new Angle((deg)1.0), new Length((mm)1)));
 
-            /// Define the diferent actions to be performed.
+
+
+            /// Define all different actions to be performed.
             var actions = new List<Action>()
             {
                 ///Motion with empty target and default settings
                 new MotionAction(mechanism, new Target(MatrixFrame.Identity), DefaultSettings.Get<MotionSettings>(),"MinimalMotion"),
                 ///Joint motion
                 new MotionAction (mechanism,new Target(new JointPositions(new Angle[]{(deg)0, (deg)0, (deg)0, (deg)0, (deg)0, (deg)0 })), approachJointSettings," approachJoint"),
-                /// Delay the exection
+                /// Delay the execution
                 new WaitTimeAction((s)3, "Pause"),
-                /// Custom action :  write the identifier alias as a new line. Can be used to call a procedure predefined in the phsyscial controller.
+                /// Custom action :  write the identifier alias as a new line. Can be used to call a procedure predefined in the physical controller.
                 new ActionSet(new Identifier("DO_01"))
             };
             var procedure = new Procedure("BasicActions", actions);
@@ -95,7 +109,7 @@ namespace HAL.Documentation.SimpleApplication
             ///Subscribe to solving events. The logger will display the appropriate alerts when the events are triggered. 
             session.ControlGroup.Solver.SolvingCompleted += OnSolvingCompleted;
             session.ControlGroup.Solver.SolvingStarted += OnSolvingStarted;
-            
+
             ///Start the solving. An unsolved procedure cannot be exported nor uploaded.
             session.ControlGroup.Solver.StartSolution();
             await controller.TryExportAsync(@"C:\Users\ThomasDelaplanche\SerializedDocuments", Linguistics.Export.DeclarationMode.Inline, cancel: CancellationToken.None); ///set the folder where you want to export.
@@ -114,7 +128,7 @@ namespace HAL.Documentation.SimpleApplication
 
 
         #region Events  
-        
+
         /// Actions to performs when the events are triggered 
 
         private static void OnSolvingStarted(object sender, EventArgs e)
@@ -125,7 +139,7 @@ namespace HAL.Documentation.SimpleApplication
         private static void OnSolvingCompleted(object sender, EventArgs e)
         {
             var logged = InfoLogger.Log(Logger.SolvingCompleted());
-        } 
+        }
 
         #endregion
     }

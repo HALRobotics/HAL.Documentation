@@ -17,8 +17,7 @@ namespace HAL.Documentation.OptiTrack
         static async Task Main(string[] args)
         {
             /// Start the client.
-            var client = new Client(ClientBootSettings.Minimal
-            );
+            var client = new Client(ClientBootSettings.Minimal);
             await client.StartAsync();
 
             /// Creates a Reference to be applied to the OptiTrackController. The matrix frame should be the transformation matrix between the OptiTrack world and the phyisical world. It has beeen computed during the calibration.
@@ -59,7 +58,7 @@ namespace HAL.Documentation.OptiTrack
         }
 
         #region MyRegion
-        
+
         /// Optitrack Controller.
         public static OptiTrackController OptiTrack;
         #endregion
