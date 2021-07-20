@@ -27,11 +27,11 @@ namespace HAL.Documentation.SimpleApplication
     public class FunctioningCellFromSerialization
     {
         public static Logger InfoLogger;
-        
-        /// Deserialise a cell, 
-        /// Create and assign a procedure,
-        /// Export the procedure to a local folder or ulpoad it to a phsycial controller.
-        public static async Task Run()
+
+        /// Deserialises a cell, 
+        /// Creates and assigns a procedure,
+        /// Exports the procedure to a local folder or ulpoad it to a phsycial controller.
+        private static async Task Main(string[] args)
         {
             ///Create a new client and set the required assemblies. Mandatory step. 
             var client =  new Client(ClientBootSettings.Minimal,
@@ -100,7 +100,7 @@ namespace HAL.Documentation.SimpleApplication
             session.ControlGroup.Solver.StartSolution();
             await controller.TryExportAsync(@"C:\Users\ThomasDelaplanche\SerializedDocuments", Linguistics.Export.DeclarationMode.Inline, cancel: CancellationToken.None); ///set the folder where you want to export.
 
-            ///
+            /// Select a subsystem abble to export and upload code.
             var canUpload = controller.SubsystemManager.TryGetSubsystem<ILoadingCapableSubsystem>(out var uploader);
             if (canUpload)
             {

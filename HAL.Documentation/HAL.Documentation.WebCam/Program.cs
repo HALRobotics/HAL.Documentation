@@ -1,7 +1,4 @@
 ﻿using HAL.Control;
-using HAL.Documentation.KaplaPlusCamera.Calibration;
-using HAL.Documentation.KaplaPlusCamera.Helpers;
-using HAL.Documentation.KaplaPlusCamera.Providers.Tests;
 using HAL.ImageAnalysis.Implementation.Features;
 using HAL.Objects.Mechanisms;
 using HAL.Runtime;
@@ -20,7 +17,7 @@ namespace HAL.Documentation.KaplaPlusCamera
 
         private static async Task Main()
         {
-            await RunCalibration.Run();
+           // await RunCalibration.Run();
             //CameraOnly.Run(0);
         //    ///Create a new client and set the required assemblies. Mandatory step. 
         //    var client = new Client(ClientBootSettings.Minimal

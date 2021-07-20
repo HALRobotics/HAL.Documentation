@@ -52,7 +52,7 @@ namespace HAL.Documentation.Base.Monitoring
         public override string ToString()
         {
             var str = $"Time stamps : {TimeStamp}" + Environment.NewLine;
-            return States.Aggregate(str, (current, state) => current + ($"{state.Date} : {state.GetType()}." + Environment.NewLine));
+            return States.Aggregate(str, (current, state) => current + ($"{state.Timestamp} : {state.GetType()}." + Environment.NewLine));
         }
     }
 }

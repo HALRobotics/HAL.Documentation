@@ -50,7 +50,7 @@ namespace HAL.Documentation.ATI
 
 
             ///Attach the sensor to the robot.
-            mechanism.AddSubMechanism(sensor, mechanism.ActiveEndPoint, out _, Persistence.Permanent);
+            mechanism.AddSubMechanism(sensor, mechanism.ActiveEndPoint, out _, Persistence.Permanent); //todo doc it in simpleApp
             mechanism.SetEndEffector(sensor); //todo: should the sensor be the end effector? 
 
             ///creates a new EGMManager and add it to the robot.
