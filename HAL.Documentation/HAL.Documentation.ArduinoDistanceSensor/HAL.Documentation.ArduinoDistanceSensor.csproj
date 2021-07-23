@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="HAL.Core" Version="1.4.0-beta" />
+    <PackageReference Include="HAL.ABB" Version="1.4.0-beta" />
   </ItemGroup>
 
 </Project>

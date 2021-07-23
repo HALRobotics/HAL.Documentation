@@ -27,28 +27,31 @@ namespace HAL.Documentation.SimpleApplication
 {
     public class FunctioningCellFromSerialization
     {
+        #region Fields
+
         public static Logger InfoLogger;
 
-        /// Deserialises a cell, 
+        #endregion
+
+        /// Deserializes a cell, 
         /// Creates and assigns a procedure,
-        /// Exports the procedure to a local folder or ulpoad it to a phsycial controller.
-        private static async Task Main(string[] args)
+        /// Exports the procedure to a local folder or upload it to a physical controller.
+        private static async Task Main(string[] args )
+
         {
-            ///Create a new client and set the required assemblies. Mandatory step. 
-            var client = new Client(ClientBootSettings.Minimal,
-            Assembly.GetAssembly(typeof(ABBController))
-            //Assembly.GetAssembly(typeof(IProcedureExportingSubsystem)),
-            //Assembly.GetAssembly(typeof(ILoadingCapableSubsystem)),
-            );
+            ///Creates a new client and sets the required assemblies. Mandatory step. 
+            await new Client(ClientBootSettings.Minimal,Assembly.GetAssembly(typeof(ABBController))).StartAsync();
 
-            await client.StartAsync();
-
+            /// Logger to display informations.
             InfoLogger = new Logger();
 
             #region Session and Cell
 
-            ///Deserialize a session and the cell components.
-            var session = Serialization.Helpers.DeserializeSession(@"C:\Users\ThomasDelaplanche\SerializedDocuments\SessionTestABB.hal", true);
+            ///Add the path there
+            string sessionFile = null;
+            ///Deserializes a session and the cell components. 
+            var serializedSession = sessionFile ?? @"C:\Users\User\SerializedDocuments\SessionTestABB.hal";
+            var session = Serialization.Helpers.DeserializeSession(serializedSession, true);
             var controller = session.ControlGroup.Controllers.OfType<RobotController>().First();
             var mechanism = controller.Controlled.OfType<Mechanism>().First();
             //var mechanism = controller.Controlled.OfType<Mechanism>().Where(m=>m.Identity.Alias =="Robot");
@@ -59,44 +62,57 @@ namespace HAL.Documentation.SimpleApplication
 
             ///Settings 
 
-            /// Get default values for <see cref="MotionSettings"/>.
+            /// Gets default values for <see cref="MotionSettings"/>.
             var defaultMotionSettings = DefaultSettings.Get<MotionSettings>();
 
-            /// Generate custom settings.
+            /// Generates custom settings.
             /// From existing, by cloning, to remove any reference to object.
             var customMotionSettings = defaultMotionSettings.Clone() as MotionSettings;
+            /// Motions can be interpreted in the Cartesian space or joint space. It is specified by the Space property <see cref="MotionSpace"/>.
+            var customCartesianSettings = defaultMotionSettings.Clone() as MotionSettings;
+            customCartesianSettings.Space = MotionSpace.Cartesian;
+            /// In Cartesian space, the motions are performed by applying settings relative to the TCP (e.g. linear speed and angular speed of the TCP).
+            /// Here are some example on how to set or perform operations on the linear speed.
             customMotionSettings.SpeedSettings.PositionSpeed =  (m_s)10;
             customMotionSettings.SpeedSettings.PositionSpeed +=  (m_s)1;
             customMotionSettings.SpeedSettings.PositionSpeed /=  2;
 
-            /// From scratch
-            ///To generate a specific setting for each joint.
+            ///In joint space, the settings of each joint must be specified. It can be simpler to create settings from scratch.
+            ///To generate a specific setting for each joint. Example with joint speeds.
             var individualJointSpeeds = (new double[] { 10, 20, 10, 20, 10, 20 });
-            var individualJointAccelerations = (new double[] { 10, 20, 10, 20, 10, 20 });
-
-            ///To generate all the value at once.  
-            var generalJointSpeeds = Enumerable.Repeat((double)1000, mechanism.ActiveJoints.Count).ToArray();
-            var generalJointAccelerations = Enumerable.Repeat(new Angle((deg)2000).ToDouble(), mechanism.ActiveJoints.Count).ToArray();
-
-            var approachJointSettings = new MotionSettings(
-                        MotionSpace.Joint, new SpeedSettings(new JointSpeeds(mechanism.ActiveJoints, generalJointSpeeds)),
-                        new AccelerationSettings(new JointAccelerations(mechanism.ActiveJoints, individualJointAccelerations)),
+            ///To generate all the value at once. Example with joint accelerations. 
+            var generalJointAccelerations = Enumerable.Repeat(new Angle((deg)20).ToDouble(), mechanism.ActiveJoints.Count).ToArray();
+            /// Joint settings using the two variables specified before.
+            var customJointSettings = new MotionSettings(
+                        MotionSpace.Joint, new SpeedSettings(new JointSpeeds(mechanism.ActiveJoints, individualJointSpeeds)),
+                        new AccelerationSettings(new JointAccelerations(mechanism.ActiveJoints, generalJointAccelerations)),
                         new BlendSettings(new Length((mm)1.0), new Angle((deg)1.0), new Length((mm)1)));
 
 
 
-            /// Define all different actions to be performed.
+            ///Targets to reach.
+            var basicTarget = new Target(new MatrixFrame(new Vector3D(100, 100, 100), RotationMatrix.Identity.RotateAroundX(Math.PI))); ///target from a frame.
+            Target.Transform(basicTarget, "", (mm)50, (mm)0, (mm)0, (deg)0, (deg)0, (deg)45, null, out var transformedTarget); /// target from a transformation of a frame.
+            var jointPositions = new Target(new JointPositions(new Angle[] { (deg)0, (deg)0, (deg)0, (deg)0, (deg)0, (deg)0 }));/// target from joint position.
+
+
+
+            /// Actions to be performed.
             var actions = new List<Action>()
             {
-                ///Motion with empty target and default settings
-                new MotionAction(mechanism, new Target(MatrixFrame.Identity), DefaultSettings.Get<MotionSettings>(),"MinimalMotion"),
-                ///Joint motion
-                new MotionAction (mechanism,new Target(new JointPositions(new Angle[]{(deg)0, (deg)0, (deg)0, (deg)0, (deg)0, (deg)0 })), approachJointSettings," approachJoint"),
+                ///Motions from previously  and default settings
+                new MotionAction(mechanism, basicTarget, defaultMotionSettings,"MinimalMotion"),
+                /// Motion from a transformed target and previously created Cartesian motion settings. 
+                new MotionAction (mechanism, transformedTarget , customCartesianSettings, "cartesianMotion"),
+                /// Motion from a new joint position and the previously created joint motion settings.
+                new MotionAction (mechanism,jointPositions, customJointSettings," approachJoint"),
                 /// Delay the execution
                 new WaitTimeAction((s)3, "Pause"),
                 /// Custom action :  write the identifier alias as a new line. Can be used to call a procedure predefined in the physical controller.
                 new ActionSet(new Identifier("DO_01"))
             };
+
+            ///procedure containing the different actions.
             var procedure = new Procedure("BasicActions", actions);
 
             /// Assign the new procedure to the mechanism.
@@ -114,17 +130,17 @@ namespace HAL.Documentation.SimpleApplication
             session.ControlGroup.Solver.StartSolution();
             await controller.TryExportAsync(@"C:\Users\ThomasDelaplanche\SerializedDocuments", Linguistics.Export.DeclarationMode.Inline, cancel: CancellationToken.None); ///set the folder where you want to export.
 
-            /// Select a subsystem abble to export and upload code.
+            /// Select a subsystem able to export and upload code.
             var canUpload = controller.SubsystemManager.TryGetSubsystem<ILoadingCapableSubsystem>(out var uploader);
             if (canUpload)
             {
-                uploader.TrySetNetworkIdentity("192.168.0.103"); /// Set the real controller Ip adress.
+                uploader.TrySetNetworkIdentity("192.168.0.103"); /// Set the real controller Ip address.
                 await controller.TryExportAndUploadAsync(Linguistics.Export.DeclarationMode.Inline, false, cancel: CancellationToken.None);
             }
 
             #endregion
         }
-
+        
 
 
         #region Events  

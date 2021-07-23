@@ -9,8 +9,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HAL.Documentation.KaplaPlusDistanceSensor
-{
+namespace HAL.Documentation.ArduinoDistanceSensor
+{ 
     public class DistanceSensorEventArg
     {
         /// <summary> Sensor event containing data as <see cref="string"/>. </summary>
@@ -127,8 +127,10 @@ namespace HAL.Documentation.KaplaPlusDistanceSensor
         private Task ReadMessage()
         {
             Message = TryReadMessage();
-            var s = Message.TrimEnd('\r', '\n');
-            InterpretMessage(s);
+            var s = Message.TrimEnd('\r','\n');
+             s = s.TrimEnd('\r');
+            //Console.WriteLine(Message);
+            InterpretMessageData(s);
             StateUpdated?.Invoke(this, new DistanceSensorEventArg(Message));
             return Task.CompletedTask;
         }
@@ -136,65 +138,19 @@ namespace HAL.Documentation.KaplaPlusDistanceSensor
         /// <summary> Raised if <see cref="DistanceSensorManager"/> message was "Stop". </summary>
         public event EventHandler StopReceived;
 
-        /// <summary> Interpretation message logic. </summary>
-        /// <param name="message"></param>
-        protected virtual void InterpretMessage(string message)
-        {
-            if (message == "STOP") StopReceived?.Invoke(this, new EventArgs());
-            else InterpretMessageData(message);
-        }
+        
 
         protected virtual void InterpretMessageData(string message)
         {
-            var datas = message.Split(';').Select(s => int.TryParse(s, out var value) ? value : -1).ToArray();
+           
+            var datas = message.Split(';').Select(s => double.TryParse(s, out var value) ? value : -1).ToArray();
             for (int i = 0; i < datas.Length; i++)
             {
-                
-                DistanceSensors[i].Value = datas[i];
+                DistanceSensors[i].Value = Convert.ToInt32(datas[i]);
             }
         }
 
-        //public async Task CalibrateSensors(int timeWindows)
-        //{
-        //    RecordedRawValues = new Dictionary<int, List<int>>();
-        //    for (int i = 0; i < DistanceSensor.Length; i++)
-        //    {
-        //        Console.WriteLine($"Calibrating sensor number {i}.");
-        //        if (HAL.ConsoleHelper.Runtime.ConsoleClient.PromptConfirmation("Start calibration?"))
-        //        {
-        //            RecordedRawValues[i] = new List<int>();
-        //            await CalibrateSensor(index, timeWindows);
-        //        }
-
-        //    }
-
-        //    foreach (var records in RecordedRawValues)
-        //    {
-        //    }
-
-        //}
-
-        //private async Task CalibrateSensor(int index, int timeWindows)
-        //{
-
-        //    Start();
-        //    StateUpdated -= OnStateUpdate;
-        //    StateUpdated += OnStateUpdate;
-
-        //    await Task.Delay(timeWindows);
-        //    StateUpdated -= OnStateUpdate;
-
-        //}
-
-        //private Dictionary<int, List<int>> RecordedRawValues { get; set; }
-        //private void OnStateUpdate(DistanceSensorManager sender, DistanceSensorEventArg e)
-        //{
-        //    int[] array = InterpretMessageData(e.Data);
-        //    for (int i = 0; i < array.Length; i++)
-        //    {
-        //        RecordedRawValues[i].Add(array[i]);
-        //    }
-        //}
+        
 
         private string TryReadMessage()
         {

@@ -27,19 +27,19 @@ namespace HAL.Documentation.OptiTrack
 
             /// Creates an OptiTrack controller. 
             OptiTrack = new OptiTrackController(null, null, calibration);
-            ///  It can be modified using the manageer
+            ///  It can be modified using the manager
             var manager = new OptiTrackManager();
             OptiTrack.SubsystemManager.Add(manager);
 
-            /// Changed the Ip adress of the data provider. 
-            /// By default the Ip is set on the loopback adress of the computer. 
-            /// If the data comes from the Motive software on the same computer, the loopback adress can be used and this line is not required.
+            /// Changed the Ip address of the data provider. 
+            /// By default the Ip is set on the loopback address of the computer. 
+            /// If the data comes from the Motive software on the same computer, the loopback address can be used and this line is not required.
             manager.TrySetNetworkIdentity("192.100.100.100");
 
             /// Used to modify the OptitrackSettings. If default settings are used, this line is not required.
             manager.SetFilterSettings(new OptiTrackSettings());
 
-            ///Start then stop the continous reception of data and subscribe/unsubscribe to the state changed event. 
+            ///Start then stop the continuous reception of data and subscribe/unsubscribe to the state changed event. 
             await manager.Start();
             manager.StateChanged -= OnManagerStateChanged;
             manager.StateChanged += OnManagerStateChanged;
@@ -47,7 +47,7 @@ namespace HAL.Documentation.OptiTrack
             manager.StateChanged -= OnManagerStateChanged;
             manager.Stop();
 
-            ///actualize and retrieve the controller's data for a single measurment.
+            ///actualize and retrieve the controller's data for a single measurement.
             var currentState = (OptiTrackControllerState)await manager.GetStateAsync();
 
             /// Marker positions in the OptiTrack's World.
@@ -57,13 +57,13 @@ namespace HAL.Documentation.OptiTrack
 
         }
 
-        #region MyRegion
+        #region Properties
 
-        /// Optitrack Controller.
+        /// OptiTrack Controller.
         public static OptiTrackController OptiTrack;
         #endregion
 
-        ///This code will be executed when a new state is asigned to the controller.
+        ///This code will be executed when a new state is assigned to the controller.
         private static void OnManagerStateChanged(Objects.IState current, Objects.IState previous)
         {
             if (current is OptiTrackControllerState state)
