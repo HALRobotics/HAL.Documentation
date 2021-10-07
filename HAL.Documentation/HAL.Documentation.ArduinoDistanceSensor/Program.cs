@@ -13,7 +13,7 @@ using HAL.Units.Electrical;
 
 namespace HAL.Documentation.ArduinoDistanceSensor
 {
-    class Program
+    public class Program
     {
         #region Properties
         public static ElectricSignal StopSignal { get; set; }

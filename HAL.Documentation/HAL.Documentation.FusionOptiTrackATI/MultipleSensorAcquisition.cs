@@ -8,6 +8,8 @@ using HAL.Documentation.Base.Monitoring;
 using HAL.Graphs;
 using HAL.Objects.Mechanisms;
 using HAL.Objects.Sensors.Force;
+using HAL.OptiTrack.Control;
+using HAL.OptiTrack.Control.Subsystems;
 using HAL.Runtime;
 using HAL.Spatial;
 using HAL.Units.Mass;
@@ -20,11 +22,6 @@ using System.Threading.Tasks;
 
 namespace HAL.Documentation.ATI
 {
-    /// <summary>
-    /// This is an example on how to use a 6DOF force sensor such as the ATI sensor with a correction on the gravity forces applied to the sensor.
-    /// Prior to that the sensor must be calibrated. To apply and maintain the calibration, the orientation of the sensor in the world must be known.
-    /// For this example, using an ATI sensor and an ABB robot, the position of the robot and therefore of the sensor is communicated by EGM. 
-    /// The values of the sensor come directly form the sensor' controller. The values of the ATI sensor can also be communicated by <see cref= HAL.Documentation.ATI"/>.
     class DataAcquisitionViaSensor
     {
         public static async Task Main()
@@ -34,9 +31,9 @@ namespace HAL.Documentation.ATI
             await Run((kg)10, MatrixFrame.Identity, frame);
         }
 
-        public static async Task Run(Mass sensorMass, MatrixFrame sensorCenterOfMass, MatrixFrame sensorCoordinateSytem, string sensorIPAddress = "192.168.1.205", string listenerIPAddress = "192.168.1.184", string remoteControllerIPAddress = "192.168.1.202")
+        public static async Task Run(Mass sensorMass, MatrixFrame sensorCenterOfMass, MatrixFrame sensorCoordinateSytem, string sensorIPAddress = "192.168.1.205", string listenerIPAddress = "192.168.1.184", string remoteControllerIPAddress = "192.168.1.202", string optiTrackIPAddress = "192.100.100.100")
         {
-            var acquisition = new DataAcquisitionViaSensor(); //todo is this ok?
+            var acquisition = new DataAcquisitionViaSensor(); 
 
             var client = new Client(ClientBootSettings.Minimal, Assembly.GetAssembly(typeof(NetBoxManager)), Assembly.GetAssembly(typeof(ABBController)));
             await client.StartAsync();
@@ -55,33 +52,26 @@ namespace HAL.Documentation.ATI
 
 
             ///Attach the sensor to the robot.
-            mechanism.AddSubMechanism(sensor, mechanism.ActiveEndPoint, out _, Persistence.Permanent); //todo doc it in simpleApp
-            mechanism.SetEndEffector(sensor);  
+            mechanism.AddSubMechanism(sensor, mechanism.ActiveEndPoint, out _, Persistence.Permanent);
+            mechanism.SetEndEffector(sensor);
 
             ///creates a new EGMManager and add it to the robot.
             var egmManager = new EGMManager(iPListenerIPAddress, 6510, mechanism);
             robotController.SubsystemManager.Add(egmManager);
 
+            /// Creates an OptiTrack controller. 
+            var optiTrackController = new OptiTrackController();
+            var optiTrackManager = new OptiTrackManager();
+            optiTrackController.SubsystemManager.Add(optiTrackManager);
+            optiTrackManager.TrySetNetworkIdentity(optiTrackIPAddress);
 
-            var monitor = new Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { aTIManager }, egmManager, "");
+            var monitor = new Monitor("Monitors the sensors", new List<IStateReceivingSubsystem> {optiTrackManager, aTIManager }, egmManager, "");
             monitor.StateChanged += OnMonitorStateChanged;
             monitor.Start();
             await Task.Delay(10000);
             monitor.Stop();
 
         }
-
-        private static void EgmManager_StateChanged(Objects.IState current, Objects.IState previous)
-        {
-            if (current is EGMState state) Console.WriteLine(state.Tool.EndPointPosition.LocationInWorld(true));
-        }
-
-        private static void ATIManager_StateChanged(Objects.IState current, Objects.IState previous)
-        {
-            if (current is ForceSensor6DofState state) Console.WriteLine(state.Force);
-
-        }
-
 
 
         /// <summary> Creates the force sensor and it's manager.</summary>
@@ -108,9 +98,6 @@ namespace HAL.Documentation.ATI
 
         }
 
-
-
-
         private static async Task GetState(NetBoxManager manager)
         {
             while (true)
@@ -133,13 +120,13 @@ namespace HAL.Documentation.ATI
                     {
                         foreach (HAL.Control.Subsystems.IControllerSubsystem subsystem in controllerState?.Source.SubsystemManager.Subsystems)
                         {
-                            if (subsystem is NetBoxManager netBoxManager) // Todo : make every 6DOFForce Sensor Manager an I6DOForceSensorManager?
+                            if (subsystem is NetBoxManager netBoxManager && netBoxManager.State is ForceSensor6DofState forceSensor6DofState) // Todo : make every 6DOFForce Sensor Manager an I6DOForceSensorManager?
                             {
-                                if (netBoxManager.State is ForceSensor6DofState forceSensor6DofState)
-                                {
-                                    Console.WriteLine($"Force: {forceSensor6DofState.Force}");
                                     Console.WriteLine($"Corrected force: {forceSensor6DofState.CorrectedForce}");
-                                }
+                            }
+                            if (subsystem is OptiTrackManager optiTrackManager && optiTrackManager.Controller is OptiTrackController optiTrackController )
+                            {
+                                Console.WriteLine($"First Body position: {optiTrackController.Bodies.FirstOrDefault().Location}");
                             }
 
                         }

@@ -30,10 +30,6 @@ namespace HAL.Documentation.ArduinoDistanceSensor
 
         public int Index { get; private set; }
         public int Value { get; set; }
-        //public abs Value => Range.Clamp(RawValue).Value;
-        //private abs RawValue { get; set; }
-        //private AbsoluteInterval Range { get; set; }
-        //public void Calibrate(abs t0, abs t1) => Range = new AbsoluteInterval(t0, t1);
 
     }
 
@@ -128,15 +124,12 @@ namespace HAL.Documentation.ArduinoDistanceSensor
         {
             Message = TryReadMessage();
             var s = Message.TrimEnd('\r','\n');
-             s = s.TrimEnd('\r');
-            //Console.WriteLine(Message);
+            s = s.TrimEnd('\r');
             InterpretMessageData(s);
             StateUpdated?.Invoke(this, new DistanceSensorEventArg(Message));
             return Task.CompletedTask;
         }
 
-        /// <summary> Raised if <see cref="DistanceSensorManager"/> message was "Stop". </summary>
-        public event EventHandler StopReceived;
 
         
 

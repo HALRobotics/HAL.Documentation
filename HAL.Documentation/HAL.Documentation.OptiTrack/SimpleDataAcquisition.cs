@@ -27,12 +27,11 @@ namespace HAL.Documentation.OptiTrack
 
             /// Creates an OptiTrack controller. 
             OptiTrack = new OptiTrackController(null, null, calibration);
-            ///  It can be modified using the manager
             var manager = new OptiTrackManager();
             OptiTrack.SubsystemManager.Add(manager);
 
-            /// Changed the Ip address of the data provider. 
-            /// By default the Ip is set on the loopback address of the computer. 
+            /// Changed the IP address of the data provider. 
+            /// By default the IP is set on the loopback address of the computer. 
             /// If the data comes from the Motive software on the same computer, the loopback address can be used and this line is not required.
             manager.TrySetNetworkIdentity("192.100.100.100");
 

@@ -69,7 +69,7 @@ namespace HAL.Documentation.Base.Monitoring
         /// <param name="executionControl">Control.</param>
         /// <param name="record">Whether it should record received states.</param>
         [Function("{E8D3FA87-5FC6-4F68-B6B0-5BA5C972EBC8}", "Execute", "Execute", "Control state monitor", 0)]
-        [FunctionSuite("{00E88BF9-3A34-4BBD-8CE5-7ED2AD4B8EE4}", "Execute", "Execute", "Control state monito", 1)]
+        [FunctionSuite("{00E88BF9-3A34-4BBD-8CE5-7ED2AD4B8EE4}", "Execute", "Execute", "Control state monitor", 1)]
         [FunctionSubcategory(HAL.Documentation.Base.Monitoring.FonctionSubCategory.Monitoring)]
         public static void Execute(Monitor monitor, bool executionControl, [Default(false)] bool record)
         {
