@@ -31,7 +31,7 @@ namespace HAL.Documentation.ATI
 
         public static async Task Run(Mass sensorMass, MatrixFrame sensorCenterOfMass, MatrixFrame sensorCoordinateSytem, string sensorIpAdress = "192.168.1.205", string listenerIPAdress = "192.168.1.184", string remoteControllerIpAdress = "192.168.1.202")
         {
-            var acquisition = new DataAcquisitionViaSensor(); //todo is this ok?
+            //var acquisition = new DataAcquisitionViaSensor(); //todo is this ok?
 
             var client = new Client(ClientBootSettings.Minimal, Assembly.GetAssembly(typeof(NetBoxManager)), Assembly.GetAssembly(typeof(ABBController)));
             await client.StartAsync();
@@ -41,9 +41,9 @@ namespace HAL.Documentation.ATI
             var iPListenerIPAdress = IPAddress.Parse(listenerIPAdress);
             var iPSensorIpAdress = IPAddress.Parse(sensorIpAdress);
 
-            acquisition.DeserializeSession(out var robotController, out var mechanism);
+            DeserializeSession(out var robotController, out var mechanism);
 
-            acquisition.SetSensor(sensorCoordinateSytem, sensorMass, sensorCenterOfMass, iPSensorIpAdress, iPListenerIPAdress, out var aTIManager, out var sensor);
+            SetSensor(sensorCoordinateSytem, sensorMass, sensorCenterOfMass, iPSensorIpAdress, iPListenerIPAdress, out var aTIManager, out var sensor);
             var atiController = new ATIController();
             atiController.AddControlledObject(sensor);
             atiController.SubsystemManager.Add(aTIManager);
@@ -56,16 +56,16 @@ namespace HAL.Documentation.ATI
             ///creates a new EGMManager and add it to the robot.
             var egmManager = new EGMManager(iPListenerIPAdress, 6510, mechanism);
             robotController.SubsystemManager.Add(egmManager);
-            
-         
 
-            var monitor = new Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { egmManager }, aTIManager, "");
+            var monitor = new Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { aTIManager }, egmManager, "");
             monitor.StateChanged += OnMonitorStateChanged;
             monitor.Start();
             await Task.Delay(10000);
             monitor.Stop();
 
         }
+
+
 
         private static void EgmManager_StateChanged(Objects.IState current, Objects.IState previous)
         {
@@ -81,7 +81,7 @@ namespace HAL.Documentation.ATI
 
 
         /// <summary> Creates the force sensor and it's manager.</summary>
-        public void SetSensor(MatrixFrame sensorCoordinateSytem, Mass sensorMass, MatrixFrame sensorCenterOfMass, IPAddress sensorIp, IPAddress listenerIp, out NetBoxManager manager, out ForceSensor6Dof sensor, int senderPort = 49152, int receiverPort = 60041) //todo revieuw in/output order
+        public static void SetSensor(MatrixFrame sensorCoordinateSytem, Mass sensorMass, MatrixFrame sensorCenterOfMass, IPAddress sensorIp, IPAddress listenerIp, out NetBoxManager manager, out ForceSensor6Dof sensor, int senderPort = 49152, int receiverPort = 60041) //todo revieuw in/output order
         {
             //Creates a sensor's manager and set the IP addresses. 
             manager = new NetBoxManager();
@@ -95,17 +95,13 @@ namespace HAL.Documentation.ATI
         }
 
         /// <summary>Deserialize a session and extract the controller and mechanism.</summary>
-        public void DeserializeSession(out RobotController controller, out Mechanism mechanism)
+        public static void DeserializeSession(out RobotController controller, out Mechanism mechanism)
         {
             var session = Serialization.Helpers.DeserializeSession(@"C:\Users\ThomasDelaplanche\SerializedDocuments\SessionTestABB.hal", true);
             controller = session.ControlGroup.Controllers.OfType<RobotController>().First();
             mechanism = controller.Controlled.OfType<Mechanism>().First();
             controller.AddControlledObject(mechanism);
-
         }
-
-
-
 
         private static async Task GetState(NetBoxManager manager)
         {
@@ -122,7 +118,7 @@ namespace HAL.Documentation.ATI
             if (sender is Monitor monitor)
             {
 
-                
+
                 foreach (HAL.Control.ControllerState controllerState in monitor.CurrentRecord.States)
                 {
                     if (!(controllerState is null))
@@ -135,7 +131,7 @@ namespace HAL.Documentation.ATI
                             }
                         }
                     }
-                    
+
                 }
 
                 //  var forceState = forceStates.FirstOrDefault();//.CorrectedForce;

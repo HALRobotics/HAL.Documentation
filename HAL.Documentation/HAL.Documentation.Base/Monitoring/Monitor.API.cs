@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using HAL.Alerts;
 using HAL.Control;
 using HAL.Control.Subsystems.Communication;
@@ -71,10 +72,10 @@ namespace HAL.Documentation.Base.Monitoring
         [Function("{E8D3FA87-5FC6-4F68-B6B0-5BA5C972EBC8}", "Execute", "Execute", "Control state monitor", 0)]
         [FunctionSuite("{00E88BF9-3A34-4BBD-8CE5-7ED2AD4B8EE4}", "Execute", "Execute", "Control state monito", 1)]
         [FunctionSubcategory(HAL.Documentation.Base.Monitoring.FonctionSubCategory.Monitoring)]
-        public static void Execute(Monitor monitor, bool executionControl, [Default(false)] bool record)
+        public static void Execute(Monitor monitor, bool run, [Default(false)] bool record)
         {
             monitor.IsRecording = record;
-            monitor.ExecutionControl = executionControl;
+            monitor.ExecutionControl = run;
         }
 
         /// <summary>Add Record Marker. </summary>
@@ -119,6 +120,7 @@ namespace HAL.Documentation.Base.Monitoring
         public static void GetProperties(Monitor monitor, out Recorder recorder)
         {
             recorder = monitor?.Recorder;
+            recorder.Records.Select(r=>r.)
         }
     }
 }
