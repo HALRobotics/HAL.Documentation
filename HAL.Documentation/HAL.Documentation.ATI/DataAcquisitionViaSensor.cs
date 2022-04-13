@@ -4,6 +4,7 @@ using HAL.ATI.Control;
 using HAL.ATI.Control.Subsystems;
 using HAL.Control;
 using HAL.Control.Subsystems.Communication;
+using HAL.Documentation.Base;
 using HAL.Documentation.Base.Monitoring;
 using HAL.Graphs;
 using HAL.Objects.Mechanisms;
@@ -29,45 +30,37 @@ namespace HAL.Documentation.ATI
     {
         public static async Task Main()
         {
-            MatrixFrame frame = MatrixFrame.Identity.RotateAroundWorldZ(2);
+            MatrixFrame coordinateSytem = MatrixFrame.Identity.RotateAroundWorldZ(2);
 
-            await Run((kg)10, MatrixFrame.Identity, frame);
+            await Run((kg)10, MatrixFrame.Identity, MatrixFrame.Identity, coordinateSytem);
         }
 
-        public static async Task Run(Mass sensorMass, MatrixFrame sensorCenterOfMass, MatrixFrame sensorCoordinateSytem, string sensorIPAddress = "192.168.1.205", string listenerIPAddress = "192.168.1.184", string remoteControllerIPAddress = "192.168.1.202")
+        public static async Task Run(Mass sensorMass, MatrixFrame frame, MatrixFrame sensorCenterOfMass, MatrixFrame sensorCoordinateSytem, string sensorIPAddress = "192.168.1.205", string listenerIPAddress = "192.168.1.184", string remoteControllerIPAddress = "192.168.1.202")
         {
-            var acquisition = new DataAcquisitionViaSensor(); //todo is this ok?
+
 
             var client = new Client(ClientBootSettings.Minimal, Assembly.GetAssembly(typeof(NetBoxManager)), Assembly.GetAssembly(typeof(ABBController)));
             await client.StartAsync();
 
-            ///converts the strings in IpAdresses.
-            var iPRemoteControllerIPAddress = IPAddress.Parse(remoteControllerIPAddress);
-            var iPListenerIPAddress = IPAddress.Parse(listenerIPAddress);
-            var iPSensorIPAddress = IPAddress.Parse(sensorIPAddress);
+            var virtualCell = new AtiVirtualCell(client, @"C:\Users\ThomasDelaplanche\Documents\HAL\Exports\SerializedSessions\TestSession.hal");
+            virtualCell.CommunicationSettings.IpSettings.Add(new IpSettings("SensorAddress", sensorIPAddress, 49152));
+            virtualCell.CommunicationSettings.IpSettings.Add(new IpSettings("ListenerAddress", listenerIPAddress, 60041));
+            virtualCell.CommunicationSettings.IpSettings.Add(new IpSettings("RemoteControllerAddress", remoteControllerIPAddress));
 
-            acquisition.DeserializeSession(out var robotController, out var mechanism);
+            virtualCell.ForceSensorSettings = new ForceSensorSettings(frame,sensorCoordinateSytem,sensorMass,sensorCenterOfMass);
+            virtualCell.InitializeForce();
 
-            acquisition.SetSensor(sensorCoordinateSytem, sensorMass, sensorCenterOfMass, iPSensorIPAddress, iPListenerIPAddress, out var aTIManager, out var sensor);
-            var atiController = new ATIController();
-            atiController.AddControlledObject(sensor);
-            atiController.SubsystemManager.Add(aTIManager);
+            var mechanism = virtualCell.Mechanism;
+            var robotController = virtualCell.Controller;
 
-
-            ///Attach the sensor to the robot.
-            mechanism.AddSubMechanism(sensor, mechanism.ActiveEndPoint, out _, Persistence.Permanent); //todo doc it in simpleApp
-            mechanism.SetEndEffector(sensor);  
-
-            ///creates a new EGMManager and add it to the robot.
-            var egmManager = new EGMManager(iPListenerIPAddress, 6510, mechanism);
-            robotController.SubsystemManager.Add(egmManager);
-
-
-            var monitor = new Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { aTIManager }, egmManager, "");
+            var monitor = new Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { virtualCell.AtiManager }, virtualCell.EgmManager, "");
             monitor.StateChanged += OnMonitorStateChanged;
             monitor.Start();
+            GetState(virtualCell.AtiManager);
             await Task.Delay(10000);
             monitor.Stop();
+
+            //Todo: show how to save data from monitor
 
         }
 
@@ -83,34 +76,6 @@ namespace HAL.Documentation.ATI
         }
 
 
-
-        /// <summary> Creates the force sensor and it's manager.</summary>
-        public void SetSensor(MatrixFrame sensorCoordinateSytem, Mass sensorMass, MatrixFrame sensorCenterOfMass, IPAddress sensorIp, IPAddress listenerIp, out NetBoxManager manager, out ForceSensor6Dof sensor, int senderPort = 49152, int receiverPort = 60041) //todo revieuw in/output order
-        {
-            //Creates a sensor's manager and set the IP addresses. 
-            manager = new NetBoxManager();
-            manager.TrySetNetworkIdentity($"{listenerIp}:{receiverPort}");
-            manager.TrySetSensorNetworkIdentity($"{sensorIp}:{senderPort}");
-
-            ///Create the sensor and set its geometric parameters.
-            ForceSensor6Dof instance = null;
-            ForceSensor6Dof.Create(ref instance, "AtiSensor", MatrixFrame.Identity, sensorCoordinateSytem, null, null, sensorMass, sensorCenterOfMass, MatrixFrame.Identity, out sensor); ;
-            Console.WriteLine(sensor.Identity);
-        }
-
-        /// <summary>Deserialize a session and extract the controller and mechanism.</summary>
-        public void DeserializeSession(out RobotController controller, out Mechanism mechanism)
-        {
-            var session = Serialization.Helpers.DeserializeSession(@"C:\Users\ThomasDelaplanche\SerializedDocuments\SessionTestABB.hal", true);
-            controller = session.ControlGroup.Controllers.OfType<RobotController>().First();
-            mechanism = controller.Controlled.OfType<Mechanism>().First();
-            controller.AddControlledObject(mechanism);
-
-        }
-
-
-
-
         private static async Task GetState(NetBoxManager manager)
         {
             while (true)
@@ -120,6 +85,8 @@ namespace HAL.Documentation.ATI
                 await Task.Delay(500);
             }
         }
+
+
 
         private static void OnMonitorStateChanged(object sender, EventArgs e)
         {
