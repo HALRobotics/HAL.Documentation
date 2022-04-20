@@ -27,36 +27,20 @@ namespace HAL.Documentation.SimpleApplication
 {
     public class FunctioningCellFromSerialization
     {
-        #region Fields
-
-        public static Logger InfoLogger;
-
-        #endregion
 
         /// Deserializes a cell, 
         /// Creates and assigns a procedure,
         /// Exports the procedure to a local folder or upload it to a physical controller.
-        private static async Task Main(string[] args )
-
+        private static async Task Main(string[] args)
+        {
+            await Run("","",new IpSettings("ControllerAddress","192.168.1.202"));
+        }
+        public static async Task Run(string sessionPath, string exportPath, IpSettings controllerIp)
         {
             ///Creates a new client and sets the required assemblies. Mandatory step. 
-            await new Client(ClientBootSettings.Minimal,Assembly.GetAssembly(typeof(ABBController))).StartAsync();
+            await new Client(ClientBootSettings.Minimal, Assembly.GetAssembly(typeof(ABBController))).StartAsync();
 
-            /// Logger to display informations.
-            InfoLogger = new Logger();
-
-            #region Session and Cell
-
-            ///Add the path there
-            string sessionFile = null;
-            ///Deserializes a session and the cell components. 
-            var serializedSession = sessionFile ?? @"C:\Users\User\SerializedDocuments\SessionTestABB.hal";
-            var session = Serialization.Helpers.DeserializeSession(serializedSession, true);
-            var controller = session.ControlGroup.Controllers.OfType<RobotController>().First();
-            var mechanism = controller.Controlled.OfType<Mechanism>().First();
-            //var mechanism = controller.Controlled.OfType<Mechanism>().Where(m=>m.Identity.Alias =="Robot");
-            //var robot = mechanism.SubMechanisms.FirstOrDefault();
-            #endregion
+            var virtualCell = new VirtualCell(null, sessionPath);
 
             #region Procedure
 
@@ -73,19 +57,19 @@ namespace HAL.Documentation.SimpleApplication
             customCartesianSettings.Space = MotionSpace.Cartesian;
             /// In Cartesian space, the motions are performed by applying settings relative to the TCP (e.g. linear speed and angular speed of the TCP).
             /// Here are some example on how to set or perform operations on the linear speed.
-            customMotionSettings.SpeedSettings.PositionSpeed =  (m_s)10;
-            customMotionSettings.SpeedSettings.PositionSpeed +=  (m_s)1;
-            customMotionSettings.SpeedSettings.PositionSpeed /=  2;
+            customMotionSettings.SpeedSettings.PositionSpeed = (m_s)10;
+            customMotionSettings.SpeedSettings.PositionSpeed += (m_s)1;
+            customMotionSettings.SpeedSettings.PositionSpeed /= 2;
 
             ///In joint space, the settings of each joint must be specified. It can be simpler to create settings from scratch.
             ///To generate a specific setting for each joint. Example with joint speeds.
             var individualJointSpeeds = (new double[] { 10, 20, 10, 20, 10, 20 });
             ///To generate all the value at once. Example with joint accelerations. 
-            var generalJointAccelerations = Enumerable.Repeat(new Angle((deg)20).ToDouble(), mechanism.ActiveJoints.Count).ToArray();
+            var generalJointAccelerations = Enumerable.Repeat(new Angle((deg)20).ToDouble(), virtualCell.Mechanism.ActiveJoints.Count).ToArray();
             /// Joint settings using the two variables specified before.
             var customJointSettings = new MotionSettings(
-                        MotionSpace.Joint, new SpeedSettings(new JointSpeeds(mechanism.ActiveJoints, individualJointSpeeds)),
-                        new AccelerationSettings(new JointAccelerations(mechanism.ActiveJoints, generalJointAccelerations)),
+                        MotionSpace.Joint, new SpeedSettings(new JointSpeeds(virtualCell.Mechanism.ActiveJoints, individualJointSpeeds)),
+                        new AccelerationSettings(new JointAccelerations(virtualCell.Mechanism.ActiveJoints, generalJointAccelerations)),
                         new BlendSettings(new Length((mm)1.0), new Angle((deg)1.0), new Length((mm)1)));
 
 
@@ -101,11 +85,11 @@ namespace HAL.Documentation.SimpleApplication
             var actions = new List<Action>()
             {
                 ///Motions from previously  and default settings
-                new MotionAction(mechanism, basicTarget, defaultMotionSettings,"MinimalMotion"),
+                new MotionAction(virtualCell.Mechanism, basicTarget, defaultMotionSettings,"MinimalMotion"),
                 /// Motion from a transformed target and previously created Cartesian motion settings. 
-                new MotionAction (mechanism, transformedTarget , customCartesianSettings, "cartesianMotion"),
+                new MotionAction (virtualCell.Mechanism, transformedTarget , customCartesianSettings, "cartesianMotion"),
                 /// Motion from a new joint position and the previously created joint motion settings.
-                new MotionAction (mechanism,jointPositions, customJointSettings," approachJoint"),
+                new MotionAction (virtualCell.Mechanism,jointPositions, customJointSettings," approachJoint"),
                 /// Delay the execution
                 new WaitTimeAction((s)3, "Pause"),
                 /// Custom action :  write the identifier alias as a new line. Can be used to call a procedure predefined in the physical controller.
@@ -116,47 +100,16 @@ namespace HAL.Documentation.SimpleApplication
             var procedure = new Procedure("BasicActions", actions);
 
             /// Assign the new procedure to the mechanism.
-            controller.Assign(mechanism, procedure);
+            virtualCell.Controller.Assign(virtualCell.Mechanism, procedure);
 
             #endregion
+            virtualCell.CommunicationSettings.IpSettings.Add(controllerIp);
+            await virtualCell.Export(controllerIp.IpAddress.ToString());
 
-            #region Solving and export
-
-            ///Subscribe to solving events. The logger will display the appropriate alerts when the events are triggered. 
-            session.ControlGroup.Solver.SolvingCompleted += OnSolvingCompleted;
-            session.ControlGroup.Solver.SolvingStarted += OnSolvingStarted;
-
-            ///Start the solving. An unsolved procedure cannot be exported nor uploaded.
-            session.ControlGroup.Solver.StartSolution();
-            await controller.TryExportAsync(@"C:\Users\ThomasDelaplanche\SerializedDocuments", Linguistics.Export.DeclarationMode.Inline, cancel: CancellationToken.None); ///set the folder where you want to export.
-
-            /// Select a subsystem able to export and upload code.
-            var canUpload = controller.SubsystemManager.TryGetSubsystem<ILoadingCapableSubsystem>(out var uploader);
-            if (canUpload)
-            {
-                uploader.TrySetNetworkIdentity("192.168.0.103"); /// Set the real controller Ip address.
-                await controller.TryExportAndUploadAsync(Linguistics.Export.DeclarationMode.Inline, false, cancel: CancellationToken.None);
-            }
-
-            #endregion
-        }
-        
-
-
-        #region Events  
-
-        /// Actions to performs when the events are triggered 
-
-        private static void OnSolvingStarted(object sender, EventArgs e)
-        {
-            var logged = InfoLogger.Log(Logger.SolvingStarted());
         }
 
-        private static void OnSolvingCompleted(object sender, EventArgs e)
-        {
-            var logged = InfoLogger.Log(Logger.SolvingCompleted());
-        }
 
-        #endregion
+
+
     }
 }

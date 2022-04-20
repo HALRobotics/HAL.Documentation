@@ -309,6 +309,42 @@ namespace HAL.Documentation.Base.Monitoring
 
         #endregion
 
+        #region Helper
+
+        /// <summary>
+        /// Retrives specified by type states in the current reccorder. 
+        /// </summary>
+        /// <param name="statesTypes"></param>
+        /// <param name="stateReceivingSubsystemsTypes"></param>
+        /// <param name="states"></param>
+        public List<IState> GetMonitorState(List<Type> statesTypes, List<Type> stateReceivingSubsystemsTypes = null)
+        {
+            var states = new List<IState>();
+            foreach (HAL.Control.ControllerState controllerState in CurrentRecord.States)
+            {
+                if (!(controllerState is null))
+                {
+                    foreach (HAL.Control.Subsystems.IControllerSubsystem subsystem in controllerState?.Source.SubsystemManager.Subsystems)
+                    {
+                        if (subsystem is StateReceivingSubsystem manager)
+                        {
+                            var typeIndex = statesTypes.IndexOf(manager.State.GetType());
+                            if (typeIndex != -1)
+                            {
+                                if (stateReceivingSubsystemsTypes is not null && statesTypes.Count() == stateReceivingSubsystemsTypes.Count() && manager.GetType() == stateReceivingSubsystemsTypes[typeIndex]) states.Add(manager.State);
+
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            return states;
+        }
+
+        #endregion
+
         public string HumanReadableStates()
         {
             var str = $"Last record : {CurrentRecord}{Environment.NewLine}";
