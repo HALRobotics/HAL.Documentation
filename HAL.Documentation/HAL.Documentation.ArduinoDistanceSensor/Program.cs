@@ -22,10 +22,11 @@ namespace HAL.Documentation.ArduinoDistanceSensor
             var iPAddress = "127.0.0.1";
             var iPPort = "COM3";
             var StopsSignalsAlias = "DO_Inter";
+            var threshold = 10;
             
             //Uncomment an example to test it.
             //await ReadDistance.Run(iPAddress, iPPort);
-            await ReadDistanceAndStop.Run(iPAddress, iPPort, StopsSignalsAlias);
+            await ReadDistanceAndStop.Run(iPAddress, iPPort, StopsSignalsAlias,threshold);
         }
 
 

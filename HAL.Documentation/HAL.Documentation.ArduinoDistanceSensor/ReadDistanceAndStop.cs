@@ -28,7 +28,7 @@ namespace HAL.Documentation.ArduinoDistanceSensor
 
         /// <summary>Simple test sensor function.</summary>
         /// <returns>Completed task.</returns>
-        public static async Task Run(string RwsIPAddress, string distanceSensorCOM, string stopSignalId, double )
+        public static async Task Run(string RwsIPAddress, string distanceSensorCOM, string stopSignalId, double threshold )
         {
             var client = new Client(ClientBootSettings.Minimal, Assembly.GetAssembly(typeof(ABBController)));
             await client.StartAsync();
