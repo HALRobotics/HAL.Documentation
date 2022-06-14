@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace HAL.Documentation.ArduinoDistanceSensor
-{ 
+{
     public class DistanceSensorEventArg
     {
         /// <summary> Sensor event containing data as <see cref="string"/>. </summary>
@@ -21,17 +21,7 @@ namespace HAL.Documentation.ArduinoDistanceSensor
         public string Data { get; }
     }
 
-    public class DistanceSensor : Identified
-    {
-        public DistanceSensor(string alias, int index) : base(alias)
-        {
-            Index = index;
-        }
-
-        public int Index { get; private set; }
-        public int Value { get; set; }
-
-    }
+    
 
     /// <summary> Base implementation of a <see cref="DistanceSensorManager"/> communicating through <see cref="SerialPort"/>. </summary>
     public class DistanceSensorManager : IDisposable
@@ -44,15 +34,10 @@ namespace HAL.Documentation.ArduinoDistanceSensor
         /// <summary> Create a new <see cref="DistanceSensorManager"/>. </summary>
         /// <param name="portName">Set <see cref="SerialPort"/> port name.</param>
         /// <param name="baudrate">Set <see cref="SerialPort"/> baudrate.</param>
-        public DistanceSensorManager(int sensorNumber, string portName, int baudrate = 9600)
+        public DistanceSensorManager(string portName, int baudrate = 9600)
         {
             PortName = portName;
             Baudrate = baudrate;
-            DistanceSensors = new DistanceSensor[sensorNumber];
-            for (int i = 0; i < DistanceSensors.Length; i++)
-            {
-                DistanceSensors[i] = new DistanceSensor($"Sensor-{i}", i);
-            }
         }
         #endregion
 
@@ -63,14 +48,16 @@ namespace HAL.Documentation.ArduinoDistanceSensor
         private int Baudrate { get; }
         private CancellationTokenSource Cancel { get; set; }
         private string Message { get; set; }
-        public DistanceSensor[] DistanceSensors { get; set; }
+        public int Value { get; set; }
+        
         #endregion
 
         #region Methods
+
         private bool Initialize()
         {
             IsInitialized = false;
-           _serialPort= _serialPort ??  new SerialPort { PortName = PortName, BaudRate = Baudrate };
+            _serialPort = _serialPort ?? new SerialPort { PortName = PortName, BaudRate = Baudrate };
 
             try
             {
@@ -123,27 +110,13 @@ namespace HAL.Documentation.ArduinoDistanceSensor
         private Task ReadMessage()
         {
             Message = TryReadMessage();
-            var s = Message.TrimEnd('\r','\n');
+            var s = Message.TrimEnd('\r', '\n');
             s = s.TrimEnd('\r');
-            InterpretMessageData(s);
+            Value = Int32.TryParse(s, out var value) ? value : -1;
             StateUpdated?.Invoke(this, new DistanceSensorEventArg(Message));
             return Task.CompletedTask;
         }
 
-
-        
-
-        protected virtual void InterpretMessageData(string message)
-        {
-           
-            var datas = message.Split(';').Select(s => double.TryParse(s, out var value) ? value : -1).ToArray();
-            for (int i = 0; i < datas.Length; i++)
-            {
-                DistanceSensors[i].Value = Convert.ToInt32(datas[i]);
-            }
-        }
-
-        
 
         private string TryReadMessage()
         {

@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="StopExecution.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="StopExecution.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="HAL.ABB" Version="1.4.0-beta" />
   </ItemGroup>
 
