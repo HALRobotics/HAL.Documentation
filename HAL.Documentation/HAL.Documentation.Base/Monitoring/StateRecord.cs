@@ -10,7 +10,6 @@ namespace HAL.Documentation.Base.Monitoring
     [DataContract]
     public partial class StateRecord : IEquatable<StateRecord>, IRecord
     {
-
         /// <summary> Create a new record at a specified time of a list of an array <see cref="IState"/>. </summary>
         /// <param name="timestamps">Current time stamps.</param>
         /// <param name="states">States sharing the same time stamp to record.</param>
