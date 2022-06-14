@@ -8,6 +8,8 @@ using HAL.Alerts;
 using HAL.Control;
 using HAL.Control.Subsystems.Communication;
 using HAL.Objects;
+using HAL.Objects.Mechanisms;
+using HAL.Objects.Mechanisms.Processes;
 using HAL.Runtime;
 using HAL.Simulation;
 using HAL.Units.Time;
@@ -78,9 +80,9 @@ namespace HAL.Documentation.Base.Monitoring
             set
             {
                 if (_executionControl == value) return;
-                if (_executionControl.Equals(true))  Start(clear: true);
+                if (_executionControl.Equals(true)) Start(clear: true);
                 else if (_executionControl.Equals(false)) Stop(true, false);
-                
+
             }
         }
         private bool _executionControl;
@@ -285,6 +287,47 @@ namespace HAL.Documentation.Base.Monitoring
         /// <summary> Add time line marker. </summary>
         /// <param name="alias">Marker name.</param>
         public void AddMarker(string alias) => Recorder.Add(new RecordMarker(alias, Timer?.ElapsedMilliseconds ?? 0));
+
+        #region Helpers
+
+
+        /// <summary>Try get a specific type of state in current states.</summary>
+        /// <typeparam name="TState">Type of state to get.</typeparam>
+        /// <param name="states">Found states if any.</param>
+        /// <returns>Whether if any state where found.</returns>
+        public bool TryGetStates<TState>(out List<TState> states) where TState : IState
+        {
+            var allStates = new List<IState>();
+            foreach (var state in CurrentRecord.States)
+            {
+                switch (state)
+                {
+                    case TState typedState:
+                        allStates.Add(typedState);
+                        break;
+                    case ControllerState controllerState:
+                        var mechanicalStates = controllerState.MechanicalState.ToList();
+                        var toolStates = mechanicalStates.Select(m => m.Tool).ToList();
+                        allStates.Add(controllerState);
+                        allStates.AddRange(mechanicalStates);
+                        allStates.AddRange(toolStates);
+                        break;
+                    case MechanismState mechanicalState:
+                        allStates.Add(mechanicalState);
+                        allStates.Add(mechanicalState.Tool);
+                        break;
+                    case ToolState toolState:
+                        allStates.Add(toolState);
+                        break;
+                }
+            }
+            states = allStates.OfType<TState>().ToList();
+            return states.Count > 0;
+        }
+
+
+
+        #endregion
 
         #region Alerts
         /// <summary>Default alert for IsRunning all subsystem.</summary>

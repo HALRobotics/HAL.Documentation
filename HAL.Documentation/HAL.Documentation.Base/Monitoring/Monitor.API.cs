@@ -120,7 +120,7 @@ namespace HAL.Documentation.Base.Monitoring
         public static void GetProperties(Monitor monitor, out Recorder recorder)
         {
             recorder = monitor?.Recorder;
-            recorder.Records.Select(r=>r.)
+            //recorder.Records.Select(r=>r.)
         }
     }
 }

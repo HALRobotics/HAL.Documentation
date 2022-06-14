@@ -78,10 +78,6 @@ namespace HAL.Documentation.ATI
         {
             if (current is ForceSensor6DofState state) Console.WriteLine(state.Force);
         }
-
-
-
-
         private static async Task GetState(NetBoxManager manager)
         {
             while (true)
