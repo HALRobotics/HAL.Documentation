@@ -290,15 +290,35 @@ namespace HAL.Documentation.Base.Monitoring
 
         #region Helpers
 
+        /// <summary>Get all same state type contained in this recorder.</summary>
+        /// <typeparam name="TState">Type of state to get.</typeparam>
+        /// <param name="states">Found states if any.</param>
+        public void GetAllStates<TState>(out List<TState> states) where TState : IState
+        {
+            states = new List<TState>();
+            foreach (var record in Recorder.Records.OfType<StateRecord>().ToList())
+            {
+                TryGetStates(record, out List<TState> s);
+                states.AddRange(s);
+            }
+        }
 
         /// <summary>Try get a specific type of state in current states.</summary>
         /// <typeparam name="TState">Type of state to get.</typeparam>
         /// <param name="states">Found states if any.</param>
         /// <returns>Whether if any state where found.</returns>
-        public bool TryGetStates<TState>(out List<TState> states) where TState : IState
+        public bool TryGetCurrentStates<TState>(out List<TState> states) where TState : IState => TryGetStates(CurrentRecord, out states);
+
+        /// <summary>Try get a specific type of state in current states.</summary>
+        /// <typeparam name="TState">Type of state to get.</typeparam>
+        /// <param name="stateRecord"><see cref="StateRecord"/> containing states.</param>
+        /// <param name="states">Found states if any.</param>
+        /// <returns>Whether if any state where found.</returns>
+        /// <returns></returns>
+        public bool TryGetStates<TState>(StateRecord stateRecord, out List<TState> states) where TState : IState
         {
             var allStates = new List<IState>();
-            foreach (var state in CurrentRecord.States)
+            foreach (var state in stateRecord.States)
             {
                 switch (state)
                 {
@@ -324,8 +344,6 @@ namespace HAL.Documentation.Base.Monitoring
             states = allStates.OfType<TState>().ToList();
             return states.Count > 0;
         }
-
-
 
         #endregion
 
