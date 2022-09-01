@@ -6,7 +6,7 @@
 
 [0.3. Join an Organization](#03-join-an-organization)
 
-[0.4. Purchases Licenses](#04-purchase-licenses)
+[0.4. Purchase Licenses](#04-purchase-licenses)
 
 [0.5. Complete Uninstallation](#05-complete-uninstallation)
 
