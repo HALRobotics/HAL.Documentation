@@ -6,7 +6,7 @@
 
 [0.3. Join an Organization](#03-join-an-organization)
 
-[~~0.4. Upload HAL5 Licenses \[Obsolete\]~~](#04-upload-hal5-licenses-obsolete)
+[0.4. Purchases Licenses](#04-purchase-licenses)
 
 [0.5. Complete Uninstallation](#05-complete-uninstallation)
 
@@ -39,10 +39,10 @@ If you already have an account, you can simply [login to the user portal](https:
 [<img src="../../assets/images/01UserPortalLogin.PNG">](../../assets/images/01UserPortalLogin.PNG)
 <em>The login page simply requires your email and password.</em>
 
-On the greeting page you should see a link to [download the HAL Robotics Framework](https://halinstaller.blob.core.windows.net/windows/HALRoboticsFramework.exe). By clicking on that link, you will download the HAL Robotics Framework Installer. 
+On the home page you should see a _Downloads_ tab which will give you a link to [download the HAL Robotics Framework](https://halinstaller.blob.core.windows.net/windows/HALRoboticsFramework.exe). By clicking on that link, you will download the HAL Robotics Framework Installer. 
 
 [<img src="../../assets/images/01UserPortal.PNG">](../../assets/images/01UserPortal.PNG)
-<em>The [user portal](https://user.hal-robotics.com/) greeting page.</em>
+<em>The [user portal](https://user.hal-robotics.com/) Downloads page.</em>
 
 [<img src="../../assets/images/01SetupExe.PNG" style="display:block">](../../assets/images/01SetupExe.PNG)
 <em>The downloaded "Setup.exe" application will install the HAL Robotics Framework Installer.</em>
@@ -74,7 +74,7 @@ Once the installation is complete you have successfully installed the HAL Roboti
 
 #### Objective:
 
-This tutorial is aimed at organization administrators who would like to manage licenses and users for their institution from the [user portal](https://user.hal-robotics.com/). If you are a user trying to access their organization's licenses please skip forward to the "Join an Organization" tutorial.
+This tutorial is aimed at organization administrators who would like to manage licenses and users for their institution from the [user portal](https://user.hal-robotics.com/). If you are a user trying to access their organization's licenses please skip forward to the [Join an Organization](#03-join-an-organization) tutorial. Please note that all new organizations need approval from a HAL Robotics team member so please **do not** follow this tutorial unless you represent an organization.
 
 #### Requirements to follow along:
 
@@ -86,32 +86,36 @@ Creating an organization will allow members to share floating licenses. This max
 
 #### How to:
 
-Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution.
+Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations tab](https://user.hal-robotics.com?PageName=Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's create an organization for you company or institution.
 
-Click on [Create New](https://user.hal-robotics.com/Organizations/Create) at the top of the page. There are a few details that need to be entered here:
+Click on the "Create" button at the top of the tab. There are a few details that need to be entered here:
 * The name of the organization.
+
+* Your _Company number_ and _VAT number_ are optional but they will need to be set (unless exempt) before you can purchase licenses for this organization online.
 
 * If your organization is an academic institution then you can tick the "Academic" box.
 
-* You then have the option of listing your organization for all users to join. Being listed will allow members, for example your colleagues or students, to request to join the organization. You will still have the option of rejecting any unsolicited requests. If you un-tick the option then you will remain hidden to all users but will need to manually add any members to your organization.
+* _Checkout Rights_ define who can temporarily check-out your licenses for offline use. "All" allows any member of your organization to do this. "None" allows nobody to do this. "AdminOnly" allows only the admins of the organization to do this.
+
+* The _Billing Address_ is required and will be used for online license purchases.
+
+* The _Joining Phrase_ is a semi-private phrase which can be used in conjunction with the organization's name to allow members to join your organization without your intervention. This can either be a word, phrase or string that you choose, or by clicking the _refresh_ button, we can generate a 3-word phrase for you. Have a look at the [Join an Organization](#03-join-an-organization) tutorial to see the _Joining Phrase_ in action. 
 
 * All other information is optional but will help to automatically populate information when requesting quotes or purchasing information.
-
-* The "Domain for automatic membership validation" will automatically accept any organizational membership requests from user accounts with a verified email address on the domain you specify e.g. "@example.com" will automatically accept "sarah@example.com" but not "toby@gmail.com". It is entirely optional but could save you some back and forth accepting users in your domain.
 
 [<img align="left" src="../../assets/images/02CreateOrganization.PNG">](../../assets/images/02CreateOrganization.PNG)
 <em>Fill the organization creation form then validate using the Create button.</em>
 
-Click "Create" and you will be redirected to your "Organization Memberships" page. From here you can view the members of the organization or any licenses that have been assigned to the organization. You may have to visit the "Members" page from time to time to accept new requests to join or manually add members. The "Licenses" page can be used to check which licenses are in use and when they expire.
+Click "Request Creation" and you will be redirected to your "Organizations" tab. Once the organization has been confirmed by the HAL Robotics team, you can view the members and licenses of the organization, and purchase licenses on the organization's behalf. You can use the "Members" tab to toggle the admin status of members or remove them. The "Licenses" tab can be used to check which licenses are in use and when they expire.
 
 [<img align="left" src="../../assets/images/02Organizations.PNG">](../../assets/images/02Organizations.PNG)
-<em>The "Organizations" page displays your memberships.</em>
+<em>The "Organizations" tab displays your memberships.</em>
 
 [<img align="left" src="../../assets/images/02OrganizationMembers.PNG">](../../assets/images/02OrganizationMembers.PNG)
-<em>The "Members" page of an organization displays members and their roles.</em>
+<em>The "Members" tab of an organization displays members and their roles.</em>
 
 [<img align="left" src="../../assets/images/02OrganizationLicenses.PNG">](../../assets/images/02OrganizationLicenses.PNG)
-<em>The "Licenses" page of an organization displays licenses and their status.</em>
+<em>The "Licenses" tab of an organization displays licenses and their status.</em>
 
 ---
 ### 0.3. Join an Organization
@@ -123,6 +127,8 @@ This tutorial is aimed at users who want to join their organization on the [user
 #### Requirements to follow along:
 
 - Internet access.
+- Organization name (including capitalization) on the portal.
+- Organization joining phrase.
 
 #### Background:
 
@@ -130,18 +136,54 @@ Joining an organization will allow you to access your organization's licenses.
 
 #### How to:
 
-Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations page](https://user.hal-robotics.com/Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's join the organization for you company or institution.
+Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You can then navigate to the [Organizations tab](https://user.hal-robotics.com?PageName=Organizations). Here you should see a list of any organizations you are already a member of. It's likely that this list is empty at this stage so let's join the organization for you company or institution.
 
-Click on "Join" at the top of the page. Here you will be given a list of organizations that you can request to join. Select your organization from the drop-down and click "Request to Join". If you can't find your organization in the list please talk to your I.T. department or HAL Robotics Framework admin as they may have hidden the organization. 
-
-In most instances, once you've clicked "Request to Join", an organization administrator will have to approve your request. Once you've been approved and login to any of the HAL Robotics Framework client applications, for example, the Grasshopper plugin, you will have access to your own and your organization's licenses.
+Click on "Join" at the top of the page. Here you will be asked for the organization's name and passphrase. If you don't know these details for your organization please ask to your I.T. department or HAL Robotics Framework admin as they will have access to these details. If your organization isn't found please check the spacing, punctuation and casing of both entries.
 
 [<img align="left" src="../../assets/images/03JoinOrganization.PNG">](../../assets/images/03JoinOrganization.PNG)
-<em>The "Join" page will allow you to look for your organization and request membership.</em>
+<em>The "Join" tab will allow you to join your organization and access its licenses.</em>
 
 ---
-### ~~0.4. Upload HAL5 Licenses \[Obsolete\]~~
-This tutorial is obsolete as all licenses are distributed through the user portal.
+### 0.4. Purchase Licenses
+
+#### Objective:
+
+This tutorial will guide you through how to purchase licenses for the HAL Robotics Framework on the [user portal](https://user.hal-robotics.com/). The process is the same whether you're purchasing for yourself or for an organization.
+
+#### Requirements to follow along:
+
+- Internet access.
+
+#### Background:
+
+Purchasing licenses will allow you to use the HAL Robotics Framework and are sold on a subscription basis, starting from 1 year. They do not automatically renew.
+
+#### How to:
+
+Start by browsing to the [user portal](https://user.hal-robotics.com/) and [logging in](https://user.hal-robotics.com/Account/Login). You should then see navigate the [Purchase Licenses tab](https://user.hal-robotics.com?PageName=LicenseRequest).
+
+* You must have a name set to purchase licenses. If your name is not listed after _For attention of_, click on _Hello youremailaddress@example.com!_ and set your first and last names.
+
+* If you wish to purchase licenses for an organization, use the _Organization_ drop down to select the correct one. You must be an admin for the organization to purchase licenses on its behalf. Otherwise, if you wish to purchase licenses for yourself then leave this set to "None".
+
+* Set _Reference_ if you want to add a Purchase Order number or similar to any invoices.
+
+* **For personal licenses** - if your _Billing Address_ is not valid, the _Billing Address_ field will be editable. Set your address and click "Save".
+**For organization licenses** - your _Billing Address_ and _VAT number_ are set by your organization. If these need changing, please navigate to the [Organizations tab](https://user.hal-robotics.com?PageName=Organizations), "View" your organization and under "Details" click "Edit".
+
+* Choose your license types, quantities and durations. "Professional" licenses are the default. All others are discounts from this and you will see conditions of sale under the license line.
+
+* If you have chosen a license type for which you have not been pre-approved, you will need to upload supporting information e.g. a scan of your student card, or evidence of your company's age, so that we can approve the purchase.
+
+Once you have entered all of your information you can "Buy Now" or "Request" your licenses, depending on whether we can automatically validate your purchase. If you do have to make a request, we will review this within 1 business day and either send you an invoice directly or be in touch to clarify any details.
+
+If you do have "Buy Now" as an option, and most people should, then your invoice should open in a new tab. If it doesn't, don't worry, there will be a link to it in the summary text on the web page and you will receive it by email too. This invoice will give you links to our secure payment providers through which you can pay online. As soon as your payment clears, your licenses will be issued and we will confirm this by email.
+
+[<img align="left" src="../../assets/images/04PurchaseLicense.PNG">](../../assets/images/04PurchaseLicense.PNG)
+<em>The "Purchase Licenses" tab will allow you to purchase or renew you HAL Robotics Framework licenses.</em>
+
+[<img align="left" src="../../assets/images/04RequestLicense.PNG">](../../assets/images/04RequestLicense.PNG)
+<em>If we need to manually validate the license type you have requested, you may be asked to "Request" your licenses, rather than to "Buy Now".</em>
 
 ---
 ### 0.5. Complete Uninstallation
