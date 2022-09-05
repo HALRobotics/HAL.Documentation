@@ -9,7 +9,7 @@
 
 #### [0.3. Join an Organization](Grasshopper/0-Administration-and-Setup/Contents.md#03-join-an-organization)
 
-#### ~~[0.4. \[Obsolete\] Upload HAL5 Licenses](Grasshopper/0-Administration-and-Setup/Contents.md#04-upload-hal5-licenses-obsolete)~~
+#### [0.4. Purchase Licenses](Grasshopper/0-Administration-and-Setup/Contents.md#04-purchase-licenses)
 
 #### [0.5. Complete Uninstallation](Grasshopper/0-Administration-and-Setup/Contents.md#05-complete-uninstallation)
 
