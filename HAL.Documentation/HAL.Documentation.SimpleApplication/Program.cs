@@ -20,7 +20,6 @@ using System.Reflection;
 using HAL.ABB.Control;
 using HAL.Control.Subsystems.Procedures;
 using System.Threading;
-using HAL.Documentation.Base;
 using HAL.Units.Speed;
 using HAL.Alerts;
 
@@ -51,7 +50,7 @@ namespace HAL.Documentation.SimpleApplication
             string sessionFile = null; 
 
             // Deserializes a session and the cell components  
-            var serializedSession = sessionFile ?? @"C:\Users\User\SerializedDocuments\SessionTestABB.hal"; //Todo pointer to serialized session
+            var serializedSession = sessionFile ?? @"C:\Users\User\SerializedDocuments\SessionTestABB.hal";
             var session = Serialization.Helpers.DeserializeSession(serializedSession, true);
             var controller = session.ControlGroup.Controllers.OfType<RobotController>().First();
             var mechanism = controller.Controlled.OfType<Mechanism>().First();
@@ -60,14 +59,14 @@ namespace HAL.Documentation.SimpleApplication
 
             #region Procedure
 
-            // Diferent ways to configure motion settings 
+            // Different ways to configure motion settings 
             /// Get the default values for <see cref="MotionSettings"/>.
             var defaultMotionSettings = DefaultSettings.Get<MotionSettings>();
 
             // Generate custom settings from existing ones, by cloning to remove any reference to the original object 
             var customMotionSettings = (MotionSettings) defaultMotionSettings.Clone();
             
-            /// Modify space settings. Motions can be interpreted in the cartesian space or joint space. It is specified by the Space property <see cref="MotionSpace"/> as follows
+            /// Modify space settings. Motions can be interpreted in the Cartesian space or joint space. It is specified by the Space property <see cref="MotionSpace"/> as follows
             var customCartesianSettings = (MotionSettings)defaultMotionSettings.Clone();
             customCartesianSettings.Space = MotionSpace.Cartesian;
             

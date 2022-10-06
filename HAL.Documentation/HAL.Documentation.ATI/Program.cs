@@ -5,13 +5,13 @@ using HAL.ATI.Control.Subsystems;
 using HAL.Control;
 using HAL.Control.Subsystems.Communication;
 using HAL.Control.Subsystems.Procedures;
-using HAL.Documentation.Base.Monitoring;
 using HAL.Graphs;
 using HAL.Objects.Mechanisms;
 using HAL.Objects.Sensors.Force;
 using HAL.Runtime;
 using HAL.Spatial;
 using HAL.Units.Mass;
+using Monitor = HAL.Streaming.Monitoring.Monitor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +20,7 @@ using System.Net;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+
 
 namespace HAL.Documentation.ATI
 {
@@ -46,9 +47,11 @@ namespace HAL.Documentation.ATI
             var sessionHelper = new SessionHelper();
 
             // Convert the strings into an IpEndPoint (IPAddress + Port)
-            var RemoteControllerIPEndPoint = IPEndPoint.Parse(remoteControllerIPAddress);
-            var listenerIPEndpoint = IPEndPoint.Parse(listenerIPAddress);
-            var sensorIPEndpoint = IPEndPoint.Parse(sensorIPAddress); // todo: rename that
+            var remoteControllerIPEndPoint = IPEndPoint.Parse(remoteControllerIPAddress);
+            var listenerIPEndpoint = new IPEndPoint(IPAddress.Parse(listenerIPAddress), 60041);
+            //var listenerIPEndpoint = IPEndPoint.Parse(listenerIPAddress);
+            //var sensorIPEndpoint = IPEndPoint.Parse(sensorIPAddress); // todo: rename that
+            var sensorIPEndpoint = new IPEndPoint(IPAddress.Parse(sensorIPAddress), 49152); // todo: rename that
 
             // Use the sessionHelper to deserialize the session 
             sessionHelper.TryDeserializeSession(out var robotController, out var robot);
@@ -56,69 +59,41 @@ namespace HAL.Documentation.ATI
             // The ForceSensorHelper instantiate a Force
             var forceSensorHelper = new ForceSensorHelper(MatrixFrame.Identity, sensorCoordinateSytem, sensorMass, sensorCenterOfMass);
             forceSensorHelper.InitializeForce(robot, listenerIPEndpoint, sensorIPEndpoint);
-            forceSensorHelper.InitalizeEGM(robotController, robot, listenerIPEndpoint);
+            forceSensorHelper.InitalizeEGM(robotController, robot, remoteControllerIPEndPoint);
 
 
             // Create a new monitor.
-            var monitor = new Base.Monitoring.Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { forceSensorHelper.AtiManager }, forceSensorHelper.EgmManager, "");
+            //var monitor = new HAL.Streaming.Monitoring.Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { forceSensorHelper.AtiManager }, forceSensorHelper.EgmManager, "");
+           // var monitor = new HAL.Streaming.Monitoring.Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { forceSensorHelper.EgmManager}, forceSensorHelper.AtiManager, "");
+            //var monitor = new HAL.Streaming.Monitoring.Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { forceSensorHelper.EgmManager, forceSensorHelper.AtiManager }, (Units.Time.s)1 ,"");
+            var monitor = new HAL.Streaming.Monitoring.Monitor("Monitors the force sensor values and the robot's position", new List<IStateReceivingSubsystem> { forceSensorHelper.AtiManager }, (Units.Time.s)1 ,"");
             // Subscribe the StateChanged event. OnMonitorStateChanged method will be performed each time a new state enters the monitor.
             monitor.StateChanged += OnMonitorStateChanged;
             monitor.Start();
+           
             await Task.Delay(10000);
             monitor.Stop();
             monitor.Recorder.Save(true, "");
         }
 
-        private static void EgmManager_StateChanged(Objects.IState current, Objects.IState previous)
-        {
-            if (current is EGMState state) Console.WriteLine(state.Tool.EndPointPosition.LocationInWorld(true));
-        }
-
-        private static void ATIManager_StateChanged(Objects.IState current, Objects.IState previous)
-        {
-            if (current is ForceSensor6DofState state) Console.WriteLine(state.Force);
-        }
-        private static async Task GetState(NetBoxManager manager)
-        {
-            while (true)
-            {
-                if (manager.State is ForceSensor6DofState state) Console.WriteLine($"{ state.Force}{state.EndPointPosition.LocationInWorld(false)}");
-                else Console.WriteLine("Not state to display");
-                await Task.Delay(500);
-            }
-        }
-
-        private static void OnMonitorStateChanged(object sender, EventArgs e)
+        /// <summary> Recover the desired state from the newly received monitor's state </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void OnMonitorStateChanged(object sender, EventArgs e) 
         {
             if (sender is Monitor monitor)
             {
-
-
-                foreach (HAL.Control.ControllerState controllerState in monitor.CurrentRecord.States)
-                {
-                    if (!(controllerState is null))
-                    {
-                        foreach (HAL.Control.Subsystems.IControllerSubsystem subsystem in controllerState?.Source.SubsystemManager.Subsystems)
-                        {
-                            if (subsystem is NetBoxManager netBoxManager) // Todo : make every 6DOFForce Sensor Manager an I6DOForceSensorManager?
-                            {
-                                if (netBoxManager.State is ForceSensor6DofState forceSensor6DofState)
-                                {
-                                    Console.WriteLine($"Force: {forceSensor6DofState.Force}");
-                                    Console.WriteLine($"Corrected force: {forceSensor6DofState.CorrectedForce}");
-                                }
-                            }
-
-                        }
-                    }
-                }
+                monitor.TryGetCurrentStates(out List<ForceSensor6DofState> forceStates);
+                Console.WriteLine($"Force: {forceStates.FirstOrDefault().Force}");
+                Console.WriteLine($"Corrected force: {forceStates.FirstOrDefault().CorrectedForce}");
             }
         }
     }
 
+    /// <summary> Helper to deserialize a cell from a path of a default one saved into the project. Contains methods to solve, export and upload.</summary>
     class SessionHelper
-
     {
+
         #region Constructors
 
         /// <summary>
@@ -154,7 +129,7 @@ namespace HAL.Documentation.ATI
             {
                 SerializedSessionPath = string.Empty;
                 Console.WriteLine($"Non-existent or no session file specified. Searching for first local session.");
-                var foundSession = Directory.EnumerateFiles("./", "*.hal").FirstOrDefault();
+                var foundSession = Directory.EnumerateFiles("./Sessions", "*.hal").FirstOrDefault();
                 if (!string.IsNullOrEmpty(foundSession)) SerializedSessionPath = foundSession;
                 if (string.IsNullOrEmpty(SerializedSessionPath))
                 {
@@ -248,17 +223,25 @@ namespace HAL.Documentation.ATI
 
         #region Fields
 
-        ForceSensor6Dof _forceSensor = null;
+        private ForceSensor6Dof _forceSensor = null;
 
         #endregion
 
         #region Properties
 
+        /// <summary> Mechanism on which the sensor is fixed.</summary>
         public Mechanism SensorParentMechanism { get; set; }
+
+        /// <summary>Manager for the ATI force sensor.</summary>
         public NetBoxManager AtiManager { get; set; }
+
+        /// <summary>Controller for the ATI force sensor./// </summary>
         public ATIController AtiController { get; private set; }
+
+        /// <summary> Force sensor 6DOF./// </summary>
         public ForceSensor6Dof ForceSensor { get => _forceSensor; private set { _forceSensor = value; } }
 
+        /// <summary> Manager for the sensor parent mechanism.</summary>
         public EGMManager EgmManager { get; set; }
 
         #endregion
@@ -300,8 +283,8 @@ namespace HAL.Documentation.ATI
         private void InitializeNetBoxManager(IPEndPoint listenerIPAddress, IPEndPoint sensorIPAddress)
         {
             AtiManager = AtiManager ?? new NetBoxManager();
-            AtiManager.TrySetNetworkIdentity(listenerIPAddress.ToString());
-            AtiManager.TrySetSensorNetworkIdentity(sensorIPAddress.ToString());
+            AtiManager.TrySetNetworkIdentity($"{listenerIPAddress.Address.ToString()}:{listenerIPAddress.Port.ToString()}");
+            AtiManager.TrySetSensorNetworkIdentity($"{sensorIPAddress.Address.ToString()}:{sensorIPAddress.Port.ToString()}");
         }
 
         /// <summary>Ensure the force sensor's controller exists then assign it the force sensor and its manager./// </summary>

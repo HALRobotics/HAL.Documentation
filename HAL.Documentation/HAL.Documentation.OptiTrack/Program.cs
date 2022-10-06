@@ -16,6 +16,14 @@ namespace HAL.Documentation.OptiTrack
     {
         static async Task Main(string[] args)
         {
+            string networkIdentity = "192.100.100.100";
+            MatrixFrame calibrationResult = MatrixFrame.Identity;
+
+            Run(networkIdentity,calibrationResult);
+                
+        }
+        public static async Task Run(string networkIdentity, MatrixFrame calibrationResut)
+        {
             // Start the client
             var client = new Client(ClientBootSettings.Minimal);
             await client.StartAsync();
@@ -23,17 +31,17 @@ namespace HAL.Documentation.OptiTrack
             // Create a Reference to be applied to the OptiTrackController. The matrix frame should be the transformation matrix between the OptiTrack world and the phyisical world. It has beeen computed during the calibration
             // A parent such as the robot can be assigned to the frame during the creation
             Reference instance = null;
-            Reference.Create(ref instance, "calibration", MatrixFrame.Identity, out Reference calibration);
+            Reference.Create(ref instance, "calibration", calibrationResut, out Reference calibration);
 
             // Create an OptiTrack controller 
-            OptiTrack = new OptiTrackController(null, null, calibration);
+            OptiTrack = new OptiTrackController(reference: calibration);
             var manager = new OptiTrackManager();
             OptiTrack.SubsystemManager.Add(manager);
 
             // Modify the IP address of the data provider. 
             // By default the IP is set on the loopback address of the computer. 
             // If the data comes from the Motive software on the same computer, the loopback address can be used and this line is not required
-            manager.TrySetNetworkIdentity("192.100.100.100"); //todo argument
+            manager.TrySetNetworkIdentity(networkIdentity); 
 
             // Used to modify the OptitrackSettings. If default settings are used, this line is not required
             manager.SetFilterSettings(new OptiTrackSettings());

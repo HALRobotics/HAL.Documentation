@@ -73,17 +73,6 @@ namespace HAL.Documentation.ArduinoDistanceSensor
             }
         }
 
-        ///// <summary>Deserialize a session and extract the controller and mechanism.</summary>
-        //public static void DeserializeSession(out RobotController controller, out Mechanism mechanism)
-        //{
-        //    var foundSession = Directory.EnumerateFiles("./", "*.hal").FirstOrDefault();
-        //    var session = Serialization.Helpers.DeserializeSession(@"C:\Users\ThomasDelaplanche\Documents\Pro\HAL_Robotics\Cells\SerializedCells\IRB120_Minimum_Cell.hal", true); // todo path
-        //    controller = session.ControlGroup.Controllers.OfType<RobotController>().First();
-        //    mechanism = controller.Controlled.OfType<Mechanism>().First();
-        //    controller.AddControlledObject(mechanism);
-
-        //}
-
     }
 }
 

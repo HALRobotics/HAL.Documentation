@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <LangVersion>latest</LangVersion>
+    <Configurations>Debug;Release;DebugLocalRefs</Configurations>
   </PropertyGroup>
 
 
@@ -11,11 +12,6 @@
     <PackageReference Include="HAL.ABB" Version="1.4.0-beta" />
     <PackageReference Include="HAL.ATI" Version="1.4.0-beta" />
     <PackageReference Include="HAL.OptiTrack" Version="1.4.0-beta" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <ProjectReference Include="..\HAL.Documentation.Base\HAL.Documentation.Base.csproj" />
   </ItemGroup>
 
 </Project>
