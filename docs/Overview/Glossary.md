@@ -113,6 +113,11 @@ _a.k.a set signal_
 
 changes the value of a [signal](#signal) at runtime. This is typically used to trigger the (de)activation of a [tool](#end-effector) or announce a change of state to a connected device.
 
+#### custom action
+_a.k.a function_
+
+[exports](#export) a piece of code to call a function which already exists in the [controller](#controller).
+
 #### target
 _a.k.a waypoint, frame, pose_
 
