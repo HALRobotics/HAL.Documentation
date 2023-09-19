@@ -180,4 +180,27 @@ _a.k.a transfer_
 
 moving of files from one device to another. Typically exported [procedures](#procedure) can be uploaded to a real [controller](#controller) and, if supported, executed.
 
+#### capabilities
+
+these are how we organize what a [controller](#controller) can do and draw parallels between different manufacturers' [controllers](#controller). _Capabilities_ are things like the ability to [upload](#upload) code to the [controller](#controller) from a PC or the ability to read the values of [signals](#signal) remotely. The standard _capabilities_ are listed below. Extensions may add others but equally, not all will be available for every [controller](#controller).
+
+| Name | Description |
+| ---- | ----------- |
+| File Manager | Edits the files and directories of a remote [controller](#controller) including copying files to and from it. |
+| Upload | Loads any [procedures](#procedure) associated with the [controller](#controller) into the memory of a remote [controller](#controller). |
+| Execution | Executes any [procedures](#procedure) associated with the [controller](#controller) on a remote [controller](#controller). |
+| Execution Monitoring | Monitors the execution status of a remote [controller](#controller). |
+| Monitor | Monitors the [controller](#controller) state. |
+| Stream | Enables state streaming to the [controller](#controller). |
+| Logger | Records events of a [controller](#controller). |
+| Language | [Exports](#export) any [procedures](#procedure) associated with the [controller](#controller) into native robot code. |
+| Read Signals | Reads the state of [signals](#signal) on a remote [controller](#controller). |
+| Write Signals | Writes the state of [signals](#signal) on a remote [controller](#controller). |
+| Backup | Backs up the contents of a remote [controller](#controller). |
+
+#### subsystems
+_a.k.a. options_
+
+these are similar to the options you have in your [controller](#controller). They are the actual software modules that implement different [capabilities](#capabilities). Details of different _subsytems_ can be found in the [manufacturer-specific documentation](../Manufacturers/Contents.md).
+
 ---
