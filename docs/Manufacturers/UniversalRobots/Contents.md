@@ -11,7 +11,9 @@
 ---
 ### 0. Tips
 
-1. We do not currently have a means to 
+1. We do not currently have a means to reference _TCPs_ and _Payloads_ from your current Installation so make sure these are accurately defined in your simulation.
+2. You can switch between Process Move (_movep_) and normal (_movel_) for linear motion in the [Controller](../../Overview/Glossary.md#controller) configurator.
+3. [Signals](../../Overview/Glossary.md#signal) are identified by their indices so either name your [signals](../../Overview/Glossary.md#signal) with an index, e.g. _2_, or use the [export overrides](../../Grasshopper/6-Control/Contents.md#64-reuse-controller-data) to ensure the correct index is exported.
 
 ---
 ### 1. Controller Options
@@ -57,14 +59,27 @@ In this section we'll explain how to get the [Procedures](../../Overview/Glossar
 
 #### Manual:
 
+1. [Export](../../Grasshopper/6-Control/Contents.md#62-export-a-procedure) your [Procedure](../../Overview/Glossary.md#procedure) to a known directory.
+2. Copy the _{ProcedureName}.script_ file onto a USB stick.
+3. Insert the USB stick into the USB port on the teach pendant.
+4. Create a new **Program** on the controller with a **Script** node (you'll find this under the **Advanced** category) and set the mode to _File_.
+[<center><img src="../../assets/images/URCreateScript.PNG"></center>](../../assets/images/URCreateScript.PNG)
+<em>Create a Script node into which you can load your URScript file.</em>
 
+5. Click _Edit_ then _Open_ to browse to your _{ProcedureName}.script_ file on the USB stick. You can then _Exit_ the script editor.
+[<center><img src="../../assets/images/URLoadScript.PNG"></center>](../../assets/images/URLoadScript.PNG)
+<em>Browse the directories and open your URScript file.</em>
+
+6. Your _{ProcedureName}.script_ is now loaded and ready to run.
+[<center><img src="../../assets/images/URManualProgram.PNG"></center>](../../assets/images/URManualProgram.PNG)
+<em>Browse the directories and open your URScript file.</em>
 
 ---
 ### 3. Simulation
 
 #### Objective:
 
-Whilst we expect most users to use our own [simulation](../../Overview/Glossary.md#73-simulation) tools for the majority of their cases, there may be a reason (e.g. cycle time analysis, or validation of the robot's limits) that you want to run your [Procedures](../../Overview/Glossary.md#procedure) on a manufacturer-provided. This section details what you'll need and how to configure that simulator.
+Whilst we expect most users to use our own [simulation](../../Overview/Glossary.md#73-simulation) tools for the majority of their cases, there may be a reason (e.g. cycle time analysis, or validation of the robot's limits) that you want to run your [Procedures](../../Overview/Glossary.md#procedure) on a manufacturer-provided simulator. This section details what you'll need and how to configure that simulator.
 
 #### Requirements to follow along:
 

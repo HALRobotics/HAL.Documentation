@@ -182,7 +182,7 @@ moving of files from one device to another. Typically exported [procedures](#pro
 
 #### capabilities
 
-these are how we organize what a [controller](#controller) can do and draw parallels between different manufacturers' [controllers](#controller). _Capabilities_ are things like the ability to [upload](#upload) code to the [controller](#controller) from a PC or the ability to read the values of [signals](#signal) remotely. The standard _capabilities_ are listed below. Extensions may add others but equally, not all will be available for every [controller](#controller).
+these are how we organize what a [controller](#controller) can do and draw parallels between different manufacturers' [controllers](#controller). _Capabilities_ are things like the ability to [upload](#upload) code to the [controller](#controller) from a PC or the ability to read the values of [signals](#signal) remotely. The standard _capabilities_ are listed below. Extensions may add others but equally, not all will be available for every [controller](#controller), and above all, not all will be of use in every situation.
 
 | Name | Description |
 | ---- | ----------- |

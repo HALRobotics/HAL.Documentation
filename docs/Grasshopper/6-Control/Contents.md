@@ -6,9 +6,7 @@
 
 [6.3. Upload a Procedure](#63-upload-a-procedure)
 
-[6.4. Monitor Robot State \[Coming Soon\]](#64-monitor-robot-state)
-
-[6.5. Stream Positions to a Robot \[Coming Soon\]](#65-stream-positions-to-a-robot)
+[6.4. Reuse Controller Data](#64-reuse-controller-data)
 
 ---
 ### 6.1. Configure a Virtual Controller
@@ -70,20 +68,64 @@ c.  External Axes - The final unique configuration is for [External Axes](../../
 
 Now that our [Controller](../../Overview/Glossary.md#controller) is configured, we can place [Export](../../Overview/Glossary.md#export) component from the **HAL Robotics** tab, **Control** panel. We can hook up our [Controller](../../Overview/Glossary.md#controller), **Solution** and assign a path to the _Destination_. When we run the component by toggling _Export_ to `true` this will generate our code and give us the paths to all exported files as an output. In the second overload of this component there's one additional input worth discussing, _Mode_. `Inline` mode will create a dense code file with as little declarative code as possible. `Predeclaration` mode will do just the opposite, it will create variables wherever possible to make it easier to change things by hand should you want to. For most scenarios we recommend `Inline` as it produces shorter code and is faster.
 
-As a final note in this tutorial, we know that there are circumstances where you may need to add very specific lines of code to your [Exports](../../Overview/Glossary.md#export). This could be to trigger a particular [Tool](../../Overview/Glossary.md#end-effector), send a message or call another piece of code. You can do this using **Custom Actions**. These are found in the **HAL Robotics** tab, **Procedure** panel. You can add any text to the _Expression_ input in double quotes ("") and it will be [Exported](../../Overview/Glossary.md#export) verbatim. If your **Custom Action** causes the [Robot](../../Overview/Glossary.md#manipulator) to [Wait](../../Overview/Glossary.md#wait-action) or some other **Simulatable** [Action](../../Overview/Glossary.md#action) to occur you can add a [Procedure](../../Overview/Glossary.md#procedure) to the _Simulation_ input. Just remember that regardless of what you add to the _Simulation_, only what you put in the _Expression_ will be [Exported](../../Overview/Glossary.md#export).
+As a final note in this tutorial, we know that there are circumstances where you may need to add very specific lines of code to your [Exports](../../Overview/Glossary.md#export). This could be to trigger a particular [Tool](../../Overview/Glossary.md#end-effector), send a message or call another piece of code. You can do this using **Custom Actions**. These are found in the **HAL Robotics** tab, **Procedure** panel. You can add any text to the _Code_ input and it will be [Exported](../../Overview/Glossary.md#export) verbatim. If your **Custom Action** causes the [Robot](../../Overview/Glossary.md#manipulator) to [Wait](../../Overview/Glossary.md#wait-action) or some other **Simulatable** [Action](../../Overview/Glossary.md#action) to occur you can add a [Procedure](../../Overview/Glossary.md#procedure) to the _Simulation_ input. Just remember that regardless of what you add to the _Simulation_, only what you put in the _Expression_ will be [Exported](../../Overview/Glossary.md#export). Learn more about **Custom Actions** in [this tutorial](../5-Advanced-Programming/Contents.md#55-custom-actions).
 
 ---
 ### 6.3. Upload a Procedure
-#### Coming Soon
 
-[//]: # (Use RobotStudio as part of demo and upload to Virtual Controller - mention that it should work with other manufacturers' offline programming solutions)
+#### Objective:
+
+In this tutorial we'll [Upload](../../Overview/Glossary.md#upload) some robot code to a real [Controller](../../Overview/Glossary.md#controller) using the HAL Robotics Framework for Grasshopper.
+
+#### Requirements to follow along:
+
+- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+
+#### Background:
+
+[Uploading](../../Overview/Glossary.md#upload) is the logical successor to [Exporting](../../Overview/Glossary.md#export) which we looked at [above](#62-export-a-procedure) which essentially copies any generated code to the remote [Controller](../../Overview/Glossary.md#controller) and can even run it for you. This is not available on all supported robots so please check the [manufacturer-specific documentation](../../Manufacturers/Contents.md) to see if it's available on your [Robot](../../Overview/Glossary.md#manipulator).
+
+#### How to:
+
+To prepare to [upload](../../Overview/Glossary.md#upload) we must do through the same process as [exporting](../../Overview/Glossary.md#export), so if you haven't been through [that tutorial above](#62-export-a-procedure) yet please do that before returning here.
+
+The configuration of your [Controller](../../Overview/Glossary.md#controller) will be different depending on the manufacturer so please check the [manufacturer-specific documentation](../../Manufacturers/Contents.md) to see how to configure your _Upload_ and _File Manager_ [subsystems](../../Overview/Glossary.md#subsystems).
+
+Now that our [Controller](../../Overview/Glossary.md#controller) is configured and we are happy with the way our code is [Exporting](../../Overview/Glossary.md#export), we can place the [Upload](../../Overview/Glossary.md#upload) component from the **HAL Robotics** tab, **Control** panel. We can hook up our [Controller](../../Overview/Glossary.md#controller) and **Solution**, exactly as we did with [Export](../../Overview/Glossary.md#export). You will also find _Mode_ which was discussed in [Export](../../Overview/Glossary.md#export). `Inline` mode will create a dense code file with as little declarative code as possible. `Predeclaration` mode will do just the opposite, it will create variables wherever possible to make it easier to change things by hand should you want to. For most scenarios we recommend `Inline` as it produces shorter code and is faster. When we run the component by toggling _Upload_ to `true` this will generate our code and copy it to the robot.
+
+The _AutoRun_ property will attempt to run the [Procedure](../../Overview/Glossary.md#procedure) as soon sa it's been [Uploaded](../../Overview/Glossary.md#upload) so use it with **extreme caution**. This is not available on all supported robots so please check the [manufacturer-specific documentation](../../Manufacturers/Contents.md) to see if it's available on your [Robot](../../Overview/Glossary.md#manipulator) and whether there are any restrictions on when it can be used.
 
 ---
-### 6.4. Monitor Robot State
-#### Coming Soon
+### 6.4. Reuse Controller Data
 
----
-### 6.5. Stream Positions to a Robot
-#### Coming Soon
+#### Objective:
+
+In this tutorial we'll explore some advanced syntax which allows you to reference data and variables which are already declared on your [Controller](../../Overview/Glossary.md#controller) or rename variables you [Export](../../Overview/Glossary.md#export) using the HAL Robotics Framework.
+
+#### Background:
+
+When your [Robot](../../Overview/Glossary.md#manipulator) and, more importantly, its [Controller](../../Overview/Glossary.md#controller) were installed, it's possible that certain [Tools](../../Overview/Glossary.md#end-effector) were calibrated and stored in the [Controller's](../../Overview/Glossary.md#controller) system variables or that it would be helpful to name [Signals](../../Overview/Glossary.md#signal) so they're immediately identifiable (e.g. _ToolOn_) but that they're named differently in your [Controller](../../Overview/Glossary.md#controller) or even that your [Robot's](../../Overview/Glossary.md#manipulator) language doesn't allow you to name [Signals](../../Overview/Glossary.md#signal) at all. We have therefore given you the option of overriding the way elements are [Exported](../../Overview/Glossary.md#export). These are generally useful for [Tools](../../Overview/Glossary.md#end-effector), [References](../../Overview/Glossary.md#reference) and [Signals](../../Overview/Glossary.md#signal) but can be used for [Targets](../../Overview/Glossary.md#target), [Motion Settings](../../Overview/Glossary.md#motion-action) or any other declarable type.
+
+#### How to:
+
+These overrides are all done through the naming of objects, by using special syntax in their _Aliases_. There are 3 scenarios we permit:
+1. Forcing the declaration of the element, even in `Inline` mode, e.g. so you can make manual changes to the code later. 
+2. Skipping the declaration of the element, e.g. because it's already in the [Controller's](../../Overview/Glossary.md#controller) system variables and you want to use that data directly.
+3. Renaming the element, e.g. the [Signal](../../Overview/Glossary.md#signal) which you have called _ToolOn_ for legibility is actually called _DO-04_ or is index _3_ on the real [Controller](../../Overview/Glossary.md#controller).
+4. [Bonus] A combination of the above.
+
+The syntax you can use is as follows:
+1. Declare an override - Append `@` to the _Alias_
+2. Skip declaration - Append `!` to the _Alias_
+3. Renaming - Append the new name to the _Alias_
+
+Examples:
+| Code | Description |
+| ---- | ----------- |
+| `MyTool` | Regular tool declaration. |
+| `MyTool@` | Forces the declaration of the tool. | 
+| `MyTool@toolData32` | Forces the declaration of the tool, as a tool variable called toolData32. |
+| `MyTool@!` | No declaration – considers that a "MyTool" tool declaration already exists in the controller. |
+| `MyTool@!toolData32` | No declaration – use the toolData32 tool variable from the controller. |
 
 ---
