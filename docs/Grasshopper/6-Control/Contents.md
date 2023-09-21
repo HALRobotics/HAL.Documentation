@@ -120,6 +120,7 @@ The syntax you can use is as follows:
 3. Renaming - Append the new name to the _Alias_
 
 Examples:
+
 | Code | Description |
 | ---- | ----------- |
 | `MyTool` | Regular tool declaration. |
