@@ -1,4 +1,4 @@
-## 2. Cell
+## 2. Cell Setup
 
 [2.1. Insert a Robot](#21-insert-a-robot)
 
