@@ -3,6 +3,7 @@ IMPORTANT PLEASE READ THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT CAREFUL
 
 This End-User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and HAL Robotics Ltd for the software identified above which may include associated software components, media, printed materials, and online or electronic documentation (referred to collectively as the “Software”). By installing, copying, or otherwise using the Software, you agree to be bound by the terms of this EULA. This license agreement represents the entire agreement concerning the program between you and HAL Robotics Ltd, (referred to as "licenser"), and it supersedes any prior proposal, representation, or understanding between the parties. If you do not agree to the terms of this EULA, do not install or use the Software.
 The Software is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. 
+
 1. GRANT OF LICENSE. 
 The Software is licensed as follows: 
 (a) Installation and Use.
@@ -11,6 +12,7 @@ The licensor grants you the right to install and use copies of the Software on y
 You may also make copies of the Software as may be necessary for backup and archival purposes.
 (c) Online License Checks
 The software may use your internal network and Internet connection for the purpose of transmitting license-related data at the time of installation, registration, use, or update to a HAL Robotics-operated license server and validating the authenticity of the license-related data in order to protect HAL Robotics Ltd against unlicensed or illegal use of the Software and to improve customer service. Activation is based on the exchange of license related data between your computer and the HAL Robotics Ltd license server. You agree that HAL Robotics Ltd may use these measures and you agree to follow any applicable requirements. You agree that efforts to circumvent or disable HAL Robotics Ltd copyright protection mechanisms or license management mechanism violate HAL Robotics Ltd’s intellectual property rights as well as the terms of this EULA. HAL Robotics Ltd expressly reserves the rights to seek all available legal and equitable remedies to prevent such actions and to recover lost profits, damages and costs.
+
 2. DESCRIPTION OF OTHER RIGHTS AND LIMITATIONS.
 (a) Maintenance of Copyright Notices.
 You must not remove or alter any copyright notices on any and all copies of the Software.
@@ -28,27 +30,34 @@ You must comply with all applicable laws regarding use of the Software.
 All users of academic and student versions of the Software are required to limit their use of the Software to academic research and development. Academic licenses may not be used in production environments or by, for, or on behalf of professional companies.
 (h) Citations in academic work.
 All users of academic and student versions of the Software are required to mention the use of the software in all publications (scientific papers, thesis, videos, etc.) involving the Software as a simulation or programming solution. This mention must contain the name of the software – HAL Robotics Framework, and the name of the author – HAL Robotics Ltd.
+
 3. TERMINATION 
 Without prejudice to any other rights, HAL Robotics Ltd may terminate this EULA if you fail to comply with the terms and conditions of this EULA. In such event, you must destroy all copies of the Software in your possession.
+
 4. COPYRIGHT
 All title, including but not limited to copyrights, in and to the Software and any copies thereof are owned by HAL Robotics Ltd. All title and intellectual property rights in and to the content which may be accessed through use of the Software is the property of the respective content owner and may be protected by applicable copyright or other intellectual property laws and treaties. This EULA grants you no rights to use such content. All rights not expressly granted are reserved by HAL Robotics Ltd.
+
 5. FUNCTIONALITY OF THE SOFTWARE
 While every effort has been made to minimize bugs and ensure the functionality of the Software, HAL Robotics Ltd cannot and will not guarantee the functionality of the Software. YOU ARE HEREBY WARNED THAT THE SOFTWARE CAN CONTAIN BUGS AND MAY EVEN CAUSE DATA LOSS.
 Notwithstanding any support for any technical standard, the software is not intended for use in or in connection with, without limitation, the operation of nuclear facilities, aircraft navigation, communication systems, air traffic control equipment, medical devices or life support systems, medical or health care applications, or other applications where the failure of the software or errors in data processing could lead to death, personal injury or severe physical or environmental damage. You agree that you are solely responsible for the accuracy and adequacy of the software and any data generated or processed by the software for your intended use and you will defend, indemnify and hold HAL Robotics Ltd, its officers and employees harmless from any 3rd party claims, demands, or suits that are based upon the accuracy and adequacy of the software in your use or any data generated by the software in your use.
 HAL Robotics Ltd expressly disclaims any warranty for the Software. The Software is provided 'As Is' without any express or implied warranty of any kind, including but not limited to any warranties of merchantability, non-infringement, or fitness of a particular purpose. HAL Robotics Ltd does not warrant or assume responsibility for the accuracy or completeness of any information, text, graphics, links or other items contained within the Software. HAL Robotics Ltd makes no warranties respecting any harm that may be caused by the transmission of a computer virus, worm, time bomb, logic bomb, or other such computer program. HAL Robotics Ltd further expressly disclaims any warranty or representation to Authorized Users or to any third party.
+
 7. LIMITATION OF LIABILITY
 In no event shall HAL Robotics Ltd be liable for any damages (including, without limitation, lost profits, business interruption, or lost information) rising out of users use of or inability to use the Software, even if HAL Robotics Ltd has been advised of the possibility of such damages. In no event will HAL Robotics Ltd be liable for loss of data or for indirect, special, incidental, consequential (including lost profit), or other damages based in contract, tort or otherwise. HAL Robotics Ltd shall have no liability with respect to the content of the Software or any part thereof, including but not limited to errors or omissions contained therein, libel, infringements of rights of publicity, privacy, trademark rights, business interruption, personal injury, loss of privacy, moral rights or the disclosure of confidential information.
 
 8. JURISDICTION
 This EULA will be governed by and construed in accordance with the laws of the United Kingdom (excluding its conflict of laws principles and the U.N. Convention on Contracts for the International Sale of Goods) and you expressly agree that exclusive jurisdiction for any claim or dispute with HAL Robotics Ltd or relating in any way to your use of the Software resides in the Commercial Court of London, United Kingdom and you further agree and expressly consent to the exercise of personal jurisdiction in the Commercial Court of London, United Kingdom in connection with any such dispute or claim.
+
 9. THIRD PARTY EXTENSIONS
 Any and all extensions to the Software, also referred to as plugins, provided by third parties are licensed to you by their authors. HAL Robotics Ltd is not responsible for nor does it grant any licenses to third party software.
+
 10. THIRD PARTY LICENSES
-ANTLR4CS
-[The "BSD license"]
-Copyright (c) 2013 Sam Harwell
-Copyright (c) 2013 Terence Parr
-All rights reserved.
+
+The BSD License
+The BSD License applies to the following third party softwares and its full text concludes this section.
+
+- ANTLR4CS, Copyright (c) 2013 Sam Harwell and Terence Parr. All rights reserved.
+- GongSolutions.WPF.DragDrop, Copyright (c) Jan Karger, Steven Kirk and Contributors. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -74,31 +83,61 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+---
+
 The MIT License
-The MIT License applies to the following third party softwares and its full text concludes this section
-Math.NET
-Copyright (c) 2002-2015 Math.NET
-Newtonsoft.JSON
-Copyright (c) 2007 James Newton-King
+The MIT License applies to the following third party softwares and its full text concludes this section.
 
-MahApps.Metro
-Copyright (c) 2016 MahApps
+- Math.NET, Copyright (c) 2002-2015 Math.NET
+- Newtonsoft.JSON, Copyright (c) 2007 James Newton-King
+- OxyPlot, Copyright (c) 2014 OxyPlot contributors
+- Prism 7, Copyright (c) .NET Foundation
 
-MIT License
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-NuGet
-Copyright (c) .NET Foundation. All rights reserved.
+
+---
+
+The Apache License, Version 2.0
+The Apache License applies to the following third party softwares.
+
+- NuGet, Copyright (c) .NET Foundation. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 these files except in compliance with the License. You may obtain a copy of the
-License at
-
-http://www.apache.org/licenses/LICENSE-2.0
+License at http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software distributed
 under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 
+---
+
+Microsoft Public License (MS-PL)
+The MS-PL License applies to the following third party softwares and its full text concludes this section.
+
+- Extended WPF Toolkit, Copyright (c) Xceed Software Inc. 2010-2020
+
+This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
+
+1. Definitions
+The terms “reproduce,” “reproduction,” “derivative works,” and “distribution” have the
+same meaning here as under U.S. copyright law.
+A “contribution” is the original software, or any additions or changes to the software.
+A “contributor” is any person that distributes its contribution under this license.
+“Licensed patents” are a contributor’s patent claims that read directly on its contribution.
+
+2. Grant of Rights
+
+(A) Copyright Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, prepare derivative works of its contribution, and distribute its contribution or any derivative works that you create.
+(B) Patent Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free license under its licensed patents to make, have made, use, sell, offer for sale, import, and/or otherwise dispose of its contribution in the software or derivative works of the contribution in the software.
+
+3. Conditions and Limitations
+
+(A) No Trademark License- This license does not grant you rights to use any contributors’ name, logo, or trademarks.
+(B) If you bring a patent claim against any contributor over patents that you claim are infringed by the software, your patent license from such contributor to the software ends automatically.
+(C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution notices that are present in the software.
+(D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license.
+(E) The software is licensed “as-is.” You bear the risk of using it. The contributors give no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
