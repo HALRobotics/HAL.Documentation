@@ -74,18 +74,20 @@ Next to the selector is a **+** which will add that item to [scene](../2-Cell/Co
 [<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
 <em>The FlowBuilder scene screen.</em> 
 
-If we add a [Reference](../../Overview/Glossary.md#reference) we can see a standard item editor screen. At the very top is the item's _Name_. This can, and should, be changed to identify the item more easily and, in the case of items that get exported to robot code, will be the exported name. You can also rename items from the main screens by right-clicking on them or selecting them and pressing _F2_. The **ok** button here finishes editing of the item and closes the editor. You can always return to an editor by double-clicking the item or selecting it and using the _edit_ icon in the top right-hand corner of the screen. 
+If we add a [Reference](../../Overview/Glossary.md#reference) we can see a standard item editor screen. At the very top is the item's _Name_. This can, and should, be changed to identify the item more easily and, in the case of items that get [exported](../../Overview/Glossary.md#export) to robot code, will be the [exported](../../Overview/Glossary.md#export) name. You can also rename items from the main screens by right-clicking on them or selecting them and pressing _F2_. The **ok** button here finishes editing of the item and closes the editor. You can always return to an editor by double-clicking the item or selecting it and using the _edit_ icon in the top right-hand corner of the screen. 
 Immediately below that top row is a _Creator_ selector. This allows you to choose how you want to create the item. In the case of a [Reference](../../Overview/Glossary.md#reference), the choices are **From Location** or **From Variable**. Each _Creator_ has a _Wizard_ which contains a series of _Steps_ that configure the item. Each _Step_ has a coloured dot on its left which indicates whether running the _Step_ succeeded or not. Its border will also change colour if the data you have input isn't valid. If that's the case, it will need to be fixed before we attempt to run the _Step_ again. Some _Steps_ have default values which means they are valid when created, others don't and will need to be edited before anything can happen.
 Any _Step_ that can be edited has an icon to indicate that fact. Any other _Steps_ are uneditable. You can start editing the _Step_ by clicking anywhere on the _Step_ but only one _Step_ can be edited at a time.
 
 [<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
 <em>The FlowBuilder Reference editor.</em> 
 
+##### Locations
 By clicking on the **Location** _Step_, we see a fairly standard editor view. Some settings require selections from a list of options, others are numeric values and they should make sense in the context. Hovering over the setting's name should give you some additional guidance if you need it. By changing the **Position** or **Rotation** values you'll see the [Reference](../../Overview/Glossary.md#reference) in your [scene](../2-Cell/Contents.md#2-cell-setup) move. We provide this kind of immediate visual feedback wherever possible and that means that changes are immediately applied. If the setting has a **🔗** symbol, it means that setting can be linked to a [Variable](#14-variables) which you can find out more about below.
 
 [<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
 <em>The FlowBuilder Reference editor with the Location Step being edited.</em> 
 
+##### Translation Overrides
 The **Translation Overrides** _Step_ is common amongst items that will be [exported](../../Overview/Glossary.md#export) to robot code and shows another setting type, the toggle. You'll find these dotted around the software and they will allow you to activate or deactivate other, optional settings. In this case, whether or not you want to change how the _Name_ of the [Reference](../../Overview/Glossary.md#reference) is [exported](../../Overview/Glossary.md#export), and if so, how.
 
 [<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>

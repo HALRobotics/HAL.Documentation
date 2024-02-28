@@ -23,7 +23,7 @@
 
 #### [2.3. Create a Reference](FlowBuilder/2-Cell/Contents.md#23-create-a-reference)
 
-#### [2.4. Insert a CAD Model](FlowBuilder/2-Cell/Contents.md#24-insert-a-cad-model)
+#### [2.4. Insert a Part](FlowBuilder/2-Cell/Contents.md#24-insert-a-part)
 
 #### [2.5. Create a Controller](FlowBuilder/2-Cell/Contents.md#25-create-a-controller)
 
@@ -68,3 +68,5 @@
 #### [5.2. Procedures from Variables](FlowBuilder/5-Advanced-Programming/Contents.md#52-procedures-from-variables)
 
 #### [5.3. Geometry from Variables](FlowBuilder/5-Advanced-Programming/Contents.md#53-geometry-from-variables)
+
+#### [5.4. Reusing Controller Data](FlowBuilder/5-Advanced-Programming/Contents.md#54-resuing-controller-data)

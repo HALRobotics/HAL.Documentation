@@ -90,5 +90,39 @@ We can create a [Custom Action](../../Overview/Glossary.md#custom-action) from t
 Other than the _Alias_, which we recommend always setting, the other input is _Simulation_. This takes in a [Procedure](../../Overview/Glossary.md#procedure) which will change how this [Action](../../Overview/Glossary.md#action) is simulated but won't affect how it's [Exported](../../Overview/Glossary.md#export). If you know it's going to take a second for your gripper to close, for example, you could put a [Wait](../../Overview/Glossary.md#wait-action) [Action](../../Overview/Glossary.md#action) in your _Simulation_ and the program will pause when simulated but the code won't contain any [Wait](../../Overview/Glossary.md#wait-action) instructions.
 
 ---
+### 6.4. Reuse Controller Data
+
+#### Objective:
+
+In this tutorial we'll explore some advanced syntax which allows you to reference data and variables which are already declared on your [Controller](../../Overview/Glossary.md#controller) or rename variables you [Export](../../Overview/Glossary.md#export) using the HAL Robotics Framework.
+
+#### Background:
+
+When your [Robot](../../Overview/Glossary.md#manipulator) and, more importantly, its [Controller](../../Overview/Glossary.md#controller) were installed, it's possible that certain [Tools](../../Overview/Glossary.md#end-effector) were calibrated and stored in the [Controller's](../../Overview/Glossary.md#controller) system variables or that it would be helpful to name [Signals](../../Overview/Glossary.md#signal) so they're immediately identifiable (e.g. _ToolOn_) but that they're named differently in your [Controller](../../Overview/Glossary.md#controller) or even that your [Robot's](../../Overview/Glossary.md#manipulator) language doesn't allow you to name [Signals](../../Overview/Glossary.md#signal) at all. We have therefore given you the option of overriding the way elements are [Exported](../../Overview/Glossary.md#export). These are generally useful for [Tools](../../Overview/Glossary.md#end-effector), [References](../../Overview/Glossary.md#reference) and [Signals](../../Overview/Glossary.md#signal) but can be used for [Targets](../../Overview/Glossary.md#target), [Motion Settings](../../Overview/Glossary.md#motion-action) or any other declarable type.
+
+#### How to:
+
+These overrides are all done through the naming of objects, by using special syntax in their _Aliases_. There are 3 scenarios we permit:
+1. Forcing the declaration of the element, even in `Inline` mode, e.g. so you can make manual changes to the code later. 
+2. Skipping the declaration of the element, e.g. because it's already in the [Controller's](../../Overview/Glossary.md#controller) system variables and you want to use that data directly.
+3. Renaming the element, e.g. the [Signal](../../Overview/Glossary.md#signal) which you have called _ToolOn_ for legibility is actually called _DO-04_ or is index _3_ on the real [Controller](../../Overview/Glossary.md#controller).
+4. [Bonus] A combination of the above.
+
+The syntax you can use is as follows:
+1. Declare an override - Append `@` to the _Alias_
+2. Skip declaration - Append `!` to the _Alias_
+3. Renaming - Append the new name to the _Alias_
+
+Examples:
+
+| Code | Description |
+| ---- | ----------- |
+| `MyTool` | Regular tool declaration. |
+| `MyTool@` | Forces the declaration of the tool. | 
+| `MyTool@toolData32` | Forces the declaration of the tool, as a tool variable called toolData32. |
+| `MyTool@!` | No declaration – considers that a "MyTool" tool declaration already exists in the controller. |
+| `MyTool@!toolData32` | No declaration – use the toolData32 tool variable from the controller. |
+
+---
 
 [Continue to: 6. Control](../6-Control/Contents.md#6-control)
