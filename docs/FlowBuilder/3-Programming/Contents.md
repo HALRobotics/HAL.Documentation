@@ -1,39 +1,47 @@
-## 3. Motion
+## 3. Programming
 
-[3.1. Create a Target](#31-create-a-target)
+[3.0. Procedures](#30-procedures)
 
-[3.2. Modify a Target](#32-modify-a-target)
+[3.1. Motion](#31-motion)
 
-[3.3. Change Motion Settings](#33-change-motion-settings)
+[3.2. Wait for a Time](#32-wait-for-a-time)
 
-[3.4. Combine Procedures](#34-combine-procedures-and-the-procedure-browser)
+[3.3. Set a Signal](#33-set-a-signal)
 
-[3.5. Synchronize Motion](#35-synchronize-motion)
+[3.4. Paths](#34-paths)
 
-[3.6. Coupled Motion and Resolving Targets](#36-coupled-motion-and-resolving-targets)
+[3.5. Custom Actions](#35-custom-actions)
 
-[3.7. Change a Tool at Runtime](#37-change-a-tool-at-runtime)
+[3.6. Structuring Procedures](#36-structuring-procedures)
 
-[3.8. Add Target Constraints \[Coming Soon\]](#38-add-target-constraints)
-
-[3.9. Add Mechanism Constraints \[Coming Soon\]](#39-add-mechanism-constraints)
-
-[3.10. Using a Track](#310-using-a-track)
+[3.7. Validation and Simulation](#37-validation-and-simulation)
 
 ---
-### 3.1. Create a Target
+### 3.0. Procedures
 
 #### Objective:
 
-In this tutorial we'll look at the different ways that we can create [Targets](../../Overview/Glossary.md#target) in the HAL Robotics Framework for Grasshopper.
+In this tutorial we'll cover the main structure and background of [Procedures](../../Overview/Glossary.md#procedure) in FlowBuilder.
 
-#### Demo Files:
+#### Background:
 
-> [<img src="../../assets/images/Grasshopper/GHFile16.PNG">  Create a Target.gh](../ExampleFiles/Tutorials/3.1%20-%20Create%20a%20Target.gh)
+[Procedures](../../Overview/Glossary.md#procedure) are a set of [Actions](../../Overview/Glossary.md#action) to be executed by a [Controller](../../Overview/Glossary.md#controller). You'll find tools to create individual, atomic [Actions](../../Overview/Glossary.md#action) like [Move](../../Overview/Glossary.md#motion-action) or [Wait](../../Overview/Glossary.md#wait-action) as well as ones which generate complex [Toolpaths](../../Overview/Glossary.md#toolpath) comprised of 10s, 100s or even 1000s of individual [Actions](../../Overview/Glossary.md#action).
+
+Each [Robot](../../Overview/Glossary.md#manipulator) has a main [Procedure](../../Overview/Glossary.md#procedure), always the first in the list, assigned to it. You can add [Procedures](../../Overview/Glossary.md#procedure) to a [Robot](../../Overview/Glossary.md#manipulator) to help you [structure your code](#36-structuring-procedures), but it's only the main one which will be [Solved](../../Overview/Glossary.md#solving), [Simulated](../../Overview/Glossary.md#73-simulation) or [Exported](../../Overview/Glossary.md#74-control). [Procedures](../../Overview/Glossary.md#procedure) can be added via the **+** button in the upper right-hand corner of the **Programming** screen and renamed,or removed through the menu button next to it.
+
+---
+### 3.1. Motion
+
+#### Objective:
+
+In this tutorial we'll look at the different ways that we can program individual [Motions](../../Overview/Glossary.md#motion-action) in FlowBuilder.
 
 #### Requirements to follow along:
 
-- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- An open [project](../1-Getting-Started/Contents.md#11-projects)
+- A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
+- A [Controller](../../Overview/Glossary.md#controller) in the **Scene**
 
 #### Background:
 
@@ -54,79 +62,71 @@ Using these two [Target](../../Overview/Glossary.md#target) creation methods we 
 All of these [Target](../../Overview/Glossary.md#target) creation options give exactly the same types of [Target](../../Overview/Glossary.md#target) so can be used interchangeably in your [Move](../../Overview/Glossary.md#motion-action) components.
 
 ---
-### 3.2. Modify a Target
+### 3.2. Wait for a Time
 
 #### Objective:
 
-In this tutorial we'll look at the different utilities to modify [Targets](../../Overview/Glossary.md#target) built in to the HAL Robotics Framework for Grasshopper.
-
-#### Demo Files:
-
-> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Modify a Target.gh](../ExampleFiles/Tutorials/3.2%20-%20Modify%20a%20Target.gh)
+In this tutorial we'll create a [Wait Action](../../Overview/Glossary.md#wait-action) that pauses [Robot](../../Overview/Glossary.md#manipulator) execution for a fixed period of time using the HAL Robotics Framework for Grasshopper.
 
 #### Requirements to follow along:
 
-- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- An open [project](../1-Getting-Started/Contents.md#11-projects)
+- A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
+- A [Controller](../../Overview/Glossary.md#controller) in the **Scene**
 
 #### Background:
 
-[Targets](../../Overview/Glossary.md#target) are the way we define to where a [Robot](../../Overview/Glossary.md#manipulator) should move and defining them correctly is a fundamental step in the programming of a [Procedure](../../Overview/Glossary.md#procedure). To facilitate certain recurring cases, we provide inbuilt [Target](../../Overview/Glossary.md#target) modifiers.
+In certain scenarios it may be necessary to have your [Robot](../../Overview/Glossary.md#manipulator) [Wait](../../Overview/Glossary.md#wait-action) in its current position. This could be because it's taking a measurement, a [Tool](../../Overview/Glossary.md#end-effector) is working or simply because something else is happening in the environment. If the time to [Wait](../../Overview/Glossary.md#wait-action) is a constant, such as the time required for a gripper to open, then a **Wait Time** [Action](../../Overview/Glossary.md#action) is a good solution.
 
 #### How to:
 
-The **Transform Target** component from the **HAL Robotics** tab, **Motion** panel offers several different ways of realigning your [Targets](../../Overview/Glossary.md#target) to face vectors, curve tangents, mesh or surface normal, or any other direction you choose with a **Free Transformation**. To start let's stick with the **Parallel to Vector** template and try and get all of our [Targets](../../Overview/Glossary.md#target) to face the base of our [Robot](../../Overview/Glossary.md#manipulator) which happens to be at the world origin. This is often useful if your [Tool](../../Overview/Glossary.md#end-effector) is free to rotate around its Z axis and can help to avoid reachability issues. We can use the **Target Properties** component to get the location of our [Targets](../../Overview/Glossary.md#target), create an XY plane to represent the [Robot](../../Overview/Glossary.md#manipulator) base frame and **Vector from 2 Points** component to find the vector between our [Targets](../../Overview/Glossary.md#target) and the origin. We can use our new vector as the _Direction_ input in our [Target](../../Overview/Glossary.md#target) modifier and pass our [Targets](../../Overview/Glossary.md#target) to their input. Ensure the original [Targets](../../Overview/Glossary.md#target) are hidden to make it easier to see our results. We should see that our [Targets](../../Overview/Glossary.md#target) are all pointing towards the origin but not necessarily in the way we were expecting. That is because the _Axis_ defaults to `Z`. If we change this to `X` then we should see something closer to what we want. We can also _Flip_ the vectors so that our [Targets](../../Overview/Glossary.md#target) face the opposite direction. If we don't want our [Targets](../../Overview/Glossary.md#target) to all be facing down towards the origin as they are now, the we can discard the Z component of our input vector to keep our [Targets](../../Overview/Glossary.md#target) horizontal.
+From the **Programming** screen, select the [Group](#36-structuring-procedures) into which you want to add your new [Wait](../../Overview/Glossary.md#wait-action), or click anywhere in the white space to clear your current selection. You can always drag and drop [Actions](../../Overview/Glossary.md#action) onto [Groups](#36-structuring-procedures) or in between other [Actions](../../Overview/Glossary.md#action) to restructure your [Procedure](../../Overview/Glossary.md#procedure) later. Either of those states will enable the _Item Type_ selector to list [Wait](../../Overview/Glossary.md#wait-action) as an option.
 
-Most variations of the **Transform Target** component work in a similar way so please play with those to discover what they can do. The one exception is the **Free Transform** template. This allows us to apply any transformation we want to our [Targets](../../Overview/Glossary.md#target) by simply specifying translations and reorientations. The default _Reference_ for this transformation is the [Target](../../Overview/Glossary.md#target) itself but we can specify a Plane as the _Reference_ to change the way our [Targets](../../Overview/Glossary.md#target) are transformed.
+Click **+** and you'll start creating a [Wait Action](../../Overview/Glossary.md#wait-action). The default, **From Time** _Creator_ will allow you to set the time for which the robot should pause. For example, if the **Time** is set to 2 seconds, when we [Simulate](#37-validation-and-simulation) the [Robot](../../Overview/Glossary.md#manipulator) pauses for 2 seconds.
 
-The last [Target](../../Overview/Glossary.md#target) modifier we're going to look at in this tutorial is the **Target Filter** component from the **HAL Robotics** tab, **Motion** panel. To demonstrate this functionality, we can divide a curve into a large number of [Targets](../../Overview/Glossary.md#target). After a certain point adding more [Targets](../../Overview/Glossary.md#target) is unnecessary, slows down code export and, in some circumstances, code execution. The **Target Filter** component takes our [Targets](../../Overview/Glossary.md#target) and splits them into two lists, those that meet the _Position_ and _Orientation_ tolerances (_Remaining_) and those that don't (_Discarded_). It is therefore useful to hide the component output and display only the _Remaining_ [Targets](../../Overview/Glossary.md#target). If we filter the targets to the nearest centimeter, we should see that far fewer remain and by changing the _Position_ tolerance the number of _Remaining_ [Targets](../../Overview/Glossary.md#target) will vary accordingly.
+Once you are happy with the [Wait](../../Overview/Glossary.md#wait-action)'s setup, ensure the name makes it easy to identify and click **ok** in the upper right corner to return to the **Programming** screen.
 
 ---
-### 3.3. Change Motion Settings
+### 3.3. Set a Signal
 
 #### Objective:
 
-In this tutorial we'll look at how to change the way in which a [Robot](../../Overview/Glossary.md#manipulator) moves to you [Targets](../../Overview/Glossary.md#target) using the HAL Robotics Framework for Grasshopper.
-
-#### Demo Files:
-
-> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Change Motion Settings.gh](../ExampleFiles/Tutorials/3.3%20-%20Change%20Motion%20Settings.gh)
+In this tutorial we'll change the state of a [Signal](../../Overview/Glossary.md#signal) at runtime in FlowBuilder.
 
 #### Requirements to follow along:
 
-- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- An open [project](../1-Getting-Started/Contents.md#11-projects)
+- A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
+- A [Controller](../../Overview/Glossary.md#controller) in the **Scene**
+- A [Signal](../../Overview/Glossary.md#signal) in your **Network**. If you don't have one, see the [Create a Signal](../2-Cell/Contents.md#26-create-a-signal) tutorial for more information.
 
 #### Background:
 
-**Motion Settings** control the way in which a [Robot](../../Overview/Glossary.md#manipulator) moves between [Targets](../../Overview/Glossary.md#target). They combine settings for the **Space**, **Speeds**, **Accelerations**, **Blends** and a number of other parameters to control how a [Robot](../../Overview/Glossary.md#manipulator) gets to its destination.
+Electrical Input and Output (I/O) [Signals](../../Overview/Glossary.md#signal) are used to activate or deactivate [Tools](../../Overview/Glossary.md#end-effector), trigger actions on remote machines or pass data between **Sensors**. The activation of these [Signals](../../Overview/Glossary.md#signal) needs to be triggered at the right time during program execution, something we can do easily with [Signal Actions](../../Overview/Glossary.md#signal-action).
 
 #### How to:
 
-The **Motion Settings** component can be found in the **HAL Robotics** tab, **Motion** panel and can be directly passed in to the **Move** component. The four settings mentioned previously are the first inputs on this component.
+In our previous tutorial, we created a digital output [Signal](../../Overview/Glossary.md#signal) within a [Controller](../../Overview/Glossary.md#controller) and assigned it an appropriate _Name_.. We now want to change the state of that [Signal](../../Overview/Glossary.md#signal) during the execution of a [Procedure](../../Overview/Glossary.md#procedure). To do so, from the **Programming** screen, select the [Group](#36-structuring-procedures) into which you want to add your new [Signal Action](../../Overview/Glossary.md#signal-action), or click anywhere in the white space to clear your current selection. You can always drag and drop [Actions](../../Overview/Glossary.md#action) onto [Groups](#36-structuring-procedures) or in between other [Actions](../../Overview/Glossary.md#action) to restructure your [Procedure](../../Overview/Glossary.md#procedure) later. Either of those states will enable the _Item Type_ selector to list [Set Signal](../../Overview/Glossary.md#signal-action) as an option.
 
-_Space_ controls which path the [Robot](../../Overview/Glossary.md#manipulator) takes to a [Target](../../Overview/Glossary.md#target). In `Cartesian` mode the [TCP](../../Overview/Glossary.md#endpoint) moves in a very controlled manner along a straight line or arc. This is probably the easier motion type to visualize but can cause problems when moving between configurations or when trying to optimise cycle times. Moving in [Joint space](../../Overview/Glossary.md#joint-space) means that each [Joint](../../Overview/Glossary.md#joint) will move from one position to the next without consideration for the position of the [TCP](../../Overview/Glossary.md#endpoint). [Joint space](../../Overview/Glossary.md#joint-space) [Moves](../../Overview/Glossary.md#motion-action) always end in the same configuration and are not liable to [Singularities](../../Overview/Glossary.md#(kinematic)-singularity). It's often useful to start your [Procedures](../../Overview/Glossary.md#procedure) with a [Motion](../../Overview/Glossary.md#motion-action) in [Joint space](../../Overview/Glossary.md#joint-space) to ensure your [Robot](../../Overview/Glossary.md#manipulator) is always initialized to a known position and configuration. It's worth noting that when using [Joint space](../../Overview/Glossary.md#joint-space) [Motions](../../Overview/Glossary.md#motion-action) your [Toolpath](../../Overview/Glossary.md#toolpath) will be dotted until the [Procedure](../../Overview/Glossary.md#procedure) is [Solved](../../Overview/Glossary.md#solving) because we can't know ahead of time exactly where the [TCP](../../Overview/Glossary.md#endpoint) will go during that [Motion](../../Overview/Glossary.md#motion-action). Once [Solved](../../Overview/Glossary.md#solving), you will see the path your [TCP](../../Overview/Glossary.md#endpoint) will actually take in space.
+Click **+** and you'll start creating a [Signal Action](../../Overview/Glossary.md#signal-action). You'll have a _Creator_ for each type of [Signal](../../Overview/Glossary.md#signal) available, e.g. **Set Digital Output** or **Set Analog Output**. Within each you will find a list of the relevant [Signals](../../Overview/Glossary.md#signal) in your **Network** and a **Value** which should be assigned.
 
-_Speed_ settings, as the name implies, constrain the speed of your [Robot](../../Overview/Glossary.md#manipulator). They can be declared in [Cartesian space](../../Overview/Glossary.md#cartesian-space) to directly limit the position or orientation _Speed_ of the [TCP](../../Overview/Glossary.md#endpoint). You can also constrain the _Speeds_ of your [Robot's](../../Overview/Glossary.md#manipulator) [Joints](../../Overview/Glossary.md#joint) using the second overload or combine the two using the third overload. Please note that not all [Robot](../../Overview/Glossary.md#manipulator) manufacturers support programmable [Joint](../../Overview/Glossary.md#endpoint) speed constraints so there may be variations between your simulation and real [Robot](../../Overview/Glossary.md#manipulator) when they are used.
-
-_Acceleration_ settings constrain the acceleration of your [Robot](../../Overview/Glossary.md#manipulator). They function in exactly the same way as the _Speeds_, constraining [Cartesian](../../Overview/Glossary.md#cartesian-space) acceleration, [Joint](../../Overview/Glossary.md#joint-space) acceleration or both.
-
-_[Blends](../../Overview/Glossary.md#blend)_ sometimes called zones or approximations change how close the [Robot](../../Overview/Glossary.md#manipulator) needs to get to a [Target](../../Overview/Glossary.md#target) before moving on to the next. It's useful to consider your _[Blends](../../Overview/Glossary.md#blend)_ carefully because increasing their size can drastically improve cycle time by allowing the [Robot](../../Overview/Glossary.md#manipulator) to maintain speed instead of coming to a stop at each [Target](../../Overview/Glossary.md#target). _[Blends](../../Overview/Glossary.md#blend)_ are most easily visualized in _Position_. If we set a 100 mm radius [Blend](../../Overview/Glossary.md#blend), we can see circles appear around each [Target](../../Overview/Glossary.md#target). These indicate that the [Robot](../../Overview/Glossary.md#manipulator) will exactly follow our [Toolpath](../../Overview/Glossary.md#toolpath) until it gets within 100 mm of the [Target](../../Overview/Glossary.md#target), at which point it will start to deviate within that circle to keep its speed up and head towards the subsequent [Target](../../Overview/Glossary.md#target). It will exactly follow our [Toolpath](../../Overview/Glossary.md#toolpath) again when it leaves the circle. When we solve our [Procedure](../../Overview/Glossary.md#procedure), we can see the path our [TCP](../../Overview/Glossary.md#endpoint) will actually take getting close but not actually to all of our [Targets](../../Overview/Glossary.md#target).
-
-_Kinematic_ settings are a more advanced topic and will be discussed in future tutorials ([1](../3-Motion/Contents.md#36-coupled-motion-and-resolving-targets),[2](../3-Motion/Contents.md#38-add-target-constraints),[3](../3-Motion/Contents.md#39-add-mechanism-constraints)).
+Once you are happy with the [Signal Action](../../Overview/Glossary.md#signal-action)'s setup, ensure the name makes it easy to identify and click **ok** in the upper right corner to return to the **Programming** screen.
 
 ---
-### 3.4. Combine Procedures and the Procedure Browser
+### 3.4. Paths
 
 #### Objective:
 
 In this tutorial we'll see how to combine different [Procedures](../../Overview/Glossary.md#procedure) to chain sequences using the HAL Robotics Framework for Grasshopper.
 
-#### Demo Files:
-
-> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Combine Procedures and the Procedure Browser.gh](../ExampleFiles/Tutorials/3.4%20-%20Combine%20Procedures%20and%20the%20Procedure%20Browser.gh)
-
 #### Requirements to follow along:
 
-- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- An open [project](../1-Getting-Started/Contents.md#11-projects)
+- A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
+- A [Controller](../../Overview/Glossary.md#controller) in the **Scene**
 
 #### Background:
 
@@ -139,42 +139,46 @@ To combine multiple [Procedures](../../Overview/Glossary.md#procedure), we can u
 Once a [Procedure](../../Overview/Glossary.md#procedure) has been assigned to a [Controller](../../Overview/Glossary.md#controller) and [Solved](../../Overview/Glossary.md#solving) it is useful to see how a [Simulation](../../Overview/Glossary.md#73-simulation) is progressing through that [Procedure](../../Overview/Glossary.md#procedure) so we can see where any issues may lie or which phases might be taking longer than we expect. We can do that using the **Procedure Browser**. To access the **Procedure Browser**, we need to ensure that we have an **Execution Control** connected to a complete **Execute** component. Once that's in place we can double-click on the **Execution Control** to open the **Procedure Browser**. In this window we can see our execution controls, reset, play/pause, next, previous and loop as well as all of our actions. Alongside that we have a time slider that allows you to speed up or slow down the [Simulation](../../Overview/Glossary.md#73-simulation) of your [Procedures](../../Overview/Glossary.md#procedure) without affecting your program itself. The rest of the **Procedure Browser** window shows the [Procedure](../../Overview/Glossary.md#procedure) that you are executing and the progress of each [Action](../../Overview/Glossary.md#action) within it. This **Procedure Browser** view also serves to demonstrate the purpose of the _Compact_ input on our **Combine Procedure** component. By default, _Compact_ is set to `true`. This compacts all of the incoming [Procedures](../../Overview/Glossary.md#procedure) and creates a single, flat list of [Actions](../../Overview/Glossary.md#action). If, however, we toggle _Compact_ to `false` we see that all of our previous [Procedures](../../Overview/Glossary.md#procedure) are maintained in the hierarchy and can be collapsed or expanded to view their contents. The hierarchical, un-compacted mode can be particularly useful if you reuse sub-[Procedures](../../Overview/Glossary.md#procedure).
 
 ---
-### 3.5. Synchronize Motion
+### 3.5. Custom Actions
 
 #### Objective:
 
-In this tutorial we'll see how to synchronize the motion of multiple [Mechanisms](../../Overview/Glossary.md#mechanism) using the HAL Robotics Framework for Grasshopper.
-
-#### Demo Files:
-
-> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Synchronize Motion.gh](../ExampleFiles/Tutorials/3.5%20-%20Synchronize%20Motion.gh)
+In this tutorial we'll use a [Custom Action](../../Overview/Glossary.md#custom-action) to trigger an existing [Robot](../../Overview/Glossary.md#manipulator) function using FlowBuilder.
 
 #### Requirements to follow along:
 
-- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- An open [project](../1-Getting-Started/Contents.md#11-projects)
+- A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
+- A [Controller](../../Overview/Glossary.md#controller) in the **Scene**
 
 #### Background:
 
-When we have multiple [Robots](../../Overview/Glossary.md#manipulator) or [Mechanisms](../../Overview/Glossary.md#mechanism), such as [Positioners](../../Overview/Glossary.md#positioner), in a [Cell](../../Overview/Glossary.md#cell) it may be necessary for them to execute [Motion](../../Overview/Glossary.md#motion-action) synchronously. This could be in scenarios such as two [Robots](../../Overview/Glossary.md#manipulator) sharing a load between them or a [Positioner](../../Overview/Glossary.md#positioner) reorientating a [Part](../../Overview/Glossary.md#part) whilst a [Robot](../../Overview/Glossary.md#manipulator) works on it.
+When working with a fully integrated [Cell](../../Overview/Glossary.md#cell) or using a [Robot](../../Overview/Glossary.md#manipulator) with pre-built functionality which isn't natively supported by the HAL Robotics Framework, you may want add code to your export which calls an existing function in the [Controller](../../Overview/Glossary.md#controller). We do this using [Custom Actions](../../Overview/Glossary.md#custom-action). Common for [Custom Actions](../../Overview/Glossary.md#custom-action) are opening or closing a gripper, running tool change procedures, starting logging, activating collision boxes, popping up messages to the operator etc.
 
 #### How to:
 
-In order to **Synchronize** [Motions](../../Overview/Glossary.md#motion-action), we need to ensure we have multiple [Procedures](../../Overview/Glossary.md#procedure) to work with and we always use one [Procedure](../../Overview/Glossary.md#procedure) per [Mechanism](../../Overview/Glossary.md#mechanism) we want to program, whether it's a [Robot](../../Overview/Glossary.md#manipulator), **Track** or [Positioner](../../Overview/Glossary.md#positioner). A setup for this could be as simple as having two [Robots](../../Overview/Glossary.md#manipulator) each moving to a single [Target](../../Overview/Glossary.md#target) in [Joint space](../../Overview/Glossary.md#joint-space). To make this a little more demonstrative it would be preferable if the [Motions](../../Overview/Glossary.md#motion-action) are dissimilar, for example one being long and the short or one fast and the other slow. To **Synchronize** the [Motions](../../Overview/Glossary.md#motion-action), we need to assign them **Sync Settings**. The **Sync Settings** component can be found in the **HAL Robotics** tab, **Motion** panel. We should assign a unique name, using the _Alias_ input, to the **Sync Settings** to ensure that they are easily identifiable later. Once those **Sync Settings** have been created, they need to be assigned to both of our [Moves](../../Overview/Glossary.md#motion-action). It is important to note that it must be the exact same **Sync Settings** passed to both. Your **Sync Settings** must only be used for one synchronous sequence of [Motions](../../Overview/Glossary.md#motion-action) per [Procedure](../../Overview/Glossary.md#procedure), and synchronous sequences must contain the same number of [Actions](../../Overview/Glossary.md#action) in each [Procedure](../../Overview/Glossary.md#procedure) in which they're used. We can now **Solve** and see that the duration of our [Moves](../../Overview/Glossary.md#motion-action) has been adjusted so that they both take the same amount of time. Also critically important in **Synchronization**, is the fact that all the motions start at the same time. We can test this out be adding a [Move](../../Overview/Glossary.md#motion-action) to one of the [Procedures](../../Overview/Glossary.md#procedure) prior to the **Synchronous** [Moves](../../Overview/Glossary.md#motion-action). When this is re-**Solved,** we can see that the second [Robot](../../Overview/Glossary.md#manipulator) implicitly waits for the first [Robot's](../../Overview/Glossary.md#manipulator) [Move](../../Overview/Glossary.md#motion-action) to finish before they both start their **Synchronous** [Moves](../../Overview/Glossary.md#motion-action).
+From the **Programming** screen, select the [Group](#36-structuring-procedures) into which you want to add your new [Custom Action](../../Overview/Glossary.md#custom-action), or click anywhere in the white space to clear your current selection. You can always drag and drop [Actions](../../Overview/Glossary.md#action) onto [Groups](#36-structuring-procedures) or in between other [Actions](../../Overview/Glossary.md#action) to restructure your [Procedure](../../Overview/Glossary.md#procedure) later. Either of those states will enable the _Item Type_ selector to list [Custom Action](../../Overview/Glossary.md#custom-action) as an option.
+
+Click **+** and you'll start creating a [Custom Action](../../Overview/Glossary.md#custom-action). The main thing required here is our **Code**. This should just be the textual representation of the code that you want to export. For example if you wanted to create a pop-up message on an ABB robot you could write _TPWrite "Hello Robot";_ and that exact line of code will be exported within your program.
+
+Other than the _Name_, which we recommend always setting, the other setting is **Simulation**. This allows you to select a [Procedure](../../Overview/Glossary.md#procedure) which will change how this [Action](../../Overview/Glossary.md#action) is simulated but won't affect how it's [Exported](../../Overview/Glossary.md#export). If you know it's going to take a second for your gripper to close, for example, you could put a [Wait](../../Overview/Glossary.md#wait-action) [Action](../../Overview/Glossary.md#action) in a [sub-procedure](#36-structuring-procedures), assign it to your **Simulation** and the program will pause when simulated but the code won't contain any [Wait](../../Overview/Glossary.md#wait-action) instructions.
+
+Once you are happy with the [Custom Action](../../Overview/Glossary.md#custom-action)'s setup, ensure the name makes it easy to identify and click **ok** in the upper right corner to return to the **Programming** screen.
 
 ---
-### 3.6. Coupled Motion and Resolving Targets
+### 3.6. Structuring Procedures
 
 #### Objective:
 
 In this tutorial we'll see how to simplify the programming of multi-[Mechanism](../../Overview/Glossary.md#mechanism) setups using **Target Resolvers** in the HAL Robotics Framework for Grasshopper.
 
-#### Demo Files:
-
-> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Resolve Targets.gh](../ExampleFiles/Tutorials/3.6%20-%20Resolve%20Targets.gh)
-
 #### Requirements to follow along:
 
-- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- An open [project](../1-Getting-Started/Contents.md#11-projects)
+- A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
+- A [Controller](../../Overview/Glossary.md#controller) in the **Scene**
 
 #### Background:
 
@@ -187,19 +191,18 @@ As an example of this we can have a [Robot](../../Overview/Glossary.md#manipulat
 With our settings in place we can now look at programming the [Positioner](../../Overview/Glossary.md#positioner). We could calculate the [Targets](../../Overview/Glossary.md#target) for the [Positioner](../../Overview/Glossary.md#positioner) and set them explicitly but when we're in a scenario like this welding example we can set some rules for the [Positioner](../../Overview/Glossary.md#positioner) to follow. We do this using the **Target Resolvers** from the **HAL Robotics** tab, **Motion** panel. There are a few different templates to explore but, in our case, the first is the one we want. The **Vector Aligned** **Target Resolver** tells the positioner to point the given _Axis_ of our [Targets](../../Overview/Glossary.md#target) towards a particular direction. If we can it's normally preferable to weld with Gravity so we're going to ask the [Positioner](../../Overview/Glossary.md#positioner) to point the Z axis of our [Targets](../../Overview/Glossary.md#target) straight down. The **Target Resolver** can be used in a **Move** just like a [Target](../../Overview/Glossary.md#target) provided it is duplicated to match the number of "secondary" [Targets](../../Overview/Glossary.md#target). To make that task easier we have included a template in **Move** called **Synchronized** which takes in a [Procedure](../../Overview/Glossary.md#procedure) and a [Target](../../Overview/Glossary.md#target), or **Target Resolver**, and will create all of the necessary [Moves](../../Overview/Glossary.md#motion-action) for you with the correct synchronization settings to match the input _Procedure_. **Synchronized** [Move](../../Overview/Glossary.md#motion-action) creates a [Procedure](../../Overview/Glossary.md#procedure) as an output like any other **Move** and so it can be merged and **Combined** as we would normally with any other **Move**. With both of our [Procedures](../../Overview/Glossary.md#procedure) now complete we can **Solve** and **Simulate** to see our [Positioner](../../Overview/Glossary.md#positioner) aligning itself automatically to best present the [Targets](../../Overview/Glossary.md#target) to the [Robot](../../Overview/Glossary.md#manipulator).
 
 ---
-### 3.7. Change a Tool at Runtime
+### 3.7. Validation and Simulation
 
 #### Objective:
 
 In this tutorial we'll see how to change the active [Tool](../../Overview/Glossary.md#end-effector) of a [Mechanism](../../Overview/Glossary.md#mechanism) during the execution of a [Procedure](../../Overview/Glossary.md#procedure) in the HAL Robotics Framework for Grasshopper.
 
-#### Demo Files:
-
-> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Change a Tool at Runtime.gh](../ExampleFiles/Tutorials/3.7%20-%20Change%20a%20Tool%20at%20Runtime.gh)
-
 #### Requirements to follow along:
 
-- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
+- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- An open [project](../1-Getting-Started/Contents.md#11-projects)
+- A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
+- A [Controller](../../Overview/Glossary.md#controller) in the **Scene**
 
 #### Background:
 
@@ -216,45 +219,5 @@ From here we're going to attach two [Tools](../../Overview/Glossary.md#end-effec
 In this final combination of [Tools](../../Overview/Glossary.md#end-effector) attached to the [Robot](../../Overview/Glossary.md#manipulator) we have two distinct potential [Endpoints](../../Overview/Glossary.md#endpoint). The final template of the **Change Tool** component allows us to set which [Endpoint](../../Overview/Glossary.md#endpoint), or [Tool](../../Overview/Glossary.md#end-effector) if you have multiple distinct [Tools](../../Overview/Glossary.md#end-effector) attached, is currently Active. We do this by specifying, once again, the combined [Mechanism](../../Overview/Glossary.md#mechanism), and the [Connection](../../Overview/Glossary.md#connection) that we want to use as the [Active Endpoint](../../Overview/Glossary.md#endpoint). To ensure consistent and deterministic output, I would recommend doing this immediately after attaching the `MultiTool` as well as when you may wish to switch between the two [Endpoints](../../Overview/Glossary.md#endpoint). With that merged and our [Tool](../../Overview/Glossary.md#end-effector) [Parts](../../Overview/Glossary.md#part) in the _Environment_ we can see everything run.
 
 ---
-### 3.8. Add Target Constraints
-#### Coming Soon
 
----
-### 3.9. Add Mechanism Constraints
-#### Coming Soon
-
----
-### 3.10. Using a Track
-
-#### Objective:
-
-In this tutorial we'll see how the previous tutorials on [synchronization](#35-synchronize-motion) and [Target Resolvers](#36-coupled-motion-and-resolving-targets) can be used together to program a **Track**, or [Linear Positioner](../../Overview/Glossary.md#positioner), using the HAL Robotics Framework for Grasshopper.
-
-#### Demo Files:
-
-> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Using a Track.gh](../ExampleFiles/Tutorials/3.10%20-%20Using%20a%20Track.gh)
-
-#### Requirements to follow along:
-
-- [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), and the HAL Robotics Framework installed on a PC.
-- Reading or watching the [Synchronize Motion](../3-Motion/Contents.md#35-synchronize-motion) tutorial is highly recommended.
-- Reading or watching the [Coupled Motion and Resolving Targets](../3-Motion/Contents.md#36-coupled-motion-and-resolving-targets) tutorial is highly recommended.
-- An extension to the HAL Robotics Framework that allows code export for external axes such as HAL.ABB or HAL.KUKA.
-
-#### Background:
-
-Mounting a [Robot](../../Overview/Glossary.md#manipulator) on a **Track**, or linear axis [Positioner](../../Overview/Glossary.md#positioner), can massively open up the usable space in a [Cell](../../Overview/Glossary.md#cell). However, programming one [Mechanism](../../Overview/Glossary.md#mechanism) whilst it's mounted on another can introduce a few complexities.
-
-#### How to:
-
-As per usual, we're going to start this session by modelling our [Cell](../../Overview/Glossary.md#cell). This means picking our [Robot](../../Overview/Glossary.md#manipulator), **Attaching** a [Tool](../../Overview/Glossary.md#end-effector), and importing our [Positioner](../../Overview/Glossary.md#positioner). This is where things start deviating slightly from our [synchronization](#35-synchronize-motion) tutorial. In this instance we actually want to mount one of our [Mechanisms](../../Overview/Glossary.md#mechanism) on another. The HAL Robotics Framework doesn't really make a distinction between [Mechanism](../../Overview/Glossary.md#mechanism) types e.g. [Positioner](../../Overview/Glossary.md#positioner), [Robot](../../Overview/Glossary.md#manipulator) or [Tool](../../Overview/Glossary.md#end-effector), so we can use the exact same strategy as **Attaching** our [Tool](../../Overview/Glossary.md#end-effector) to the [Robot](../../Overview/Glossary.md#manipulator). We'll use the **Attach** component with the **Track** as the _Parent_ and the [Robot](../../Overview/Glossary.md#manipulator) + [Tool](../../Overview/Glossary.md#end-effector) combination as the _Child_. Ensure that _IsEndEffector_ is left as `true` because our _Child_ contains our desired [End Effector](../../Overview/Glossary.md#end-effector). We can use the _Location_ and _InWorld_ parameters to adjust the position and orientation of the [Robot](../../Overview/Glossary.md#manipulator) on the **Track**. This will create a single [Mechanism](../../Overview/Glossary.md#mechanism) that we can program as we would any other [Mechanism](../../Overview/Glossary.md#mechanism), however, this monolithic approach doesn't give us as much freedom as treating this like a multi-[Mechanism](../../Overview/Glossary.md#mechanism) setup does. N.B. If you do use the single [Mechanism](../../Overview/Glossary.md#mechanism) approach, ensure any [Joint space](../../Overview/Glossary.md#joint-space) [Targets](../../Overview/Glossary.md#target) are a) in SI units for the relevant joints, and b) are in the right order i.e. with the **Track** first in this case (_Parent_ joints followed by _Child_ joints). To return to a multi-[Mechanism](../../Overview/Glossary.md#mechanism) scenario we can use the **Disassemble** component from **HAL Robotics** -\> **Cell**. This will split our [Mechanism](../../Overview/Glossary.md#mechanism) into its constituent parts including its _SubMechanisms_, that is to say, the [Mechanisms](../../Overview/Glossary.md#mechanism) which make it up. We can now treat the _SubMechanisms_ as we did our [Mechanisms](../../Overview/Glossary.md#mechanism) in [previous](#35-synchronize-motion) [tutorials](#36-coupled-motion-and-resolving-targets).
-
-There are a few subtleties to programming a **Track** so let's walk through an example. Let's start by preparing a simple curve following [Procedure](../../Overview/Glossary.md#procedure) for the [Robot](../../Overview/Glossary.md#manipulator) as we did in the [Getting Started tutorial](../1-Getting-Started/Contents.md#1-getting-started). Ensure the **Track** is actually required by making this curve longer than the [Robot's](../../Overview/Glossary.md#manipulator) reach. We can then program the **Track** using [Targets](../../Overview/Glossary.md#target) as we do for any other [Mechanism](../../Overview/Glossary.md#mechanism) for maximum control, or using the **Target Resolvers** seen in a [previous tutorial](#36-coupled-motion-and-resolving-targets) for a quick but effective approach. For a **Track** the **Offset** **Target Resolver** overload is of particular use. The default version of this component asks simply for an _Offset_ distance which is the distance the **Track's** [Endpoint](../../Overview/Glossary.md#endpoint) (and by extension the [Robot's](../../Overview/Glossary.md#manipulator) base) should be kept from the [Robot's](../../Overview/Glossary.md#manipulator) [Target](../../Overview/Glossary.md#target). Setting the _Offset_ to `0` or any value less than the distance between the **Track's** [Endpoint](../../Overview/Glossary.md#endpoint) and [Target](../../Overview/Glossary.md#target) will cause the **Track** to get as close to the [Target](../../Overview/Glossary.md#target) as possible. To create a full [Procedure](../../Overview/Glossary.md#procedure) for the **Track** we need to set some **Sync Settings** for the [Robot's](../../Overview/Glossary.md#manipulator) [Move](../../Overview/Glossary.md#motion-action) and can then use the **Synchronize** utility overload of the **Move** component to synchronize our **Target Resolver** with the full [Robot](../../Overview/Glossary.md#manipulator) [Procedure](../../Overview/Glossary.md#procedure) (see the [Synchronize Motion tutorial](../3-Motion/Contents.md#35-synchronize-motion) for a refresher on how to do this). As one [Mechanism](../../Overview/Glossary.md#mechanism) is moving another, you will also need to ensure that the **Kinematic Settings** are in place for this setup, with the **Track** as the _Primary_ and [Robot](../../Overview/Glossary.md#manipulator) as a _Secondary_, in both the [Robot's](../../Overview/Glossary.md#manipulator) [Move](../../Overview/Glossary.md#motion-action) and the **Track's** (see the [Coupled Motion and Resolving Targets tutorial](../3-Motion/Contents.md#36-coupled-motion-and-resolving-targets) as a reminder if needed). With this in place we are in a position to **Solve** and **Execute** and we should see both [Mechanisms](../../Overview/Glossary.md#mechanism) moving as we expect.
-
-Although [exporting](../../Overview/Glossary.md#export) is covered in a later [tutorial](../6-Control/Contents.md#62-export-a-procedure), there are a couple of things that need to be setup for external axes that are worth looking at here if your [Positioner](../../Overview/Glossary.md#positioner) is an external axis and programmed within the same exported [Procedure](../../Overview/Glossary.md#procedure) as your [Robot](../../Overview/Glossary.md#manipulator).
-1. You'll need to setup your [Joint Mappings](../../Overview/Glossary.md#joint-mapping).  When you created or loaded your [Positioner](../../Overview/Glossary.md#positioner) you will likely have glossed over the _Mapping(s)_ input. These values are 0-based indices of any external [axis](../../Overview/Glossary.md#joint) that needs to be exported. In our example above, we have 6 axes in our [Robot](../../Overview/Glossary.md#manipulator) and our [Positioner](../../Overview/Glossary.md#positioner) comes after that. We can therefore assign it an index of `6` (0-based, so 7th when exported) or higher depending on the exact configuration of our real [Cell](../../Overview/Glossary.md#cell).
-2. You'll need to set your [Positioner](../../Overview/Glossary.md#positioner) [Procedure](../../Overview/Glossary.md#procedure) as a child of your [Robot](../../Overview/Glossary.md#manipulator) [Procedure](../../Overview/Glossary.md#procedure). This can be done in the [Controller](../../Overview/Glossary.md#controller) configuration, accessible by double-clicking on your [Controller](../../Overview/Glossary.md#controller) component. On the right-hand side of this window you should see both of the [Procedures](../../Overview/Glossary.md#procedure) listed. Drag the [Positioner](../../Overview/Glossary.md#positioner) [Procedure](../../Overview/Glossary.md#procedure) onto the main [Procedure](../../Overview/Glossary.md#procedure) to make it a child. As you're doing this, ensure that the _Task Alias_ of your main [Procedure](../../Overview/Glossary.md#procedure) matches the target **Task** on your real [Controller](../../Overview/Glossary.md#controller).
-
----
-
-[Continue to: 4. I/O](../4-IO/Contents.md#4-io)
+[Continue to: 4. Operator Workflows](../4-Workflows/Contents.md#4-operator-workflows)

@@ -33,6 +33,8 @@
 
 ### [3. Programming](FlowBuilder/3-Programming/Contents.md#3-programming)
 
+#### [3.0. Procedures](FlowBuilder/3-Programming/Contents.md#30-procedures)
+
 #### [3.1. Motion](FlowBuilder/3-Programming/Contents.md#31-motion)
 
 #### [3.2. Wait for a Time](FlowBuilder/3-Programming/Contents.md#32-wait-for-a-time)
