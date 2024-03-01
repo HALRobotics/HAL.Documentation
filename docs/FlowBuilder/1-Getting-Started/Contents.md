@@ -1,5 +1,7 @@
 ## 1. Getting Started
 
+[1.0. The Beta](#10-the-beta)
+
 [1.1. Projects](#11-projects)
 
 [1.2. Structure](#12-structure)
@@ -9,6 +11,35 @@
 [1.4. Variables](#14-variables)
 
 [1.5. Assets](#15-assets)
+
+---
+### 1.0. The Beta
+
+#### Welcome to the FlowBuilder by HAL Robotics Beta!:
+
+FlowBuilder's primary purpose is to give operators, those with expert process knowledge, enough agency to adapt a robot's task without burdening them with the complexities of programming. For system integrators and roboticists, however, it serves as a means of quickly setting up complex robotic toolpaths, simulating and validating those procedures, and then sending them as native robot code to your machines.
+
+FlowBuilder is built on top of the HAL Robotics Framework which has been in use for nearly a decade in different guises within multi-nationals, SMEs, research institutions and academia. So, whilst FlowBuilder is a new user interface and workflow, the Framework under the hood is stable.
+
+That being said, the interface is new so we know there will be issues and instabilities within it, hence the need for a Beta. As such, we recommend erring on the side of caution when using physical hardware and running simulations in OEM tools wherever possible to ensure everything works as expected. Please also read the next two sections which cover [known limitations](#current-limitations) and [feedback procedures](#feedback).
+
+#### Current Limitations:
+
+1. We are using [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download) as a visualisation engine within FlowBuilder and as such it will need to be installed before you can install FlowBuilder. We are working with McNeel to automate this process for you and will be working with them to simplify the licensing of the complete software so that there's a single point of entry, account management etc. when using FlowBuilder
+2. **Save** is currently disabled. We are still working out the final details of how and where we store data which means that we will almost certainly break any previously saved projects. Whilst we know this will be frustrating we hope it will discourage particularly time-consuming development and therefore limit the frustrations of losing that work anyway further down the line. This is a top priority for us and **save** will be coming soon™.
+3. Things will be getting fixed and updated very frequently so there will be weekly or maybe even daily updates pushed so please check back in the installer before launching the software on any given day. Once it's stable, the update cadence will slow and this will no longer be necessary, although we will still keep releasing meaningful feature updates, tweaks and fixes as necessary.
+4. Whilst you will have to log in to FlowBuilder, the licensing has been deactivated so you will, for now, have free access to everything in there. We will try to ensure you get fair warning before that changes.
+5. As mentioned above, this is a Beta interface so there are likely to be anomalies, a few bugs and maybe even the occasional crash. We would like as much [feedback](#feedback) as you can give.
+
+#### Feedback:
+
+We appreciate your support helping us make FlowBuilder a stable interface that you can trust for your development needs now and hopefully long into the future. If you find any bugs or major issues please let us know, preferably through our [GitHub issues or discussions](https://github.com/HALRobotics/Beta) so that anyone else with the same experience can chime in and, if need be, help us pinpoint the source of the error. Please give us as much detail as possible as that will ensure we can reproduce the problem internally and therefore identify, and fix, the root cause rather than the symptom.
+
+We would also be very receptive to anything that could make your experience better. That could be features you'd like to see, interactions that could be improved or any other suggestions you have. Again if those go through our [GitHub page](https://github.com/HALRobotics/Beta/discussions) then we can have an open discussion about how those would work and get input from others on the same subject.
+
+Of course, if you have anything nice to say about FlowBuilder then we'd love to hear that too, on [GitHub](https://github.com/HALRobotics/Beta/discussions), by [email](mailto:the-team@hal-robotics.com) or in whatever public forum you feel is appropriate.
+
+Thank you once again for helping to make FlowBuilder better.
 
 ---
 ### 1.1. Projects
