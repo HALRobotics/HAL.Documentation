@@ -212,4 +212,4 @@ Once this is done you can clean up any remnants that the uninstallation process 
 
 ---
 
-Continue to: 1. Getting Started for [FlowBuilder](../../FlowBuilder/1-Getting-Started/Contents.md#1-getting-started) or the [Grasshopper SDK](../../Grasshopper/1-Getting-Started/Contents.md#1-getting-started)
+Continue to: 1. Getting Started for [FlowBuilder](../../decode/1-Getting-Started/Contents.md#1-getting-started) or the [Grasshopper SDK](../../Grasshopper/1-Getting-Started/Contents.md#1-getting-started)
