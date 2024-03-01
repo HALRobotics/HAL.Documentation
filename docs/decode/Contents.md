@@ -35,7 +35,7 @@
 
 #### [3.0. Procedures](decode/3-Programming/Contents.md#30-procedures)
 
-#### [3.1. Motion](decode/3-Programming/Contents.md#31-motion)
+#### [3.1. Move](decode/3-Programming/Contents.md#31-move)
 
 #### [3.2. Wait for a Time](decode/3-Programming/Contents.md#32-wait-for-a-time)
 
