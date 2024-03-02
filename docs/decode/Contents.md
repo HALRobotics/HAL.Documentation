@@ -1,4 +1,4 @@
-## Tutorials for FlowBuilder 
+## Tutorials for _decode_ 
 ---
 
 ### [1. Getting Started](decode/1-Getting-Started/Contents.md#1-getting-started)
@@ -57,9 +57,7 @@
 
 #### [4.2. Steps](decode/4-Workflows/Contents.md#42-steps)
 
-#### [4.3. Nested Workflows](decode/4-Workflows/Contents.md#43-nested-workflows)
-
-#### [4.4. Run a Workflow](decode/4-Workflows/Contents.md#44-run-a-workflow)
+#### [4.3. Run a Workflow](decode/4-Workflows/Contents.md#43-run-a-workflow)
 
 ---
 

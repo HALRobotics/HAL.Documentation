@@ -17,11 +17,11 @@
 
 #### Objective:
 
-In this quick tutorial we'll take a look how to insert a [Robot](../../Overview/Glossary.md#manipulator) preset into your FlowBuilder scene.
+In this quick tutorial we'll take a look how to insert a [Robot](../../Overview/Glossary.md#manipulator) preset into your _decode_ scene.
 
 #### Requirements to follow along:
 
-- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- HAL Robotics _decode_ installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
 - An open [project](../1-Getting-Started/Contents.md#11-projects)
 
 #### How to:
@@ -42,15 +42,15 @@ Once you are happy with the [Robot](../../Overview/Glossary.md#manipulator)'s se
 
 #### Objective:
 
-In this tutorial we'll create a simple [Tool](../../Overview/Glossary.md#end-effector) for your FlowBuilder scene.
+In this tutorial we'll create a simple [Tool](../../Overview/Glossary.md#end-effector) for your _decode_ scene.
 
 #### Demo Files:
 
-> [<img src="../../assets/images/Grasshopper/RHFile16.PNG">  Tool.stl](../ExampleFiles/Tool.stl)
+> [<img src="../../assets/images/Grasshopper/RHFile16.PNG"> Tool.stl](../ExampleFiles/Tool.stl)
 
 #### Requirements to follow along:
 
-- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- HAL Robotics _decode_ installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
 - An open [project](../1-Getting-Started/Contents.md#11-projects)
 - A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
 
@@ -69,14 +69,14 @@ The **From Preset** _Creator_ will allow you to select a [Tool](../../Overview/G
 
 Opening the **Assemble** _Step_ will generate a mini-**Scene** which represents your [Tool](../../Overview/Glossary.md#end-effector). A [Tool](../../Overview/Glossary.md#end-effector) will always be composed of at least one [Part](../../Overview/Glossary.md#part) which acts as its _base_, and one [endpoint](../../Overview/Glossary.md#endpoint) which acts as the [tool centre point (TCP)](../../Overview/Glossary.md#endpoint). 
 
-Start by adding a [Part](../../Overview/Glossary.md#part) and you'll get a whole new _Creator_ embedded. There are lots of options here to explore but the most common workflow is likely to **From Geometry** and importing your **Part Body** **From CAD File**. There first editable _Step_ therein is **CAD File** which will allow you to select the CAD file which contains your [Tool](../../Overview/Glossary.md#end-effector)'s geometry. _To keep things simple, it's worth ensuring that the base of that geometry is at the origin of the file you're importing but you can adjust that with the **Location** if needed._ The next few _Steps_ will work on their own to import that geometric data and convert into our own formats for optimal performance. The rest of the [Part](../../Overview/Glossary.md#part) settings are optional and should be self-explanatory. Click **ok** on the _Creator_ to finish creating that [Part](../../Overview/Glossary.md#part).
+Start by adding a [Part](../../Overview/Glossary.md#part) and you'll get a whole new _Creator_ embedded. There are lots of options here to explore but the most common workflow is likely to **From Geometry** and importing your _Part Body_ **From CAD File**. There first editable _Step_ therein is _CAD File_ which will allow you to select the CAD file which contains your [Tool](../../Overview/Glossary.md#end-effector)'s geometry. _To keep things simple, it's worth ensuring that the base of that geometry is at the origin of the file you're importing but you can adjust that with the Location if needed._ The next few _Steps_ will work on their own to import that geometric data and convert into our own formats for optimal performance. The rest of the [Part](../../Overview/Glossary.md#part) settings are optional and should be self-explanatory. Click **ok** on the _Creator_ to finish creating that [Part](../../Overview/Glossary.md#part).
 
 [<img src="../../assets/images/Grasshopper/22Reference.gif">](../../assets/images/Grasshopper/22Reference.gif)
 <em>The Part Creator in From Geometry mode allowing the importing of a CAD file to act as the Tool's geometry.</em>
 
-Now select your [Part](../../Overview/Glossary.md#part), and you can add an [Endpoint](../../Overview/Glossary.md#endpoint) to it. The only settings here are for the **Location** of that [Endpoint](../../Overview/Glossary.md#endpoint) which will act as the [TCP](../../Overview/Glossary.md#endpoint). This is most easily set relative to its **Parent** as a **Reference** and we recommend that the Z axis of [TCPs](../../Overview/Glossary.md#endpoint) point out of the [Tool](../../Overview/Glossary.md#end-effector), following the co-ordinate system flow of the [Robot](../../Overview/Glossary.md#manipulator) itself. Click **ok** on the _Creator_ to finish creating that [Endpoint](../../Overview/Glossary.md#endpoint) and then on **ok** again to complete the assembly.
+Now select your [Part](../../Overview/Glossary.md#part), and you can add an [Endpoint](../../Overview/Glossary.md#endpoint) to it. The only settings here are for the _Location_ of that [Endpoint](../../Overview/Glossary.md#endpoint) which will act as the [TCP](../../Overview/Glossary.md#endpoint). This is most easily set relative to its _Parent_ as a _Reference_ and we recommend that the Z axis of [TCPs](../../Overview/Glossary.md#endpoint) point out of the [Tool](../../Overview/Glossary.md#end-effector), following the co-ordinate system flow of the [Robot](../../Overview/Glossary.md#manipulator) itself. Click **ok** on the _Creator_ to finish creating that [Endpoint](../../Overview/Glossary.md#endpoint) and then on **ok** again to complete the assembly.
 
-As standard, the [Tool](../../Overview/Glossary.md#end-effector)'s base will be attached to the [Robot](../../Overview/Glossary.md#manipulator)'s _flange_, or [endpoint](../../Overview/Glossary.md#endpoint). Setting the **Location** allows you to offset that attachment point if you need to.
+As standard, the [Tool](../../Overview/Glossary.md#end-effector)'s base will be attached to the [Robot](../../Overview/Glossary.md#manipulator)'s _flange_, or [endpoint](../../Overview/Glossary.md#endpoint). Setting the _Location_ allows you to offset that attachment point if you need to.
 
 The **Translation Override** _Step_ will allow you change how the [Tool](../../Overview/Glossary.md#end-effector) is [exported](../../Overview/Glossary.md#export) into [Robot](../../Overview/Glossary.md#manipulator) code.
 
@@ -90,11 +90,11 @@ Once you are happy with the [Tool](../../Overview/Glossary.md#end-effector)'s se
 
 #### Objective:
 
-In this tutorial we'll see how to create [References](../../Overview/Glossary.md#reference) for your FlowBuilder scene.
+In this tutorial we'll see how to create [References](../../Overview/Glossary.md#reference) for your _decode_ scene.
 
 #### Requirements to follow along:
 
-- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- HAL Robotics _decode_ installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
 - An open [project](../1-Getting-Started/Contents.md#11-projects)
 
 #### Background:
@@ -121,7 +121,7 @@ Take a look at the next tutorial on creating [Parts](../../Overview/Glossary.md#
 
 #### Objective:
 
-In this tutorial we'll see how to add [Parts](../../Overview/Glossary.md#part) to your FlowBuilder scene.
+In this tutorial we'll see how to add [Parts](../../Overview/Glossary.md#part) to your _decode_ scene.
 
 #### Demo Files:
 
@@ -129,13 +129,13 @@ In this tutorial we'll see how to add [Parts](../../Overview/Glossary.md#part) t
 
 #### Requirements to follow along:
 
-- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- HAL Robotics _decode_ installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
 - An open [project](../1-Getting-Started/Contents.md#11-projects)
 - Reading the [Create a Reference](#23-create-a-reference) tutorial is highly recommended.
 
 #### Background:
 
-[Parts](../../Overview/Glossary.md#part) serve two roles in FlowBuilder and come in two variants. Firstly, [Parts](../../Overview/Glossary.md#part) can be used to populate your [Cells](../../Overview/Glossary.md#cell) with environmental elements such as pedestals, tables or tool holders which can in turn be used as [References](../../Overview/Glossary.md#reference) for your [Toolpaths](../../Overview/Glossary.md#toolpath). They can also be used as the basis geometry for [Toolpaths](../../Overview/Glossary.md#toolpath), e.g. following edges or surfaces. When we import [Parts](../../Overview/Glossary.md#part) for the environment, we optimise them for performance. To retain all the geometric data and therefore enable the latter use, use a **CAD Model** instead. Both are grouped here because the settings and workflow are almost identical and we'll use [Parts](../../Overview/Glossary.md#part) as a general term for both below.
+[Parts](../../Overview/Glossary.md#part) serve two roles in _decode_ and come in two variants. Firstly, [Parts](../../Overview/Glossary.md#part) can be used to populate your [Cells](../../Overview/Glossary.md#cell) with environmental elements such as pedestals, tables or tool holders which can in turn be used as [References](../../Overview/Glossary.md#reference) for your [Toolpaths](../../Overview/Glossary.md#toolpath). They can also be used as the basis geometry for [Toolpaths](../../Overview/Glossary.md#toolpath), e.g. following edges or surfaces. When we import [Parts](../../Overview/Glossary.md#part) for the environment, we optimise them for performance. To retain all the geometric data and therefore enable the latter use, use a **CAD Model** instead. Both are grouped here because the settings and workflow are almost identical and we'll use [Parts](../../Overview/Glossary.md#part) as a general term for both below.
 
 #### How to:
 
@@ -153,11 +153,11 @@ Once you are happy with the [Part](../../Overview/Glossary.md#part) or **CAD Mod
 
 #### Objective:
 
-In this tutorial we'll look at how you can create and configure a virtual [Controller](../../Overview/Glossary.md#controller) to match your real [Controller](../../Overview/Glossary.md#controller) in your FlowBuilder scene.
+In this tutorial we'll look at how you can create and configure a virtual [Controller](../../Overview/Glossary.md#controller) to match your real [Controller](../../Overview/Glossary.md#controller) in your _decode_ scene.
 
 #### Requirements to follow along:
 
-- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- HAL Robotics _decode_ installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
 - An open [project](../1-Getting-Started/Contents.md#11-projects)
 - A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene** is recommended
 
@@ -165,7 +165,7 @@ In this tutorial we'll look at how you can create and configure a virtual [Contr
 
 Industrial [Controllers](../../Overview/Glossary.md#controller) are typically comprised of core functionality, such as the ability to run a program, extended through optional extras, like communication protocols or multi-[Robot](../../Overview/Glossary.md#manipulator) support. To ensure that we only try and interact with your real [Controller](../../Overview/Glossary.md#controller) in a way that is compatible, be it through a network or with exported code, we have added a means to configure your [Controller](../../Overview/Glossary.md#controller). The constituent parts of this are:
 
-a.  Controller - this is essentially a computer to which your [Robot](../../Overview/Glossary.md#manipulator) and [Signals](../../Overview/Glossary.md#signal) are connected.
+a.  [Controller](../../Overview/Glossary.md#controller) - this is essentially a computer to which your [Robot](../../Overview/Glossary.md#manipulator) and [Signals](../../Overview/Glossary.md#signal) are connected.
 
 b.  Capabilities - these are how we organize what a [Controller](../../Overview/Glossary.md#controller) can do and draw parallels between different manufacturers' [Controllers](../../Overview/Glossary.md#controller). _Capabilities_ are things like the ability to [Upload](../../Overview/Glossary.md#upload) code to the [Controller](../../Overview/Glossary.md#controller) from a PC or the ability to read the values of [Signals](../../Overview/Glossary.md#signal) remotely.
 
@@ -193,11 +193,11 @@ Once you are happy with the [Controller](../../Overview/Glossary.md#controller)'
 
 #### Objective:
 
-In this tutorial we'll create a [Signal](../../Overview/Glossary.md#signal) that can be programmed in FlowBuilder.
+In this tutorial we'll create a [Signal](../../Overview/Glossary.md#signal) that can be programmed in _decode_.
 
 #### Requirements to follow along:
 
-- HAL Robotics FlowBuilder installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
+- HAL Robotics _decode_ installed on a PC. See [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) if you need to install the software.
 - An open [project](../1-Getting-Started/Contents.md#11-projects)
 - A [Robot](../../Overview/Glossary.md#manipulator) in the **Scene**
 - A [Controller](../../Overview/Glossary.md#controller) in the **Scene**
@@ -210,7 +210,7 @@ Electrical Input and Output (I/O) [Signals](../../Overview/Glossary.md#signal) a
 
 From the **Network** screen, select the **I/O Signals Board** into which you want to add your new [Signal(s)](../../Overview/Glossary.md#signal). [Signals](../../Overview/Glossary.md#signal) can't be moved between **Boards** later. That will enable the _Item Type_ selector to list a number of different [Signals](../../Overview/Glossary.md#signal) types. Select whichever you need but **Digital Output**s are very common so we'll use that as our example here. Click **+** and you'll start creating a [Signal](../../Overview/Glossary.md#signal) of your selected type.
 
-The **Configuration** _Step_ will allow you to set its upper and lower limits (leave 0 to 24V if you are unsure). The[Translation Overrides](../1-Getting-Started/Contents.md#translation-overrides) will allow you to use a human readable name within FlowBuilder but change what's [exported](../../Overview/Glossary.md#export).
+The **Configuration** _Step_ will allow you to set its upper and lower limits (leave `0` to `24V` if you are unsure). The[Translation Overrides](../1-Getting-Started/Contents.md#translation-overrides) will allow you to use a human readable name within _decode_ but change what's [exported](../../Overview/Glossary.md#export).
 
 Once you are happy with the [Signal](../../Overview/Glossary.md#signal)'s setup, ensure the name makes it easy to identify and click **ok** in the upper right corner to return to the **Network** screen.
 

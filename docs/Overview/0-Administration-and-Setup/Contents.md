@@ -48,7 +48,7 @@ On the home page you should see a _Downloads_ tab which will give you a link to 
 <em>The downloaded "Setup.exe" application will install the HAL Robotics Framework Installer.</em>
 v
 Once the download is complete, run the installer and you should see a list of all available packages and extensions. 
-Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. For example, if you want the **Grasshopper SDK**, select **HAL.McNeel.V5**, or for **FlowBuilder** select **HAL.FlowBuilder**. Once you have selected your configuration simply click apply and the installation will start.
+Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. For example, if you want the **Grasshopper SDK**, select **HAL.McNeel.V5**, or for **_decode_** select **HAL._decode_**. Once you have selected your configuration simply click apply and the installation will start.
 
 Every time there are updates available for the packages you have installed simply clicking apply will download and install the latest version.
 
@@ -212,4 +212,4 @@ Once this is done you can clean up any remnants that the uninstallation process 
 
 ---
 
-Continue to: 1. Getting Started for [FlowBuilder](../../decode/1-Getting-Started/Contents.md#1-getting-started) or the [Grasshopper SDK](../../Grasshopper/1-Getting-Started/Contents.md#1-getting-started)
+Continue to: 1. Getting Started for [_decode_](../../decode/1-Getting-Started/Contents.md#1-getting-started) or the [Grasshopper SDK](../../Grasshopper/1-Getting-Started/Contents.md#1-getting-started)
