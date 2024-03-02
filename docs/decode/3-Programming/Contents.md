@@ -156,7 +156,7 @@ There are two _Creators_ in **Path**, **Follow Curve** and **Follow Pattern**. T
 
 ##### Follow Curve
 
-There are lots of different ways to assign curves for the **Path** to follow, grouped un the **Source** setting. If you want to follow the edge of a CAD Model you have in your **Scene**, **From Model** lets you select that geometry. In the **From Model** settings you'll find a selector which allows you to add or remove curves to a collection. Click on **select** and then the **+** button in the pop-up to start selecting. Any eligible curves within your model will be highlighted when you hover over them and a single click will add them to the selection. You will see a banner appear above your 3D viewport which has extra information about the next step in the selection process, in this case how to confirm your selection and return to the pop-up. All the curves you selected will be listed here and can be individually removed using the **X** next to each item. You can return to adding or removing curves from the model by clicking the **+** again. When you're happy with your selection click **ok** and you'll be returned to the **Path** editor.
+There are lots of different ways to assign curves for the **Path** to follow, grouped un the **Source** setting. If you want to follow the edge of a CAD Model you have in your **Scene**, **From Model** lets you select that geometry. In the **From Model** settings you'll find a selector which allows you to add or remove curves to a collection. Click on **select** and then the **+** button in the pop-up to start selecting. Any eligible curves within your model will be highlighted when you hover over them and a single click will add them to the selection. You will see a banner appear above your 3D viewport which has extra information about the next step in the selection process, in this case how to confirm your selection and return to the pop-up. All the curves you selected will be listed here and can be individually removed using the **X** next to each item, or all cleared with the **X** next to he **+** button. You can return to adding or removing curves from the model by clicking the **+** again. When you're happy with your selection click **ok** and you'll be returned to the **Path** editor.
 
 The other **Sources** allow you to create curves on any CAD Models you have imported. They will all ask you for one or more **Host** **Locations** which can be selected on any CAD Model in your **Scene**, and then a series of relevant **Settings**. There lots of possibilities here so it's well worth experimenting with all the options to see what can be achieved. For example from the **Spiral** **Source**, setting the **Inner Radius** and **Outer Radius** to the same value (maybe even a [Variable](../1-Getting-Started/Contents.md#14-variables)), and deactivating **Flat**, will allow you to create a cylindrical spiral at some point(s) on your CAD Model. Or linking your **Location(s)** to a [Variable](../1-Getting-Started/Contents.md#14-variables) will allow you to apply several different curves to the same locations.
 
@@ -164,7 +164,41 @@ The **Modifiers** then allow you to manipulate those curves, **Flipping** their 
 
 ##### Follow Pattern
 
+Both **Follow Pattern** _Creators_ require some means of defining a **Region** to work. **Planar** requires the selection of **Boundary** curves from a CAD Model. Those can either be independent closed regions or one inside another which will be treated as holes within the outermost region. **Non-planar** regions need a surface or mesh from a CAD Model. It's best to explode complex models into their usable surfaces or meshes in your CAD editor of choice before importing them to make this easier. If you have curves within you CAD Models you can also set these are **Boundaries** on the **Host** surfaces but if no **Boundaries** are specified we'll the edges of those surfaces in their stead.
 
+With a **Region** in place, we can **Create a Pattern**. The **Pattern Type** will determine the settings available so, again, it's worth experimenting to see what they all do. All **Pattern Types** work well on **Planar** **Regions** but we only recommend **Concentric** or **Parallel** on **Non-Planar** **Regions**.
+
+##### Target Generation
+
+The **Targets** _Step_ allows you to decide how the geometry we have no selected or created should be subdivided into Moves. The **Subdivision** **Method** allows you to decide how the inputs should be approximated whilst the **Tolerance** allows you to specify how accurately the input should be followed. A larger **Tolerance** value will allow greater deviation from the input but will result in fewer Targets. Whilst it might seem desirable to make that as low as possible, having too many Targets will generate lots of code and may have a negative impact on Robot performance. The **Guide** settings allow you to automatically orient your Targets to follow some geometry. For example if you were applying a **Pattern** to a surface, the **Guide** would enable you to keep all your Targets normal (perpendicular) to that surface, or if you have selected curves **From Model** you could keep one of the axes tangent to them (**Use Curve As Guide**).
+
+**Transform Targets** allows you to offset your Targets uniformly. This is applied relative to the Target itself when in **Parent** or to the **World** when the Reference is set to the **World**. If for example you had a pattern across a surface with all of your Targets' Z-axes facing into that surface, you could moving them all off the surface by 20mm by setting the **Position Z** value to -20 (minus because it's in the opposite direction to the Z axis). Or you could rotate all of your Targets around their X-axes by changing the **Rotation X** value.
+
+##### Motion
+
+**Motion Settings** are exactly the same as you will have seen in the [Move](#31-move) tutorial.
+
+##### Jumps
+
+It's possible that your **Path** is a single continuous sequence of Targets, but if there are breaks in it **Jumps** allow you to specify how the Robot should get from the end of one sequence to the start of the next. There are 5 phases to the **Jump** _Step_ that can all be controlled by the same settings or specified individually.
+- **Path Entry** specifies where the Robot should Move to before the start of the first sequence.
+- **Path Exit** specifies where the Robot should Move to after the end of the last sequence.
+- **Jump Start** specifies where the Robot should Move to after the end of any other sequence.
+- **Jump End** specifies where the Robot should Move to before the start of any other sequence.
+- **Jump Travel** dictates how the Robot Moves between **Jump Start** and **Jump End**.
+
+The settings within each of those phases should be familiar by now.
+
+**Jump Events** allow you to specify if anything should happen during the **Path** or its **Jumps**. That could include activating or deactivating a Tool, triggering a Signal or a Wait. They are all Procedure **Calls** and therefore need to be created within sub-Procedures. See [Structuring Procedures](#36-structuring-procedures) for more details about how those are created.
+
+- **Entry** **On Approach** is called at the **Path Entry** Target.
+- **Entry** **On Start** is called at the first Target of the first sequence only.
+- **Jumps** **On Departure** is called at the last Target of each sequence.
+- **Jumps** **On Retract** is called at the **Jump Start** point of each sequence.
+- **Jumps** **On Travel** is called at the **Jump End** point of each sequence.
+- **Jumps** **On Arrival** is called at the first Target of each sequence.
+- **Exit** **On End** is called at the last Target of the last sequence only.
+- **Exit** **On Retract** is called at the **Path Exit** Target.
 
 Once you are happy with the **Path**'s setup, ensure the name makes it easy to identify and click **ok** in the upper right corner to return to the **Programming** screen.
 
