@@ -28,6 +28,9 @@ In this tutorial we'll create an **Operator Workflow** in _decode_.
 
 From the **Workflow Editor** screen, click on the three bar menu icon (**☰**) in the top right-hand corner and **Add a New Workflow**. You can use the same menu to rename the **Workflow**, add other **Workflows** or delete the currently selected **Workflow**.
 
+[<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
+<em>An empty Workflow isn't very useful but offers a lot of potential.</em>
+
 ---
 ### 4.2. Steps
 
@@ -73,6 +76,9 @@ _N.B. For any of these to run the [Procedure](../../Overview/Glossary.md#procedu
 - **Upload Code** allows you to [Upload](../../Overview/Glossary.md#upload) code directly to a Controller. The same settings as **Export Code** apply but the **Destination** is on the Controller. _Run Automatically_ will, if possible, start executing the [Robot](../../Overview/Glossary.md#manipulator)'s [Procedure](../../Overview/Glossary.md#procedure) once the [Upload](../../Overview/Glossary.md#upload) completes.
 - **Set Procedure Execution** works just like _Run Automatically_ in **Upload Code** in _Production Mode_ when set to but will run a [simulation](../../Overview/Glossary.md#73-simulation) in the 3D viewport in _Simulation Mode_. It will not, however, [Upload](../../Overview/Glossary.md#upload) any code.
 
+[<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
+<em>Workflows acts a collaborative work instructions for operators and connected devices.</em>
+
 ---
 ### 4.3. Run a Workflow
 
@@ -97,6 +103,9 @@ In this tutorial we'll see how to run an **Operator Workflow** in _decode_.
 The **Operator Workflow Executor** screen has a few buttons at the top and nothing else, yet. The _simulation/production_ mode toggle changes between running the virtual [Robot](../../Overview/Glossary.md#manipulator) or the real one. The **Workflow** selector allows the operator to choose which **Workflow** they want to run. The **X** resets the execution of a **Workflow** if for any reason the operator needs to start again or abort the current run. The **play**/**pause** button plays or pauses the execution and the circular arrows activates or deactivates the looping of the **Workflow**.
 
 Once the **Workflow** is started **Notifications**, **Confirmations**, **Inputs** etc. will start appearing for the operator, as programmed in the **Workflow**.
+
+[<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
+<em>The operator will continue to get instructions and be able to adjust the process until their Workflow is complete.</em>
 
 ---
 
