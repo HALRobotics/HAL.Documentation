@@ -47,4 +47,4 @@
 
 ---
 
-### [Release Notes](Manufacturers/Contents.md)
+### [Release Notes](ReleaseNotes/Contents.md)
