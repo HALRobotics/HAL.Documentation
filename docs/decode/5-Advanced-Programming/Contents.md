@@ -41,7 +41,7 @@ These overrides are all done through the naming of objects, by using special syn
 
 Overriding can be activated in the **Translation Overrides** _Step_ of compatible items by toggling **Override** on. You will then see a few options appear. **Mode** can be set between **Alias** and **Index**. The former will allow you to specify a new name for the item when it's exported. If the **Alias Override** is left blank, we will reuse the _Name_ specified in the object itself. In **Index** mode, we will try to [Export](../../Overview/Glossary.md#export) the **Index** within an array in the native language e.g. `Tool[3]`. If **Skip Declaration** is activated, then we will _not_ [Export](../../Overview/Glossary.md#export) any values for the item and assume that it is defined in your [Controller's](../../Overview/Glossary.md#controller) system variables.
 
-[<img src="../../assets/images/decode/02-Signals/Signals-AliasOverride.png">](../../assets/images/decode/02-Signals/Signals-AliasOverride.png)
+[<img src="../../assets/images/decode/02-Network/Signals-AliasOverride.png">](../../assets/images/decode/02-Network/Signals-AliasOverride.png)
 <em>Translation overrides give you extra control over how items are exported to your robot code.</em>
 
 The syntax you will see is as follows:

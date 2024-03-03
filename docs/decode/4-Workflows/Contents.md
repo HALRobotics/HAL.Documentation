@@ -28,7 +28,7 @@ In this tutorial we'll create an **Operator Workflow** in _decode_.
 
 From the **Workflow Editor** screen, click on the three bar menu icon (**☰**) in the top right-hand corner and **Add a New Workflow**. You can use the same menu to rename the **Workflow**, add other **Workflows** or delete the currently selected **Workflow**.
 
-[<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
+[<img src="../../assets/images/decode/04-WorkflowEditor/WorkflowEditor-Create.gif">](../../assets/images/decode/04-WorkflowEditor/WorkflowEditor-Create.gif)<br>
 <em>An empty Workflow isn't very useful but offers a lot of potential.</em>
 
 ---
@@ -52,6 +52,9 @@ An **Operator Workflow** is comprised of a sequence of multiple **Steps** which 
 
 #### How to:
 
+[<img src="../../assets/images/decode/04-WorkflowEditor/WorkflowEditor-Complete.png">](../../assets/images/decode/04-WorkflowEditor/WorkflowEditor-Complete.png)<br>
+<em>Workflows acts a collaborative work instructions for operators and connected devices.</em>
+
 Use the _Item Type_ selector to choose the **Step** type you want to add and click the **+** button to add it. As usual, it is highly recommended to assign a useful _Name_ to any **Step**. The standard **Steps** and their settings are listed below.
 
 ##### Operator Interactions
@@ -59,6 +62,12 @@ Use the _Item Type_ selector to choose the **Step** type you want to add and cli
 - **Operator Confirmation** shows a message to the operator with a button to confirm before the **Workflow** proceeds. The settings are a _Message_ to the operator and the _Confirm Button Content_ which is the text on the button they will see. e.g. _Load the part into the fixturing and click "Done" once complete._ - _Done_
 - **Operator Input** builds on **Operator Confirmation** and also asks the operator to set the value of a [Variable](../1-Getting-Started/Contents.md#14-variables). A selector is shown from which the [Variable](../1-Getting-Started/Contents.md#14-variables) can be chosen, and if _Validate on Change_ is active, then _decode_ will re-**solve** the [Procedure](../../Overview/Glossary.md#procedure) every time the value is changed by the operator. e.g. _How fast should the robot go?_ - _MySpeed Variable_ - _OK_
 - **Operator Choice** allows the operator to choose from one or more **Options**, each of which can branch the **Workflow**. The new settings here are _Minimum_ and _Maximum_ which specify the minimum and maximum number of **Options** the operator can select before proceeding. Setting either to `0` will allow any number of **Options** to be a valid selection. Once your **Operator Choice** has been created, two **Options** will automatically be generated within it, more can be added by selecting the **Operator Choice** and clicking the **+** with **Option** in the _Item Type_ selector.
+
+[<img src="../../assets/images/decode/04-WorkflowEditor/WorkflowEditor-OperatorInput.png">](../../assets/images/decode/04-WorkflowEditor/WorkflowEditor-OperatorInput.png)<br>
+<em>Workflow Steps can ask the operator for input about how the process should work.</em>
+
+[<img src="../../assets/images/decode/05-WorkflowExecutor/WorkflowExecutor-OperatorInput.png">](../../assets/images/decode/05-WorkflowExecutor/WorkflowExecutor-OperatorInput.png)<br>
+<em>An editor will be shown to the operator when asking for their input.</em>
 
 ##### Non-Interactive
 - **Set Variable** works like an **Operator Input** but does not prompt the operator. These are envisaged to be most useful within **Options** but are not limited to that case. If **Visible To Operator** is activate, the operator will be notified that the value of the [Variable](../1-Getting-Started/Contents.md#14-variables) has been changed, and told what the new value is. The _Value_ to be set can be changed via the _Value_ **edit** button.
@@ -75,9 +84,6 @@ _N.B. For any of these to run the [Procedure](../../Overview/Glossary.md#procedu
 - **Export Code** allows you to [Export](../../Overview/Glossary.md#export) code to a folder. The Controller, _Destination_ and _Mode_ can be set. `Inline` **Mode** will create a dense code file with as little declarative code as possible. `Predeclaration` mode will do just the opposite, it will create variables wherever possible to make it easier to change things by hand should you want to. For most scenarios we recommend `Inline` as it produces shorter code and is faster. You can also set what happens once the code is [Exported](../../Overview/Glossary.md#export) in _On Export_.
 - **Upload Code** allows you to [Upload](../../Overview/Glossary.md#upload) code directly to a Controller. The same settings as **Export Code** apply but the **Destination** is on the Controller. _Run Automatically_ will, if possible, start executing the [Robot](../../Overview/Glossary.md#manipulator)'s [Procedure](../../Overview/Glossary.md#procedure) once the [Upload](../../Overview/Glossary.md#upload) completes.
 - **Set Procedure Execution** works just like _Run Automatically_ in **Upload Code** in _Production Mode_ when set to but will run a [simulation](../../Overview/Glossary.md#73-simulation) in the 3D viewport in _Simulation Mode_. It will not, however, [Upload](../../Overview/Glossary.md#upload) any code.
-
-[<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
-<em>Workflows acts a collaborative work instructions for operators and connected devices.</em>
 
 ---
 ### 4.3. Run a Workflow
@@ -104,7 +110,7 @@ The **Operator Workflow Executor** screen has a few buttons at the top and nothi
 
 Once the **Workflow** is started **Notifications**, **Confirmations**, **Inputs** etc. will start appearing for the operator, as programmed in the **Workflow**.
 
-[<img src="../../assets/images/Grasshopper/12Parameters.PNG">](../../assets/images/Grasshopper/12Parameters.PNG)<br>
+[<img src="../../assets/images/decode/05-WorkflowExecutor/WorkflowExecutor-Simulation-FastExecution.gif">](../../assets/images/decode/05-WorkflowExecutor/WorkflowExecutor-Simulation-FastExecution.gif)<br>
 <em>The operator will continue to get instructions and be able to adjust the process until their Workflow is complete.</em>
 
 ---
