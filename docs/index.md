@@ -44,3 +44,7 @@
 #### [Universal Robots](Manufacturers/UniversalRobots/Contents.md)
 
 #### [Yaskawa](Manufacturers/Yaskawa/Contents.md)
+
+---
+
+### [Release Notes](Manufacturers/Contents.md)
