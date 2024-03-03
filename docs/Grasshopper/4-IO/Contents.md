@@ -13,7 +13,7 @@ In this tutorial we'll create a [Signal](../../Overview/Glossary.md#signal) that
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG"> Create a Signal.gh](../ExampleFiles/Tutorials/4.1%20-%20Create%20a%20Signal.gh)
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Create a Signal.gh](../ExampleFiles/Tutorials/4.1%20-%20Create%20a%20Signal.gh)
 
 #### Requirements to follow along:
 
@@ -36,7 +36,7 @@ In this tutorial we'll change the state of a [Signal](../../Overview/Glossary.md
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG"> Change a Signal State.gh](../ExampleFiles/Tutorials/4.2%20-%20Change%20a%20Signal%20State.gh)
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Change a Signal State.gh](../ExampleFiles/Tutorials/4.2%20-%20Change%20a%20Signal%20State.gh)
 
 #### Requirements to follow along:
 
@@ -49,7 +49,7 @@ Electrical Input and Output (I/O) [Signals](../../Overview/Glossary.md#signal) a
 
 #### How to:
 
-In our previous tutorial, we create a digital output [Signal](../../Overview/Glossary.md#signal), assigned it an appropriate _Alias_ and hooked it up to a [Controller](../../Overview/Glossary.md#controller). We now want to change the state of that [Signal](../../Overview/Glossary.md#signal) during the execution of a [Procedure](../../Overview/Glossary.md#procedure). To do so we're going to get the **Change Signal State** component from the **HAL Robotics** tab, **Procedure** panel. Just like the **Create Signal** component we can change between digital and analogue with component templates and swap between input or output by changing overloads. We can assign our previously created [Signal](../../Overview/Glossary.md#signal) to the component's _Signal_ input and choose what effect we want to have on the [Signal](../../Overview/Glossary.md#signal) by right-clicking on the _Effect_ input. In this scenario we're going to `Set` the state. As we're setting the state, we need to pass in a _State_ which, for a digital signal, is a Boolean value where `true` is equivalent to High and `false` is equivalent to Low. The output of this component is an [Action](../../Overview/Glossary.md#action) which can be merged into any other sequence of [Actions](../../Overview/Glossary.md#action) you may have. Once that's merged, we can see in the **Procedure Browser** that we have some [Motion](../../Overview/Glossary.md#motion-action), our `Set DO_01 to high` [Action](../../Overview/Glossary.md#action) and then some more [Motion](../../Overview/Glossary.md#motion-action) to finish off the [Procedure](../../Overview/Glossary.md#procedure).
+In our previous tutorial, we created a digital output [Signal](../../Overview/Glossary.md#signal), assigned it an appropriate _Alias_ and hooked it up to a [Controller](../../Overview/Glossary.md#controller). We now want to change the state of that [Signal](../../Overview/Glossary.md#signal) during the execution of a [Procedure](../../Overview/Glossary.md#procedure). To do so we're going to get the **Change Signal State** component from the **HAL Robotics** tab, **Procedure** panel. Just like the **Create Signal** component we can change between digital and analogue with component templates and swap between input or output by changing overloads. We can assign our previously created [Signal](../../Overview/Glossary.md#signal) to the component's _Signal_ input and choose what effect we want to have on the [Signal](../../Overview/Glossary.md#signal) by right-clicking on the _Effect_ input. In this scenario we're going to `Set` the state. As we're setting the state, we need to pass in a _State_ which, for a digital signal, is a Boolean value where `true` is equivalent to High and `false` is equivalent to Low. The output of this component is an [Action](../../Overview/Glossary.md#action) which can be merged into any other sequence of [Actions](../../Overview/Glossary.md#action) you may have. Once that's merged, we can see in the **Procedure Browser** that we have some [Motion](../../Overview/Glossary.md#motion-action), our `Set DO_01 to high` [Action](../../Overview/Glossary.md#action) and then some more [Motion](../../Overview/Glossary.md#motion-action) to finish off the [Procedure](../../Overview/Glossary.md#procedure).
 
 ---
 

@@ -61,7 +61,7 @@ In this section we'll explain how to get the [Procedures](../../Overview/Glossar
 2. Copy the _{ProcedureName}.mod_ file onto a USB stick.
 3. Insert the USB stick into the USB port on the teach pendant.
 4. Navigate to the _Program Editor_ and select _Modules_ (in the top centre of the screen) -> _File_ -> _Load Module_.
-[<center><img src="../../assets/images/ABBViewModules.PNG"></center>](../../assets/images/ABBViewModules.PNG)
+[<center><img src="../../assets/images/Manufacturers/ABBViewModules.PNG"></center>](../../assets/images/Manufacturers/ABBViewModules.PNG)
 <em>Edit the Program and Load a Module.</em>
 
 5. Navigate to your Module file on the USB stick and click _OK_.

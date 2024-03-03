@@ -19,7 +19,7 @@ In this tutorial we'll create a [Wait Action](../../Overview/Glossary.md#wait-ac
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG"> Wait for a Time.gh](../ExampleFiles/Tutorials/5.1%20-%20Wait%20for%20a%20Time.gh)
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Wait for a Time.gh](../ExampleFiles/Tutorials/5.1%20-%20Wait%20for%20a%20Time.gh)
 
 #### Requirements to follow along:
 
@@ -42,7 +42,7 @@ In this tutorial we'll create a [Wait Action](../../Overview/Glossary.md#wait-ac
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG"> Wait for Synchronization.gh](../ExampleFiles/Tutorials/5.2%20-%20Wait%20for%20Synchronization.gh)
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Wait for Synchronization.gh](../ExampleFiles/Tutorials/5.2%20-%20Wait%20for%20Synchronization.gh)
 
 #### Requirements to follow along:
 
@@ -73,7 +73,7 @@ In this tutorial we'll use a [Custom Action](../../Overview/Glossary.md#custom-a
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG"> Custom Action.gh](../ExampleFiles/Tutorials/5.5%20-%20Custom%20Action.gh)
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Custom Action.gh](../ExampleFiles/Tutorials/5.5%20-%20Custom%20Action.gh)
 
 #### Requirements to follow along:
 

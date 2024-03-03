@@ -63,15 +63,15 @@ In this section we'll explain how to get the [Procedures](../../Overview/Glossar
 2. Copy the _{ProcedureName}.script_ file onto a USB stick.
 3. Insert the USB stick into the USB port on the teach pendant.
 4. Create a new **Program** on the controller with a **Script** node (you'll find this under the **Advanced** category) and set the mode to _File_.
-[<center><img src="../../assets/images/URCreateScript.PNG"></center>](../../assets/images/URCreateScript.PNG)
+[<center><img src="../../assets/images/Manufacturers/URCreateScript.PNG"></center>](../../assets/images/Manufacturers/URCreateScript.PNG)
 <em>Create a Script node into which you can load your URScript file.</em>
 
 5. Click _Edit_ then _Open_ to browse to your _{ProcedureName}.script_ file on the USB stick. You can then _Exit_ the script editor.
-[<center><img src="../../assets/images/URLoadScript.PNG"></center>](../../assets/images/URLoadScript.PNG)
+[<center><img src="../../assets/images/Manufacturers/URLoadScript.PNG"></center>](../../assets/images/Manufacturers/URLoadScript.PNG)
 <em>Browse the directories and open your URScript file.</em>
 
 6. Your _{ProcedureName}.script_ is now loaded and ready to run.
-[<center><img src="../../assets/images/URManualProgram.PNG"></center>](../../assets/images/URManualProgram.PNG)
+[<center><img src="../../assets/images/Manufacturers/URManualProgram.PNG"></center>](../../assets/images/Manufacturers/URManualProgram.PNG)
 <em>Browse the directories and open your URScript file.</em>
 
 ---

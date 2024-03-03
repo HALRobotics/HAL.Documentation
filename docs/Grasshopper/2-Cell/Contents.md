@@ -33,7 +33,7 @@ Within the **HAL Robotics** tab, under the **Cell** panel you will find a compon
 
 You can use the search bar or tags listed on the left-hand side of the window to filter the [Robots](../../Overview/Glossary.md#manipulator) to find the one you want. Once you have identified the [Robot](../../Overview/Glossary.md#manipulator) you want to add to the document simply double click or use the "Select" button to instantiate your [Robot](../../Overview/Glossary.md#manipulator) in the scene. If you intend to [Export](../../Overview/Glossary.md#export) code to your [Robot](../../Overview/Glossary.md#manipulator) it is a good habit to name your virtual **Robot** to match the real one using the _Alias_ input. For example, the `IRB-1200` we have in the office is configured as `HAL_Jarvis`.
 
-[<img src="../../assets/images/21Robot.gif">](../../assets/images/21Robot.gif)
+[<img src="../../assets/images/Grasshopper/21Robot.gif">](../../assets/images/Grasshopper/21Robot.gif)
 <em>It is good practice to name HAL objects by using the _Alias_ input of the components.</em>
 
 ---
@@ -45,7 +45,7 @@ In this tutorial we'll see how to create [References](../../Overview/Glossary.md
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG">  Create a Reference.gh](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.gh)
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG">  Create a Reference.gh](../ExampleFiles/Tutorials/2.2%20-%20Create%20a%20Reference.gh)
 
 #### Requirements to follow along:
 
@@ -59,26 +59,26 @@ In this tutorial we'll see how to create [References](../../Overview/Glossary.md
 
 The simplest way to create a [Reference](../../Overview/Glossary.md#reference) is under the **Cell** panel, **Create Reference**. Our [Reference](../../Overview/Glossary.md#reference) defaults to the world origin but you can equally select any point from your Rhino or Grasshopper session. In this demo I'm going to use this point on the corner of my box which I've previously drawn in Rhino. I'm going to bring that into Grasshopper and assign it as the origin of an XY Plane and the _Frame_ of my **Reference**. We can see the location of our [Reference](../../Overview/Glossary.md#reference) from these dashed axes with dots at the ends. You can also see that the [Reference](../../Overview/Glossary.md#reference) is labelled. To simplify finding our [References](../../Overview/Glossary.md#reference) later it's advisable to give them an identifiable name, in this case `BoxCorner`, using the _Alias_ input.
 
-[<img src="../../assets/images/22Reference.gif">](../../assets/images/22Reference.gif)
+[<img src="../../assets/images/Grasshopper/22Reference.gif">](../../assets/images/Grasshopper/22Reference.gif)
 <em>It is good practice to name HAL objects by using the _Alias_ input of the components.</em>
 
 There are two main ways to use [References](../../Overview/Glossary.md#reference), both of which can be demonstrated using the **Target** component and selecting the **From Curve** template. 
 *   The first, default, way of using the [Reference](../../Overview/Glossary.md#reference) can be seen by simply selecting a curve already in position in the world. We can see that the [Targets](../../Overview/Glossary.md#target) all follow the curve as it is drawn, but if we drill down into the **Targets'** properties using the **Target Properties** component, we can see that their [References](../../Overview/Glossary.md#reference) are correctly set to `BoxCorner`. If, in this configuration, we move our [Reference](../../Overview/Glossary.md#reference) you'll see that the [Targets](../../Overview/Glossary.md#target) do not follow. That's because the parameter _InWorld_ is set to `true` meaning that both the [Targets](../../Overview/Glossary.md#target) and [Reference](../../Overview/Glossary.md#reference) are in their correct positions in the world and no modifications need to be made. 
 
-[<img src="../../assets/images/22TargetsAbsolute.gif">](../../assets/images/22TargetsAbsolute.gif)
+[<img src="../../assets/images/Grasshopper/22TargetsAbsolute.gif">](../../assets/images/Grasshopper/22TargetsAbsolute.gif)
 <em>Targets created without reference will automatically have the world origin assigned as their reference. Their coordinates will be translated to robot code as they are.</em>
 
-[<img src="../../assets/images/22TargetsAbsoluteReferenced.gif">](../../assets/images/22TargetsAbsoluteReferenced.gif)
+[<img src="../../assets/images/Grasshopper/22TargetsAbsoluteReferenced.gif">](../../assets/images/Grasshopper/22TargetsAbsoluteReferenced.gif)
 <em>Targets created with a reference but _InWorld_ will have the reference assigned but their location relative to the world origin won't change. Their coordinates relative to the reference will be translated to robot code.</em>
 
 *   The other way of using the [References](../../Overview/Glossary.md#reference) is with geometry modelled relative to the world origin like this curve. If we set this up in the same way and change _InWorld_ to `false` our [Targets](../../Overview/Glossary.md#target) maintain the same relative transformation between the world origin and their new [Reference](../../Overview/Glossary.md#reference). Now when we move the [Reference](../../Overview/Glossary.md#reference) around, the relative [Targets](../../Overview/Glossary.md#target) follow.
 
-[<img src="../../assets/images/22ReferencedTargetsOnRoot.gif">](../../assets/images/22ReferencedTargetsOnRoot.gif)
+[<img src="../../assets/images/Grasshopper/22ReferencedTargetsOnRoot.gif">](../../assets/images/Grasshopper/22ReferencedTargetsOnRoot.gif)
 <em>Targets created at the document origin then assigned to a reference, not _InWorld_, will follow the reference around the scene treating the reference as their new origin. Their coordinates relative to the reference will be translated to robot code.</em>
 
 [References](../../Overview/Glossary.md#reference) can also be parented. If we create another [Reference](../../Overview/Glossary.md#reference) and use Shift + Up to change overload we can see a _Parent_ input appear and the same _InWorld_ parameter that we saw in **Target from Curve**. If we use our old [Reference](../../Overview/Glossary.md#reference) as the _Parent_ of this new [Reference](../../Overview/Glossary.md#reference), add a bit of an offset by assigning the _Frame_ and set _InWorld_ to `false` we now have a [Reference](../../Overview/Glossary.md#reference) referenced to a [Reference](../../Overview/Glossary.md#reference). We can reassign the [Reference](../../Overview/Glossary.md#reference) of our relative [Targets](../../Overview/Glossary.md#target) and see both the new [Reference](../../Overview/Glossary.md#reference) and our [Targets](../../Overview/Glossary.md#target) follow when `BoxCorner` is moved. This is of particular use if you have a calibrated work surface but want to perform work in different areas of it.
 
-[<img src="../../assets/images/22RelativeReferences.gif">](../../assets/images/22RelativeReferences.gif)
+[<img src="../../assets/images/Grasshopper/22RelativeReferences.gif">](../../assets/images/Grasshopper/22RelativeReferences.gif)
 <em>References can be declared relative to each other.</em>
 
 #### Next:
@@ -94,7 +94,7 @@ In this tutorial we'll see how to create [Parts](../../Overview/Glossary.md#part
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG">  Create a Part.gh](../ExampleFiles/Tutorials/2.3%20-%20Create%20a%20Part.gh)
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG">  Create a Part.gh](../ExampleFiles/Tutorials/2.3%20-%20Create%20a%20Part.gh)
 
 #### Requirements to follow along:
 
@@ -109,16 +109,16 @@ In this tutorial we'll see how to create [Parts](../../Overview/Glossary.md#part
 
 We can create a [Part](../../Overview/Glossary.md#part) by going to the **Cell** panel, **Create Part**. If you've seen the [Create a Reference](../2-Cell/Contents.md#22-create-a-reference) tutorial many of the inputs here will look familiar, in its simplest form a [Part](../../Overview/Glossary.md#part) is just a [Reference](../../Overview/Glossary.md#reference) with associated geometry. The _Frame_ of our [Part](../../Overview/Glossary.md#part) is its base frame, that is to say if you were to set the position of the [Part](../../Overview/Glossary.md#part) that is the point that you would expect to be at the designated position. The _Body_ is the geometry we want to assign to our [Part](../../Overview/Glossary.md#part), and we can assign a _Mass_. The _Mass_ is particularly necessary if this part is going to be used as part of a [Tool](../../Overview/Glossary.md#end-effector) so that the total mass can be calculated and [Exported](../../Overview/Glossary.md#export) in your code.
 
-[<img src="../../assets/images/23Part.gif">](../../assets/images/23Part.gif)
+[<img src="../../assets/images/Grasshopper/23Part.gif">](../../assets/images/Grasshopper/23Part.gif)
 <em>A part is a shape (approximated by meshes) with an associated location an mass.</em>
 
-[<img src="../../assets/images/23PartAdvanced.gif">](../../assets/images/23PartAdvanced.gif)
+[<img src="../../assets/images/Grasshopper/23PartAdvanced.gif">](../../assets/images/Grasshopper/23PartAdvanced.gif)
 <em>The second overload of the [Part](../../Overview/Glossary.md#part) component allows us to specify a few more details including the _Color_ and _Centre of Mass_.</em>
 
-[<img src="../../assets/images/23PartRelocate.gif">](../../assets/images/23PartRelocate.gif)
+[<img src="../../assets/images/Grasshopper/23PartRelocate.gif">](../../assets/images/Grasshopper/23PartRelocate.gif)
 <em>Once you've created your [Parts](../../Overview/Glossary.md#part) they can be moved around your scene using the **Relocate** component.</em>
 
-[<img src="../../assets/images/23PartAttach.gif">](../../assets/images/23PartAttach.gif)
+[<img src="../../assets/images/Grasshopper/23PartAttach.gif">](../../assets/images/Grasshopper/23PartAttach.gif)
 <em> Two parts can also be attached to each other using the **Attach** component.</em>
 
 #### Next:
@@ -134,8 +134,8 @@ In this tutorial we'll create a simple [Tool](../../Overview/Glossary.md#end-eff
 
 #### Demo Files:
 
-> [<img src="../../assets/images/RHFile16.PNG">  Create a Tool.3dm](../ExampleFiles/Tutorials/2.4%20-%20Create%20a%20Tool.3dm)<br>
-> [<img src="../../assets/images/GHFile16.PNG">  Create a Tool.gh](../ExampleFiles/Tutorials/2.4%20-%20Create%20a%20Tool.gh)
+> [<img src="../../assets/images/Grasshopper/RHFile16.PNG">  Create a Tool.3dm](../ExampleFiles/Tutorials/2.4%20-%20Create%20a%20Tool.3dm)<br>
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG">  Create a Tool.gh](../ExampleFiles/Tutorials/2.4%20-%20Create%20a%20Tool.gh)
 
 #### Requirements to follow along:
 
@@ -163,7 +163,7 @@ In this tutorial we'll bring in calibrated data to improve the accuracy of [Tool
 
 #### Demo Files:
 
-> [<img src="../../assets/images/GHFile16.PNG"> Calibrate a Tool or Reference.gh](../ExampleFiles/Tutorials/2.5%20-%20Calibrate%20a%20Tool%20or%20Reference.gh)
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG"> Calibrate a Tool or Reference.gh](../ExampleFiles/Tutorials/2.5%20-%20Calibrate%20a%20Tool%20or%20Reference.gh)
 
 #### Requirements to follow along:
 
@@ -187,8 +187,8 @@ In this tutorial we'll look at how we can create more complex [Tools](../../Over
 
 #### Demo Files:
 
-> [<img src="../../assets/images/RHFile16.PNG">  Create a Multi-Part Tool.3dm](../ExampleFiles/Tutorials/2.6%20-%20Create%20a%20Multi-Part%20Tool.3dm)<br>
-> [<img src="../../assets/images/GHFile16.PNG">  Create a Multi-Part Tool.gh](../ExampleFiles/Tutorials/2.6%20-%20Create%20a%20Multi-Part%20Tool.gh)
+> [<img src="../../assets/images/Grasshopper/RHFile16.PNG">  Create a Multi-Part Tool.3dm](../ExampleFiles/Tutorials/2.6%20-%20Create%20a%20Multi-Part%20Tool.3dm)<br>
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG">  Create a Multi-Part Tool.gh](../ExampleFiles/Tutorials/2.6%20-%20Create%20a%20Multi-Part%20Tool.gh)
 
 #### Requirements to follow along:
 
@@ -222,8 +222,8 @@ In this tutorial we'll be modelling a [Positioner](../../Overview/Glossary.md#po
 
 #### Demo Files:
 
-> [<img src="../../assets/images/RHFile16.PNG">  Create a Positioner.3dm](../ExampleFiles/Tutorials/2.7%20-%20Create%20a%20Positioner.3dm)<br>
-> [<img src="../../assets/images/GHFile16.PNG">  Create a Positioner.gh](../ExampleFiles/Tutorials/2.7%20-%20Create%20a%20Positioner.gh)
+> [<img src="../../assets/images/Grasshopper/RHFile16.PNG">  Create a Positioner.3dm](../ExampleFiles/Tutorials/2.7%20-%20Create%20a%20Positioner.3dm)<br>
+> [<img src="../../assets/images/Grasshopper/GHFile16.PNG">  Create a Positioner.gh](../ExampleFiles/Tutorials/2.7%20-%20Create%20a%20Positioner.gh)
 
 #### Requirements to follow along:
 
