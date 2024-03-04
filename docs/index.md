@@ -2,7 +2,7 @@
 
 ---
 
-[<img src="./assets/images/decode/logo.png" height="35">](decode/Contents.md)
+[<img class="logo" src="./assets/images/decode/logo.png" height="35">](decode/Contents.md)
 
 ---
 
