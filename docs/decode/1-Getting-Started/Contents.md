@@ -40,6 +40,12 @@ We would also be very receptive to anything that could make your experience bett
 
 Of course, if you have anything nice to say about _decode_ then we'd love to hear that too, on [GitHub](https://github.com/HALRobotics/Beta/discussions), by [email](mailto:the-team@hal-robotics.com) or in whatever public forum you feel is appropriate.
 
+#### Where Next
+
+If you are new to our software, we would recommend starting with the [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) tutorial which will get you up and running.
+
+If you already familiar with our software and have our installer loaded, you can re-run it, make sure **include beta** is ticked on, and you'll be ready to go.
+
 Thank you once again for helping to make _decode_ better.
 
 ---
