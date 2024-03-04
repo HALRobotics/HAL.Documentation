@@ -1,4 +1,19 @@
-## Tutorials for _decode_ 
+[<img src="../assets/images/decode/logo.png" height="35">](decode/Contents.md)
+
+---
+
+### [0. Administration and Setup](../Overview/0-Administration-and-Setup/Contents.md#0-administration-and-setup)
+
+#### [0.1. Install](../Overview/0-Administration-and-Setup/Contents.md#01-install)
+
+#### [0.2. Create and Administer an Organization](../Overview/0-Administration-and-Setup/Contents.md#02-create-and-administer-an-organization)
+
+#### [0.3. Join an Organization](../Overview/0-Administration-and-Setup/Contents.md#03-join-an-organization)
+
+#### [0.4. Purchase Licenses](../Overview/0-Administration-and-Setup/Contents.md#04-purchase-licenses)
+
+#### [0.5. Complete Uninstallation](../Overview/0-Administration-and-Setup/Contents.md#05-complete-uninstallation)
+
 ---
 
 ### [1. Getting Started](./1-Getting-Started/Contents.md#1-getting-started)
