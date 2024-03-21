@@ -26,10 +26,10 @@ You may not rent, lease, or lend the Software.
 HAL Robotics Ltd may provide you with support services related to the Software. Unless stipulated during your license purchase or agreed to in a subsequent contract all support is made on a voluntary basis to which no claims can be made. Any supplemental software code provided to you as part of the Support Services shall be considered part of the Software and subject to the terms and conditions of this EULA. 
 (f) Compliance with Applicable Laws.
 You must comply with all applicable laws regarding use of the Software.
-(g) Academic licenses.
-All users of academic and student versions of the Software are required to limit their use of the Software to academic research and development. Academic licenses may not be used in production environments or by, for, or on behalf of professional companies.
+(g) Academic, Educational and Student licenses.
+All users of academic, educational and student versions of the Software are required to limit their use of the Software to academic research and development. Academic, Educational and Student licenses may not be used in production environments or by, for, or on behalf of professional companies.
 (h) Citations in academic work.
-All users of academic and student versions of the Software are required to mention the use of the software in all publications (scientific papers, thesis, videos, etc.) involving the Software as a simulation or programming solution. This mention must contain the name of the software – HAL Robotics Framework, and the name of the author – HAL Robotics Ltd.
+All users of academic, educational and student versions of the Software are required to mention the use of the software in all publications (scientific papers, thesis, videos, etc.) involving the Software as a simulation, programming or user interface solution. This mention must contain the name of the software – HAL Robotics Framework, and the name of the author – HAL Robotics Ltd.
 
 3. TERMINATION 
 Without prejudice to any other rights, HAL Robotics Ltd may terminate this EULA if you fail to comply with the terms and conditions of this EULA. In such event, you must destroy all copies of the Software in your possession.
