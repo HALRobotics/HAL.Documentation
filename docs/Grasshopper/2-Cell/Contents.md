@@ -152,7 +152,7 @@ In the Getting Started tutorial we used a preset [Tool](../../Overview/Glossary.
 
 #### Next:
 
-Take a look at the [tutorial](#26-create-a-multi-part-tool) on creating multi-[Part](../../Overview/Glossary.md#part) [Tools](../../Overview/Glossary.md#end-effector) and the calibrating [Tools](../../Overview/Glossary.md#end-effector) [tutorial](2.5.-calibrate-a-reference-or-tool) to get a more accurate representation of your cell.
+Take a look at the [tutorial](#26-create-a-multi-part-tool) on creating multi-[Part](../../Overview/Glossary.md#part) [Tools](../../Overview/Glossary.md#end-effector) and the calibrating [Tools](../../Overview/Glossary.md#end-effector) [tutorial](#25-calibrate-a-reference-or-tool) to get a more accurate representation of your cell.
 
 ---
 ### 2.5. Calibrate a Reference or Tool
