@@ -8,7 +8,7 @@
 
 #### [Inovo Robotics](InovoRobotics/Contents.md)
 
-#### [Kawasaki](Kawaasaki/Contents.md)
+#### [Kawasaki](Kawasaki/Contents.md)
 
 #### [KUKA](KUKA/Contents.md)
 
