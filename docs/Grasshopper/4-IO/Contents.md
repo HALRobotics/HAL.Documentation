@@ -53,4 +53,4 @@ In our previous tutorial, we created a digital output [Signal](../../Overview/Gl
 
 ---
 
-[Continue to: 5. Advanced Programming](../5-Flow-Control/Contents.md#5-advanced-programming)
+[Continue to: 5. Advanced Programming](../5-Advanced-Programming/Contents.md#5-advanced-programming)
