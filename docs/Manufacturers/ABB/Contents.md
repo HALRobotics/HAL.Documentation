@@ -91,3 +91,7 @@ ABB's robot simulation tool is [RobotStudio](https://new.abb.com/products/roboti
 6. Check the _Customize options_ box and match the options on your real robot.
 7. This will now start a virtual controller and instantiate a model of your robot. It may take a minute or two.
 8. You can now use this robot exactly as you would the real robot using the loopback IP address _127.0.0.1_ from the HAL Robotics Framework.
+
+A few extra tips, if things aren't quite working as expected:
+- If RobotWebServices (RWS) isn't working in your simulated environment, you may need to enable it using the instructions from ABB [here](https://forums.robotstudio.com/discussion/comment/36060#Comment_36060?utm_source=community-search&utm_medium=organic-search&utm_term=robotwebservices). For those experienced with ABB robots and controllers the TL;DR is - activation can be found under _Configuration -> Communication -> Firewall Manager -> RobotWebServices -> Enable_
+- If you want to access your virtual controller from another PC that can be done using the instructions from ABB [here](https://forums.robotstudio.com/discussion/12082/using-robotwebservices-to-access-a-remote-virtual-controller).
