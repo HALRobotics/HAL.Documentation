@@ -87,6 +87,14 @@ Whilst we expect most users to use our own [simulation](../../Overview/Glossary.
 
 #### How to:
 
+##### Docker
+
+The easiest way to run URSim on a Windows PC or Linux is via Docker for which there is a Docker image [here](https://hub.docker.com/r/universalrobots/ursim_e-series) although this is (at the time of writing) still listed as experimental. To enable [remote upload](#remote) you will need to ensure that the Dashboard port (_29999_) is exposed in your container. This is mentioned on the [Docker Hub page for the image](https://hub.docker.com/r/universalrobots/ursim_e-series). You will also need to ensure that your [File Manager](../../Overview/Glossary.md#capabilities) is set to Local, its path is set correctly and the _Remote Root Directory_ in your Dashboard matches your Docker bind mounts e.g. _/root_ if you bind mount points to _/root/programs_ or _/ursim_ if following the Docker examples. 
+
+E.g. `docker run --rm -it -p 5900:5900 -p 6080:6080 -p 29999:29999 -v "/c/UniversalRobots/staging/root/programs:/root/programs" -e ROBOT_MODEL=UR5 universalrobots/ursim_e-series`
+
+In the example below, `-p 29999:29999` is used to enable the Dashboard from your PC and the `-v ...` contains the full path `/root/programs` on the left hand side.
+
 ##### Linux
 
 **For CB Series Robots UR3-UR10** - Download the latest version of URSim **3**.x from [here](https://www.universal-robots.com/download/?filters[]=98759&filters[]=98916&query=). Installation instructions are included on the page.
@@ -110,11 +118,3 @@ ln -s /programs $URSIM_ROOT/programs
 
 ...
 ```
-
-##### Docker
-
-If you prefer to run URSim on a Windows PC or via Docker then there is a Docker image [here](https://hub.docker.com/r/universalrobots/ursim_e-series) although this is (at the time of writing) still listed as experimental. To enable [remote upload](#remote) you will need to ensure that the Dashboard port (_29999_) is exposed in your container. This is mentioned on the [Docker Hub page for the image](https://hub.docker.com/r/universalrobots/ursim_e-series). You will also need to ensure that your [File Manager](../../Overview/Glossary.md#capabilities) is set to Local, its path is set correctly and the _Remote Root Directory_ in your Dashboard matches your Docker bind mounts e.g. _/root_ if you bind mount points to _/root/programs_ or _/ursim_ if following the Docker examples. 
-
-E.g. `docker run --rm -it -p 5900:5900 -p 6080:6080 -p 29999:29999 -v "/c/UniversalRobots/staging/ursim/programs:/ursim/programs" -e ROBOT_MODEL=UR5 universalrobots/ursim_e-series`
-
-In the example below, `-p 29999:29999` is used to enable the Dashboard from your PC and the `-v ...` contains the full path `/ursim/programs` on the left hand side.
