@@ -47,7 +47,7 @@ You'll find a number of different ABB controllers in our catalogs but between th
 
 #### Objective:
 
-In this section we'll explain how to get the [Procedures](../../Overview/Glossary.md#procedure) you've generated onto your robot. There are two different ways to do this, either (manually)[#manual] or (remotely)[#remote].
+In this section we'll explain how to get the [Procedures](../../Overview/Glossary.md#procedure) you've generated onto your robot. There are two different ways to do this, either [manually](#manual) or [remotely](#remote).
 
 #### Remote:
 

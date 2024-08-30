@@ -49,17 +49,17 @@ You'll find two different Universal Robots controllers in our catalogs, _CB3_ (f
 
 #### Objective:
 
-In this section we'll explain how to get the [Procedures](../../Overview/Glossary.md#procedure) you've generated onto your robot. There are two different ways to do this, either (manually)[#manual] or (remotely)[#remote].
+In this section we'll explain how to get the [Procedures](../../Overview/Glossary.md#procedure) you've generated onto your robot. There are two different ways to do this, either [manually](#manual) or [remotely](#remote).
 
 #### Remote:
 
-If this is the first time you're setting up this particular robot controller for (remote upload)[#remote], skip down to the (remote upload prerequisites)[#remote-upload-prerequisites] and then come back here.
+If this is the first time you're setting up this particular robot controller for [remote upload](#remote), skip down to the [remote upload prerequisites](#remote-upload-prerequisites) and then come back here.
 
 1. Ensure your controller is configured to communicate with your controller. See [Controller Options](#1-controller-options) and [Configure a Virtual Controller](../../Grasshopper/6-Control/Contents.md#61-configure-a-virtual-controller) for more details about what your options are.
 2. Follow the instructions in [Upload a Procedure](../../Grasshopper/6-Control/Contents.md#63-upload-a-procedure).
 3. That's all!
 
-#### Remote Upload Prerequisites
+#### Remote Upload Prerequisites:
 
 There are a few settings that need to be checked on your controller before we can connect to it from your PC. Some of these might already be correctly set on your system, but even if they aren't these will only ever need to be done once on your controller. It is also good practice to restart the controller once everything below is configured to ensure it's taken into account, the only exception is the activation of _Remote Control_ which is likely to be toggled frequently and does not require a restart.
 
