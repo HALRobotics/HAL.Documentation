@@ -53,9 +53,43 @@ In this section we'll explain how to get the [Procedures](../../Overview/Glossar
 
 #### Remote:
 
+If this is the first time you're setting up this particular robot controller for (remote upload)[#remote], skip down to the (remote upload prerequisites)[#remote-upload-prerequisites] and then come back here.
+
 1. Ensure your controller is configured to communicate with your controller. See [Controller Options](#1-controller-options) and [Configure a Virtual Controller](../../Grasshopper/6-Control/Contents.md#61-configure-a-virtual-controller) for more details about what your options are.
 2. Follow the instructions in [Upload a Procedure](../../Grasshopper/6-Control/Contents.md#63-upload-a-procedure).
 3. That's all!
+
+#### Remote Upload Prerequisites
+
+There are a few settings that need to be checked on your controller before we can connect to it from your PC. Some of these might already be correctly set on your system, but even if they aren't these will only ever need to be done once on your controller. It is also good practice to restart the controller once everything below is configured to ensure it's taken into account, the only exception is the activation of _Remote Control_ which is likely to be toggled frequently and does not require a restart.
+
+1. Ensure you have access to the admin password for you controller. You will need this to make many of the changes below, and it will be needed when you configure your [Controller Options](#1-controller-options).
+[<center><img src="../../assets/images/Manufacturers/UR/URAdminPassword.PNG"></center>](../../assets/images/Manufacturers/UR/URAdminPassword.PNG)
+<em>The Admin Password can be changed in the settings.</em>
+
+2. Enable the _Network_. DHCP or Static will work as long as your PC can be on the same subnet as the controller. Make a note of the IP address as it will be needed when you configure your [Controller Options](#1-controller-options).
+[<center><img src="../../assets/images/Manufacturers/UR/UREnableNetwork.PNG"></center>](../../assets/images/Manufacturers/UR/UREnableNetwork.PNG)
+<em>The controller network needs to be enabled to give us remote access.</em>
+
+3. Enable the _Secure Shell (SSH)_. This will allow us to transfer code files from a PC to your controller remotely.
+[<center><img src="../../assets/images/Manufacturers/UR/UREnableSSH.PNG"></center>](../../assets/images/Manufacturers/UR/UREnableSSH.PNG)
+<em>SSH allows us to transfer code files to your controller.</em>
+
+4. Enable the _Services_ chosen in your [Controller Options](#1-controller-options). Typically this will include _Dashboard Server_, _RTDE_ and the _Primary Client Interface_.
+[<center><img src="../../assets/images/Manufacturers/UR/UREnableServices.PNG"></center>](../../assets/images/Manufacturers/UR/UREnableServices.PNG)
+<em>Services you have chosen to remotely command your controller need to be Enabled.</em>
+
+5. Ensure _inbound access_ for the following ports isn't disabled - 22 (for _SSH_), 29999 (for _Dashboard Server_), 30004 (for _RTDE_) and 30001 (for _Primary Client Interface_). If there are other services you have enabled, the full list of used ports can be found [here](https://forum.universal-robots.com/t/overview-of-used-ports-on-local-host/8889).
+[<center><img src="../../assets/images/Manufacturers/UR/UREnablePorts.PNG"></center>](../../assets/images/Manufacturers/UR/UREnablePorts.PNG)
+<em>Ports can be blocked for security but access needs to be allowed for certain services.</em>
+
+6. Enable _Remote Control_. This will add a nwe option in the top right corner of the screen which will allow us to command the controller from a PC using the various _Services_ we just set up.
+[<center><img src="../../assets/images/Manufacturers/UR/UREnableRemoteControl.PNG"></center>](../../assets/images/Manufacturers/UR/UREnableRemoteControl.PNG)
+<em>Remote Control must be enabled before it can be activated for us to command the controller remotely.</em>
+
+7. Activate _Remote Control_. This will allow us to command the controller from a PC using the various _Services_ we just set up. It can be toggled in the top right corner of you teach pendant screen. In _Remote Control_ you won't be able to jog the robot or make manual changes so you are likely to toggle this on and off a few times whilst setting up your application but remember to activate it before attempting to upload code remotely.
+[<center><img src="../../assets/images/Manufacturers/UR/URActivateRemoteControl.PNG"></center>](../../assets/images/Manufacturers/UR/URActivateRemoteControl.PNG)
+<em>Remote Control must be activated for us to command the controller remotely.</em>
 
 #### Manual:
 
@@ -63,15 +97,15 @@ In this section we'll explain how to get the [Procedures](../../Overview/Glossar
 2. Copy the _{ProcedureName}.script_ file onto a USB stick.
 3. Insert the USB stick into the USB port on the teach pendant.
 4. Create a new **Program** on the controller with a **Script** node (you'll find this under the **Advanced** category) and set the mode to _File_.
-[<center><img src="../../assets/images/Manufacturers/URCreateScript.PNG"></center>](../../assets/images/Manufacturers/URCreateScript.PNG)
+[<center><img src="../../assets/images/Manufacturers/UR/URCreateScript.PNG"></center>](../../assets/images/Manufacturers/UR/URCreateScript.PNG)
 <em>Create a Script node into which you can load your URScript file.</em>
 
 5. Click _Edit_ then _Open_ to browse to your _{ProcedureName}.script_ file on the USB stick. You can then _Exit_ the script editor.
-[<center><img src="../../assets/images/Manufacturers/URLoadScript.PNG"></center>](../../assets/images/Manufacturers/URLoadScript.PNG)
+[<center><img src="../../assets/images/Manufacturers/UR/URLoadScript.PNG"></center>](../../assets/images/Manufacturers/UR/URLoadScript.PNG)
 <em>Browse the directories and open your URScript file.</em>
 
 6. Your _{ProcedureName}.script_ is now loaded and ready to run.
-[<center><img src="../../assets/images/Manufacturers/URManualProgram.PNG"></center>](../../assets/images/Manufacturers/URManualProgram.PNG)
+[<center><img src="../../assets/images/Manufacturers/UR/URManualProgram.PNG"></center>](../../assets/images/Manufacturers/UR/URManualProgram.PNG)
 <em>Browse the directories and open your URScript file.</em>
 
 ---
