@@ -39,6 +39,11 @@ If you already have an account, you can simply [login to the user portal](https:
 [<img src="../../assets/images/Overview/01UserPortalLogin.PNG">](../../assets/images/Overview/01UserPortalLogin.PNG)
 <em>The login page simply requires your email and password.</em>
 
+Once logged in, if you haven't had a trial before, you should see a _Request Trial_ button which will send one of our team a request to activate a trial license for you. Requests are monitored frequently during the week so you should get a license quickly but to ensure we know who's asking, please ensure your name is complete in your [portal profile](https://user.hal-robotics.com/Manage/Index) and that you've used your organisation (work, university, college etc.) email address.
+
+[<img src="../../assets/images/Overview/01UserPortalRequestTrial.PNG">](../../assets/images/Overview/01UserPortalRequestTrial.PNG)
+<em>The [user portal](https://user.hal-robotics.com/) allows you to request a trial license if you've never had one before.</em>
+
 On the home page you should see a _Downloads_ tab which will give you a link to [download the HAL Robotics Framework](https://halinstaller.blob.core.windows.net/windows/HALRoboticsFramework.exe). By clicking on that link, you will download the HAL Robotics Framework Installer. 
 
 [<img src="../../assets/images/Overview/01UserPortal.PNG">](../../assets/images/Overview/01UserPortal.PNG)
@@ -46,7 +51,7 @@ On the home page you should see a _Downloads_ tab which will give you a link to 
 
 [<img src="../../assets/images/Overview/01SetupExe.PNG" style="display:block">](../../assets/images/Overview/01SetupExe.PNG)
 <em>The downloaded "Setup.exe" application will install the HAL Robotics Framework Installer.</em>
-v
+
 Once the download is complete, run the installer and you should see a list of all available packages and extensions. 
 Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. For example, if you want **_decode_** simply select **HAL._decode_** or for the **Grasshopper SDK**, select **HAL.McNeel.V5**. Once you have selected your configuration simply click apply and the installation will start.
 
