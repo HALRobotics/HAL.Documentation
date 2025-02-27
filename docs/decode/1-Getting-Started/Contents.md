@@ -1,6 +1,6 @@
 ## 1. Getting Started
 
-[1.0. The Beta](#10-the-beta)
+[1.0. Introduction](#10-introduction)
 
 [1.1. Projects](#11-projects)
 
@@ -13,31 +13,23 @@
 [1.5. Assets](#15-assets)
 
 ---
-### 1.0. The Beta
+### 1.0. Introduction
 
-#### Welcome to the _decode_ by HAL Robotics Beta!:
+#### Welcome to _decode_ by HAL Robotics!:
 
 _decode_'s primary purpose is to give operators, those with expert process knowledge, enough agency to adapt a robot's task without burdening them with the complexities of programming. For system integrators and roboticists, however, it serves as a means of quickly setting up complex robotic toolpaths, simulating and validating those procedures, and then sending them as native robot code to your machines.
 
-_decode_ is built on top of the HAL Robotics Framework which has been in use for nearly a decade in different guises within multi-nationals, SMEs, research institutions and academia. So, whilst _decode_ is a new user interface and workflow, the Framework under the hood is stable.
-
-That being said, the interface is new so we know there will be issues and instabilities within it, hence the need for a Beta. As such, we recommend erring on the side of caution when using physical hardware and running simulations in OEM tools wherever possible to ensure everything works as expected. Please also read the next two sections which cover [known limitations](#current-limitations) and [feedback procedures](#feedback).
+_decode_ is built on top of the HAL Robotics Framework which has been in use for nearly a decade in different guises within multi-nationals, SMEs, research institutions and academia. That being said, we always recommend erring on the side of caution when using physical hardware and running simulations in OEM tools wherever possible to ensure everything works as expected. Please also read the next two sections which cover [known limitations](#current-limitations) and [feedback procedures](#feedback).
 
 #### Current Limitations:
 
-1. We are using [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download) as a visualisation engine within _decode_ and as such it will need to be installed before you can install _decode_. We are working with McNeel to automate this process for you and will be working with them to simplify the licensing of the complete software so that there's a single point of entry, account management etc. when using _decode_.
-2. If you are using Rhino 8 (the latest version) please open Rhino, run the `SetDotNetRuntime` command and select `NETFramework` before running _decode_. Again, we are working with the McNeel team to try and streamline this during installation.
-3. _decode_ currently in Beta, so you will need to ensure the **include beta** box is ticked in the installer before it will be shown. To do this, open the HAL Robotics Framework installer and tick the **include beta** box in the upper right-hand corner:
-[<center><img src="../../assets/images/Overview/01InstallerPackages-IncludeBeta.png"></center>](../../assets/images/Overview/01InstallerPackages-IncludeBeta.png)
-4. _Limitation removed in HAL.decode version 1.5.25-beta_ ~~**Save** is currently disabled. We are still working out the final details of how and where we store data which means that we will almost certainly break any previously saved projects. Whilst we know this will be frustrating we hope it will discourage particularly time-consuming development and therefore limit the frustrations of losing that work anyway further down the line. This is a top priority for us and **save** will be coming soon™.~~
-5. Things will be getting fixed and updated very frequently so there will be weekly or maybe even daily updates pushed so please check back in the installer before launching the software on any given day. Once it's stable, the update cadence will slow and this will no longer be necessary, although we will still keep releasing meaningful feature updates, tweaks and fixes as necessary.
-6. We are currently limiting the cells to one robot with one tool and no external axes/positioners. This is temporary to keep things relatively simple but if you need multi-robot or external axis support, please use the [Grasshopper SDK](../../Grasshopper/Contents.md).
-7. Whilst you will have to log in to _decode_, the licensing has been deactivated so you will, for now, have free access to everything in there. We will try to ensure you get fair warning before that changes.
-8. As mentioned above, this is a Beta interface so there are likely to be anomalies, a few bugs and maybe even the occasional crash. We would like as much [feedback](#feedback) as you can give.
+1. We use [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download) as a visualisation engine within _decode_ and as such it will need to be installed before you can install _decode_. We are working with McNeel to automate this process for you and will be working with them to simplify the licensing of the complete software so that there's a single point of entry, account management etc. when using _decode_. If you haven't received your Rhino license with _decode_ (and your license includes one) please contact the HAL Robotics team by [email](mailto:the-team@hal-robotics.com).
+2. We are currently limiting the cells to one robot with one tool and no external axes/positioners. Multi-robot, positioner, tool change and stationary tool support are all in our development pipeline but if you need any of these features today, we recommend [our visual scripting SDK](../../Grasshopper/Contents.md).
+3. We release meaningful feature updates, tweaks and fixes as necessary so please ensure that updates are installed if you do encounter any other issues.
 
 #### Feedback:
 
-We appreciate your support helping us make _decode_ a stable interface that you can trust for your development needs now and hopefully long into the future. If you find any bugs or major issues please let us know, preferably through our [GitHub issues or discussions](https://github.com/HALRobotics/Beta) so that anyone else with the same experience can chime in and, if need be, help us pinpoint the source of the error. Please give us as much detail as possible as that will ensure we can reproduce the problem internally and therefore identify, and fix, the root cause rather than the symptom.
+We always appreciate your support helping us make _decode_ a stable interface that you can trust for your development needs now and hopefully long into the future. If you find any bugs or issues please let us know, preferably through our [GitHub issues or discussions](https://github.com/HALRobotics/Beta) so that anyone else with the same experience can chime in and, if need be, help us pinpoint the source of the error. Please give us as much detail as possible as that will ensure we can reproduce the problem internally and therefore identify, and fix, the root cause rather than the symptom.
 
 We would also be very receptive to anything that could make your experience better. That could be features you'd like to see, interactions that could be improved or any other suggestions you have. Again if those go through our [GitHub page](https://github.com/HALRobotics/Beta/discussions) then we can have an open discussion about how those would work and get input from others on the same subject.
 
@@ -46,10 +38,6 @@ Of course, if you have anything nice to say about _decode_ then we'd love to hea
 #### Where Next
 
 If you are new to our software, we would recommend starting with the [Installation](../../Overview/0-Administration-and-Setup/Contents.md#01-install) tutorial which will get you up and running.
-
-If you already familiar with our software and have our installer loaded, you can re-run it, make sure **include beta** is ticked on, and you'll be ready to go.
-
-Thank you once again for helping to make _decode_ better.
 
 ---
 ### 1.1. Projects

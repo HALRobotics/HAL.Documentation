@@ -18,7 +18,7 @@
 
 ### [1. Getting Started](./1-Getting-Started/Contents.md#1-getting-started)
 
-#### [1.0. The Beta](./1-Getting-Started/Contents.md#10-the-beta)
+#### [1.0. Introduction](./1-Getting-Started/Contents.md#10-introduction)
 
 #### [1.1. Projects](./1-Getting-Started/Contents.md#11-projects)
 

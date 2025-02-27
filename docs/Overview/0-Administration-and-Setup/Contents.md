@@ -19,7 +19,7 @@ In this tutorial you will learn how to install the HAL Robotics Framework from t
 
 #### Requirements to follow along:
 
-- Host software e.g. [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), installed on a PC. _N.B. We are working with McNeel to automate this process for you._
+- Host software e.g. [McNeel's Rhinoceros 3D and Grasshopper](https://www.rhino3d.com/download), installed on a PC. _N.B. We are working with McNeel to automate this process for you._ If you are using Rhino 8 (the latest version) please open Rhino, run the `SetDotNetRuntime` command and select `NETFramework` before running any of our software. Again, we are working with the McNeel team to try and streamline this during installation.
 - Internet access.
 
 #### How to:
@@ -53,7 +53,14 @@ On the home page you should see a _Downloads_ tab which will give you a link to 
 <em>The downloaded "Setup.exe" application will install the HAL Robotics Framework Installer.</em>
 
 Once the download is complete, run the installer and you should see a list of all available packages and extensions. 
-Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. For example, if you want **_decode_** simply select **HAL._decode_** or for the **Grasshopper SDK**, select **HAL.McNeel.V5**. Once you have selected your configuration simply click apply and the installation will start.
+Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. For example, if you want **_decode_** simply select **HAL._decode_** or for the **Grasshopper SDK**, select **HAL.McNeel.V5**. 
+
+If you can't find an extension you're expecting to see or are interested in using any packages that are currently in Beta, you will need to ensure the **include beta** box is ticked in the installer, as shown below.
+
+[<center><img src="../../assets/images/Overview/01InstallerPackages-IncludeBeta.png"></center>](../../assets/images/Overview/01InstallerPackages-IncludeBeta.png)
+<em>The include beta box in the upper right-hand corner of the installer shows you packages which are still under development.</em>
+
+Once you have selected your configuration simply click apply and the installation will start.
 
 Every time there are updates available for the packages you have installed simply clicking apply will download and install the latest version.
 
