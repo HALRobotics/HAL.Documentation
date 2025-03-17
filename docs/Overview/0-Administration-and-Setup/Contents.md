@@ -53,7 +53,7 @@ On the home page you should see a _Downloads_ tab which will give you a link to 
 <em>The downloaded "Setup.exe" application will install the HAL Robotics Framework Installer.</em>
 
 Once the download is complete, run the installer and you should see a list of all available packages and extensions. 
-Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. For example, if you want **_decode_** simply select **HAL._decode_** or for the **Grasshopper SDK**, select **HAL.McNeel.V5**. 
+Select the ones you want to install according to the robots that you will want to program using the HAL Robotics Framework and the host software you want to add the Framework to. For example, if you want **_decode_** simply select **HAL._decode_** or for the **Grasshopper SDK**, select **HAL.McNeel.V5**. If you have a custom extension please see [this guide for additional instructions](./CustomExtensions.md#01-setup).
 
 If you can't find an extension you're expecting to see or are interested in using any packages that are currently in Beta, you will need to ensure the **include beta** box is ticked in the installer, as shown below.
 
