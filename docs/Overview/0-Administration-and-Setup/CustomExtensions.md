@@ -62,7 +62,7 @@ If you can't find an extension you're expecting to see it's possible that it's a
 
 To set up your _Catalogue Items_, open Rhino3D and Grasshopper, navigate to the **HAL** menu and select the **catalog repositories** option.
 
-[<center><img src="../../assets/images/Overview/01CataloguePackages-AccessRepositories.png"></center>](../../assets/images/Overview/01CataloguePackages-AccessRepositories.png)
+[<center><img src="../../assets/images/Overview/01CataloguePackages-AccessRepositories.PNG"></center>](../../assets/images/Overview/01CataloguePackages-AccessRepositories.PNG)
 <em>The catalog repositories option accesses the catalogue item repository manager.</em>
 
 From the repository manager, give your repository an alias and put the path to the directory as the URI, then click **add**. 
