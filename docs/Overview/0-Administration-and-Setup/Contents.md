@@ -86,7 +86,9 @@ Once the installation is complete you have successfully installed the HAL Roboti
 
 #### Objective:
 
-This tutorial is aimed at organization administrators who would like to manage licenses and users for their institution from the [user portal](https://user.hal-robotics.com/). If you are a user trying to access their organization's licenses please skip forward to the [Join an Organization](#03-join-an-organization) tutorial. Please note that all new organizations need approval from a HAL Robotics team member so please **do not** follow this tutorial unless you represent an organization.
+**Do not** follow this tutorial unless you represent an organization.
+
+This tutorial is aimed at organization administrators who would like to manage licenses and users for their institution from the [user portal](https://user.hal-robotics.com/). If you are a user trying to access their organization's licenses please skip forward to the [Join an Organization](#03-join-an-organization) tutorial. Please note that all new organizations need approval from a HAL Robotics team member so, again, please **do not** follow this tutorial unless you represent an organization.
 
 #### Requirements to follow along:
 
