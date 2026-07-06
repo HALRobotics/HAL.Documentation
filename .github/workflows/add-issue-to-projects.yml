@@ -1,0 +1,14 @@
+name: Add Issue to Projects
+on:
+  issues:
+    types: [opened]
+jobs:
+  # copy and paste this step to add new jobs
+  add-to-backlog:
+    uses: HALRobotics/.github/.github/workflows/add-content-to-project.yml@develop
+    with:
+      project: 32
+      contentId: ${{ github.event.issue.node_id }}
+    secrets:
+      appId: ${{ secrets.PROJECTS_WORKFLOW_ID }}
+      key: ${{ secrets.PROJECTS_WORKFLOW_KEY }}
