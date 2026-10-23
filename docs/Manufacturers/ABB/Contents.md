@@ -51,9 +51,24 @@ In this section we'll explain how to get the [Procedures](../../Overview/Glossar
 
 #### Remote:
 
-1. Ensure your controller is configured to communicate with your controller. See [Controller Options](#1-controller-options) and [Configure a Virtual Controller](../../Grasshopper/6-Control/Contents.md#61-configure-a-virtual-controller) for more details about what your options are.
-2. Follow the instructions in [Upload a Procedure](../../Grasshopper/6-Control/Contents.md#63-upload-a-procedure).
-3. That's all!
+1. If you are using RobotWare 6, skip ahead to step **7**.
+2. You may need to create a new user within your controller with permissions to remotely upload, and optionally run, programs.
+3. To do this, connect to your controller via RobotStudio and ensure you are logged in as an administrator.
+4. Then navigate to the _Users_ tab and open the list of _Users and Roles_. You will need to start by adding a _Role_ with the necessary permissions - at least _Edit RAPID Code_, _Execute Program_, and _Load Program_.
+[<center><img src="../../assets/images/Manufacturers/ABB/ABB_AddRole.png"></center>](../../assets/images/Manufacturers/ABB/ABB_AddRole.png)
+<em>Add a Role with the necessary permissions for remote code upload and execution.</em>
+
+5. Then add this new _Role_ to a _User_, either an existing one or a new one.
+[<center><img src="../../assets/images/Manufacturers/ABB/ABB_AddUser.png"></center>](../../assets/images/Manufacturers/ABB/ABB_AddUser.png)
+<em>Assign the Role to a User.</em>
+
+6. If you are using RobotWare 8, you will also need to enable _Remote Control_. This can be done, by either using the toggle shown in the image below or by long-pressing the messages button, highlighted in orange in the image.
+[<center><img src="../../assets/images/Manufacturers/ABB/ABB_TPEnableRemoteAccess.png"></center>](../../assets/images/Manufacturers/ABB/ABB_TPEnableRemoteAccess.png)
+<em>RobotWare 8+ also requires the activation of Remote Control before code can be uploaded remotely.</em>
+
+7. Ensure your controller is configured to communicate with your controller, including the credentials for the correct user. See [Controller Options](#1-controller-options) and [Configure a Virtual Controller](../../Grasshopper/6-Control/Contents.md#61-configure-a-virtual-controller) for more details about what your options are.
+8. Follow the instructions in [Upload a Procedure](../../Grasshopper/6-Control/Contents.md#63-upload-a-procedure).
+9. That's all!
 
 #### Manual (via Teach Pendant):
 
